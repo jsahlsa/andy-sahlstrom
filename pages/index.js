@@ -32,6 +32,7 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          background-image: linear-gradient(17deg, hsl(127, 50%, 70%), hsl(180, 50%, 80%));
         }
 
         main {
@@ -45,22 +46,13 @@ export default function Home() {
 
         footer {
           width: 100%;
-          height: 100px;
+          height: 50px;
           border-top: 1px solid #eaeaea;
           display: flex;
           justify-content: center;
           align-items: center;
         }
 
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
 
         a {
           color: inherit;
