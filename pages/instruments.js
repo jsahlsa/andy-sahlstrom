@@ -1,11 +1,10 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from 'next/head'
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Andy Sahlstrom</title>
+        <title>Instruments</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -17,10 +16,6 @@ export default function Home() {
         <p className="description">
           Gonna be building in plain sight using <a href="https://nextjs.org">NEXT.JS</a>
         </p>
-
-        <Link href="/instruments">
-          <a>instruments</a>
-        </Link>
 
         
       </main>
@@ -152,20 +147,7 @@ export default function Home() {
         }
       `}</style>
 
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+      
     </div>
   )
 }
