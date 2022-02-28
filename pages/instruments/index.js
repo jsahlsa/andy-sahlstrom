@@ -1,4 +1,6 @@
-import Head from 'next/head'
+
+import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -12,10 +14,26 @@ export default function Home() {
         <h1 className="title">
           Andy's new personal site
         </h1>
+        
 
         <p className="description">
           Gonna be building in plain sight using <a href="https://nextjs.org">NEXT.JS</a>
         </p>
+        <Link href="instruments/airless-organ">
+          <a>airless organ</a>
+        </Link>
+        <Link href="instruments/airless-organ-articulator">
+          <a>airless organ articulator</a>
+        </Link>
+        <Link href="instruments/midi-player-piano">
+          <a>midi player piano</a>
+        </Link>
+        <Link href="instruments/robotic-articulating-mouth">
+          <a>robotic articulating mouth</a>
+        </Link>
+        <Link href="instruments/touchless-tongue-drum">
+          <a>touchless tongue drum</a>
+        </Link>
 
         
       </main>
