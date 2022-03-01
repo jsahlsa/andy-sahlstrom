@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Nav from '../components/nav';
 
 export default function Home() {
   return (
@@ -8,6 +9,8 @@ export default function Home() {
         <title>Andy Sahlstrom</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Nav />
 
       <main>
         <h1 className="title">

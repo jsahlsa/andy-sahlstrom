@@ -1,6 +1,6 @@
-
 import Head from 'next/head';
 import Link from 'next/link';
+import Nav from '../../components/nav';
 
 export default function Home() {
   return (
@@ -10,14 +10,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Nav />
+
       <main>
-        <h1 className="title">
-          Andy's new personal site
-        </h1>
-        
+        <h1 className="title">Instruments</h1>
 
         <p className="description">
-          Gonna be building in plain sight using <a href="https://nextjs.org">NEXT.JS</a>
+          Gonna be building in plain sight using{' '}
+          <a href="https://nextjs.org">NEXT.JS</a>
         </p>
         <Link href="instruments/airless-organ">
           <a>airless organ</a>
@@ -34,8 +34,6 @@ export default function Home() {
         <Link href="instruments/touchless-tongue-drum">
           <a>touchless tongue drum</a>
         </Link>
-
-        
       </main>
 
       <footer>
@@ -50,7 +48,11 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          background-image: linear-gradient(17deg, hsl(127, 50%, 70%), hsl(180, 50%, 80%));
+          background-image: linear-gradient(
+            17deg,
+            hsl(127, 50%, 70%),
+            hsl(180, 50%, 80%)
+          );
         }
 
         main {
@@ -70,7 +72,6 @@ export default function Home() {
           justify-content: center;
           align-items: center;
         }
-
 
         a {
           color: inherit;
@@ -164,8 +165,6 @@ export default function Home() {
           }
         }
       `}</style>
-
-      
     </div>
-  )
+  );
 }
