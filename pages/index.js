@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Nav from '../components/nav';
 
+import data from '../public/data.json';
+
 export default function Home() {
   return (
     <div className="container">
@@ -12,20 +14,21 @@ export default function Home() {
 
       <Nav />
 
+      {data.map((item, i) => {
+        console.log(item);
+      })}
+
       <main>
-        <h1 className="title">
-          Andy's new personal site
-        </h1>
+        <h1 className="title">Andy's new personal site</h1>
 
         <p className="description">
-          Gonna be building in plain sight using <a href="https://nextjs.org">NEXT.JS</a>
+          Gonna be building in plain sight using{' '}
+          <a href="https://nextjs.org">NEXT.JS</a>
         </p>
 
         <Link href="/instruments">
           <a>instruments</a>
         </Link>
-
-        
       </main>
 
       <footer>
@@ -40,7 +43,11 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          background-image: linear-gradient(17deg, hsl(127, 50%, 70%), hsl(180, 50%, 80%));
+          background-image: linear-gradient(
+            17deg,
+            hsl(127, 50%, 70%),
+            hsl(180, 50%, 80%)
+          );
         }
 
         main {
@@ -60,7 +67,6 @@ export default function Home() {
           justify-content: center;
           align-items: center;
         }
-
 
         a {
           color: inherit;
@@ -170,5 +176,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }

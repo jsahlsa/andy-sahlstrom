@@ -1,13 +1,5 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import airlessOrgan1 from '/public/images/instruments/airless-organ/airless-organ-1.jpeg';
-import airlessOrgan2 from '/public/images/instruments/airless-organ/airless-organ-2.jpeg';
-import airlessOrgan3 from '/public/images/instruments/airless-organ/airless-organ-3.jpeg';
-import airlessOrgan4 from '/public/images/instruments/airless-organ/airless-organ-4.jpeg';
-import airlessOrgan5 from '/public/images/instruments/airless-organ/airless-organ-5.jpeg';
-import airlessOrgan6 from '/public/images/instruments/airless-organ/airless-organ-6.jpeg';
-import airlessOrgan7 from '/public/images/instruments/airless-organ/airless-organ-7.jpeg';
-import airlessOrgan8 from '/public/images/instruments/airless-organ/airless-organ-8.jpeg';
 
 import data from '/public/data.json';
 
@@ -17,11 +9,11 @@ export default function Home() {
   // console.log(data);
 
   const airlessOrganData = data[0].instruments[0].airless_organ;
-
+  console.log(airlessOrganData[0].name);
   return (
     <div className="container">
       <Head>
-        <title>Instruments</title>
+        <title>{airlessOrganData[0].name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -86,9 +78,9 @@ export default function Home() {
           width: 80vw;
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          grid-template-rows: repeat(5, 1fr);
+          grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
           grid-auto-flow: dense;
-          grid-gap: 20px;
+          grid-gap: 10px;
           place-items: center;
         }
         .img-container {
