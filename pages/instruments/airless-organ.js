@@ -4,10 +4,6 @@ import Image from 'next/image';
 import data from '/public/data.json';
 
 export default function Home() {
-  // const airlessOrganData = data.instruments.airless_organ;
-  // console.log(airlessOrganData);
-  // console.log(data);
-
   const airlessOrganData = data[0].instruments[0].airless_organ;
   console.log(airlessOrganData[0].name);
   return (
