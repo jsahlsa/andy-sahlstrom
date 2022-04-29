@@ -182,8 +182,8 @@
       {
         "kinetic_dandelion": [
           {
-            "name": "kinetic",
-            "image": "/images/instruments/airless-organ/airless-organ-1.jpeg",
+            "name": "kinetic-dandelion",
+            "image": "/images/instruments/kinetic-dandelion/kinetic-dandelion-1.jpeg",
             "caption": "some text",
             "width": 1500,
             "height": 844
