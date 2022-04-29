@@ -14,10 +14,6 @@ export default function Home() {
 
       <Nav />
 
-      {data.map((item, i) => {
-        console.log(item);
-      })}
-
       <main>
         <h1 className="title">Andy's new personal site</h1>
 

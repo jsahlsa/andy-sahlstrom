@@ -2,15 +2,31 @@ import Link from 'next/link';
 import data from '/public/data.json';
 
 export default function Nav() {
-  Object.keys(
-    data.map((item) => {
-      console.log(Object.keys(item));
-    })
-  );
-
   return (
     <>
-      <header></header>
+      <header>
+        {data.map((item, i) => {
+          const name = Object.keys(item);
+          const values = Object.values(item);
+          const newValue = values[0];
+          console.log(newValue);
+          return (
+            <details key={i}>
+              <summary key={i}>{name[0]}</summary>
+              <ul>
+                {newValue.map((item, i) => {
+                  const newValueKeys = Object.keys(item);
+                  return (
+                    <li key={i}>
+                      <a key={i}>{newValueKeys[0]}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </details>
+          );
+        })}
+      </header>
       <header>
         <div>
           <h1>
