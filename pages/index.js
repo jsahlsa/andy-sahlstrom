@@ -22,7 +22,7 @@ export default function Home() {
           <a href="https://nextjs.org">NEXT.JS</a>
         </p>
 
-        <Link href="/instruments">
+        <Link href="instruments">
           <a>instruments</a>
         </Link>
       </main>

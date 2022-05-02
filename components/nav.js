@@ -9,16 +9,23 @@ export default function Nav() {
           const name = Object.keys(item);
           const values = Object.values(item);
           const newValue = values[0];
-          console.log(newValue);
           return (
             <details key={i}>
-              <summary key={i}>{name[0]}</summary>
+              <summary key={i}>
+                <Link href={name[0]}>
+                  <a>{name[0]}</a>
+                </Link>
+              </summary>
               <ul>
                 {newValue.map((item, i) => {
                   const newValueKeys = Object.keys(item);
+                  const subLinkNames = newValueKeys[0].split('_').join('-');
+                  const subLink = `${name[0]}/${subLinkNames}`;
                   return (
                     <li key={i}>
-                      <a key={i}>{newValueKeys[0]}</a>
+                      <Link href={subLink}>
+                        <a key={i}>{newValueKeys[0]}</a>
+                      </Link>
                     </li>
                   );
                 })}
@@ -26,49 +33,6 @@ export default function Nav() {
             </details>
           );
         })}
-      </header>
-      <header>
-        <div>
-          <h1>
-            <Link href="/">
-              <a>Logo here</a>
-            </Link>
-          </h1>
-        </div>
-        <nav>
-          <ul>
-            <li>
-              <Link href="/instruments">
-                <a>instruments</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/sculptures">
-                <a>sculptures</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/time-lapse">
-                <a>time lapse</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/music">
-                <a>music</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/design">
-                <a>design</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>about</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
       </header>
     </>
   );

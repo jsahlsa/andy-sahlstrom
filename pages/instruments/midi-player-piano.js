@@ -1,4 +1,8 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import RenderMedia from '../../components/renderMedia';
+import data from '/public/data.json';
+
+const pageData = data[0].instruments[2].midi_player_piano;
 
 export default function Home() {
   return (
@@ -9,20 +13,18 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="title">
-          Andy's new personal site
-        </h1>
+        <h1 className="title">Andy's new personal site</h1>
 
         <p className="description">
-          Gonna be building in plain sight using <a href="https://nextjs.org">NEXT.JS</a>
+          Gonna be building in plain sight using{' '}
+          <a href="https://nextjs.org">NEXT.JS</a>
         </p>
-
-        
+        <RenderMedia props={pageData} />
       </main>
 
       <footer>
         <p>coming soon…</p>
-          </footer>
-          </div>
-          )
-      }
+      </footer>
+    </div>
+  );
+}

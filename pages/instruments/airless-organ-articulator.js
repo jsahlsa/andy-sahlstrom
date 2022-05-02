@@ -1,28 +1,26 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import { useEffect } from 'react';
+import RenderMedia from '../../components/renderMedia';
+import data from '/public/data.json';
 
 export default function Home() {
+  const pageData = data[0].instruments[1].airless_organ_articulator;
+
   return (
     <div className="container">
-      <Head>
-        <title>Instruments</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main>
-        <h1 className="title">
-          Andy's new personal site
-        </h1>
+        <h1 className="title">Andy's new personal site</h1>
 
         <p className="description">
-          Gonna be building in plain sight using <a href="https://nextjs.org">NEXT.JS</a>
+          Gonna be building in plain sight using{' '}
+          <a href="https://nextjs.org">NEXT.JS</a>
         </p>
-
-        
+        <RenderMedia props={pageData} />
       </main>
 
       <footer>
         <p>coming soon…</p>
-          </footer>
-          </div>
-          )
-      }
+      </footer>
+    </div>
+  );
+}

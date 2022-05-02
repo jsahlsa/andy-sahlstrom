@@ -1,18 +1,14 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import RenderMedia from '../../components/renderMedia';
 
 import data from '/public/data.json';
 
 export default function Home() {
-  const airlessOrganData = data[0].instruments[0].airless_organ;
-  console.log(airlessOrganData[0].name);
+  const pageData = data[0].instruments[0].airless_organ;
+
   return (
     <div className="container">
-      <Head>
-        <title>{airlessOrganData[0].name}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main>
         <h1 className="title">Andy's new personal site</h1>
 
@@ -20,43 +16,7 @@ export default function Home() {
           Gonna be building in plain sight using{' '}
           <a href="https://nextjs.org">NEXT.JS</a>
         </p>
-        <div className="images-wrapper">
-          {airlessOrganData.map((item, i) => {
-            if (item.width > item.height) {
-              return (
-                <div
-                  key={i}
-                  className="img-container wide-image"
-                  style={{ position: 'relative' }}
-                >
-                  <Image
-                    src={item.image}
-                    layout="responsive"
-                    width={item.width}
-                    height={item.height}
-                    objectFit="cover"
-                  />
-                </div>
-              );
-            } else {
-              return (
-                <div
-                  key={i}
-                  className="img-container tall-image"
-                  style={{ position: 'relative' }}
-                >
-                  <Image
-                    src={item.image}
-                    layout="responsive"
-                    width={item.width}
-                    height={item.height}
-                    objectFit="cover"
-                  />
-                </div>
-              );
-            }
-          })}
-        </div>
+        <RenderMedia props={pageData} />
       </main>
 
       <footer>
