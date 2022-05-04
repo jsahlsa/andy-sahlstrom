@@ -1,5 +1,4 @@
-import Head from 'next/head';
-import { useEffect } from 'react';
+import Nav from '../../components/nav';
 import RenderMedia from '../../components/renderMedia';
 import data from '/public/data.json';
 
@@ -8,6 +7,7 @@ export default function Home() {
 
   return (
     <div className="container">
+      <Nav />
       <main>
         <h1 className="title">Andy's new personal site</h1>
 
