@@ -1,55 +1,30 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
+import RenderImage from './renderImage';
+import RenderVideo from './renderVideo';
 
 export default function RenderMedia(data) {
-  const [pageName, setPageName] = useState(null);
-
   const pageData = data.props;
   useEffect(() => {
     const path = window.location.pathname;
     const fileEnd = path.split('/').pop();
     const name = fileEnd.split('-').join(' ');
-    setPageName(name);
-    document.title = pageName;
+    document.title = name;
   }, []);
 
   return (
     <div className="images-wrapper">
       {pageData.map((item, i) => {
-        if (item.width > item.height) {
-          return (
-            <div
-              key={i}
-              className="img-container wide-image"
-              style={{ position: 'relative' }}
-            >
-              <Image
-                src={item.image}
-                layout="responsive"
-                width={item.width}
-                height={item.height}
-                objectFit="cover"
-              />
-            </div>
-          );
-        } else {
-          return (
-            <div
-              key={i}
-              className="img-container tall-image"
-              style={{ position: 'relative' }}
-            >
-              <Image
-                src={item.image}
-                layout="responsive"
-                width={item.width}
-                height={item.height}
-                objectFit="cover"
-              />
-            </div>
-          );
+        if (item.image.split('.').pop() === 'mp4') {
+          return <RenderVideo {...item} key={i} />;
         }
       })}
+      {pageData.map((item, i) => {
+        if (item.image.split('.').pop() === 'jpeg') {
+          return <RenderImage {...item} key={i} />;
+        }
+      })}
+
       <style jsx>{`
         main > h1 {
           border: red solid 10px;
@@ -66,20 +41,6 @@ export default function RenderMedia(data) {
           grid-auto-flow: dense;
           grid-gap: 10px;
           place-items: center;
-        }
-        .img-container {
-          object-fit: cover;
-          display: grid;
-          width: 100%;
-          height: 100%;
-        }
-        .wide-image {
-          grid-column: span 4;
-          grid-row: span 3;
-        }
-        .tall-image {
-          grid-row: span 4;
-          grid-column: span 3;
         }
       `}</style>
     </div>

@@ -5,6 +5,13 @@
         "airless_organ": [
           {
             "name": "airless organ",
+            "image": "/images/instruments/airless-organ/airless-organ.mp4",
+            "caption": "some text",
+            "width": 1500,
+            "height": 844
+          },
+          {
+            "name": "airless organ",
             "image": "/images/instruments/airless-organ/airless-organ-1.jpeg",
             "caption": "some text",
             "width": 1500,

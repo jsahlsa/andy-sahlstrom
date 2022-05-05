@@ -1,11 +1,8 @@
 import Link from 'next/link';
 import data from '/public/data.json';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 
 export default function Nav() {
-  const router = useRouter();
-  console.log(router);
   const [pageNameSame, setPageNameSame] = useState(undefined);
   const [isChildLink, setIsChildLink] = useState(false);
   useEffect(() => {
@@ -45,7 +42,6 @@ export default function Nav() {
                   const subLinkNames = newValueKeys[0].split('_').join('-');
                   const subLink = `/${name[0]}/${subLinkNames}`;
                   const subLinkTwo = `${subLinkNames}`;
-                  console.log(name[0], subLink, subLinkTwo);
                   return (
                     <li key={i}>
                       <Link
