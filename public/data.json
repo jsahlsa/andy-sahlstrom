@@ -480,5 +480,35 @@
         ]
       }
     ]
+  },
+  {
+    "music": [
+      {
+        "name": "daanjoy"
+      },
+      {
+        "name": "stay awake dreamer"
+      }
+    ]
+  },
+  {
+    "design": [
+      {
+        "name": "daanjoy"
+      },
+      {
+        "name": "stay awake dreamer"
+      }
+    ]
+  },
+  {
+    "about": [
+      {
+        "name": "andy sahlstrom",
+        "image": "/images/andy-self.jpeg",
+        "width": 720,
+        "height": 720
+      }
+    ]
   }
 ]

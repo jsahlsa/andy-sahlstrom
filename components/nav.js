@@ -24,43 +24,59 @@ export default function Nav() {
         <div>
           <Link href="/">Home</Link>
         </div>
-        {data.map((item, i) => {
-          const name = Object.keys(item);
-          const parentLink = `/${name[0]}`;
-          const values = Object.values(item);
-          const newValue = values[0];
-          return (
-            <details key={i}>
-              <summary key={i}>
-                <Link href={parentLink}>
-                  <a>{name[0]}</a>
-                </Link>
-              </summary>
-              <ul>
-                {newValue.map((item, i) => {
-                  const newValueKeys = Object.keys(item);
-                  const subLinkNames = newValueKeys[0].split('_').join('-');
-                  const subLink = `/${name[0]}/${subLinkNames}`;
-                  const subLinkTwo = `${subLinkNames}`;
-                  return (
-                    <li key={i}>
-                      <Link
-                        href={
-                          name[0] === pageNameSame && isChildLink
-                            ? subLinkTwo
-                            : subLink
-                        }
-                        replace
-                      >
-                        <a key={i}>{newValueKeys[0]}</a>
+        <ul>
+          {data.map((item, i) => {
+            const name = Object.keys(item);
+            const parentLink = `/${name[0]}`;
+            const values = Object.values(item);
+            const newValue = values[0];
+            if (!newValue[0].name) {
+              return (
+                <li key={i}>
+                  <details key={i}>
+                    <summary key={i}>
+                      <Link href={parentLink}>
+                        <a>{name[0]}</a>
                       </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </details>
-          );
-        })}
+                    </summary>
+                    <ul>
+                      {newValue.map((item, i) => {
+                        const newValueKeys = Object.keys(item);
+                        const subLinkNames = newValueKeys[0]
+                          .split('_')
+                          .join('-');
+                        const subLink = `/${name[0]}/${subLinkNames}`;
+                        const subLinkTwo = `${subLinkNames}`;
+                        return (
+                          <li key={i}>
+                            <Link
+                              href={
+                                name[0] === pageNameSame && isChildLink
+                                  ? subLinkTwo
+                                  : subLink
+                              }
+                              replace
+                            >
+                              <a key={i}>{newValueKeys[0]}</a>
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </details>
+                </li>
+              );
+            } else {
+              return (
+                <li key={i}>
+                  <Link href={parentLink}>
+                    <a>{name[0]}</a>
+                  </Link>
+                </li>
+              );
+            }
+          })}
+        </ul>
       </header>
     </>
   );

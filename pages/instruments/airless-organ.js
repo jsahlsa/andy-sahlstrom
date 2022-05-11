@@ -26,31 +26,6 @@ export default function Home() {
         main > h1 {
           border: red solid 10px;
         }
-
-        video {
-          width: 300px;
-        }
-        .images-wrapper {
-          width: 80vw;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-          grid-auto-flow: dense;
-          grid-gap: 10px;
-          place-items: center;
-        }
-        .img-container {
-          object-fit: cover;
-          display: grid;
-          width: 100%;
-          height: 100%;
-        }
-        .wide-image {
-          grid-column: span 2;
-        }
-        .tall-image {
-          grid-row: span 2;
-        }
       `}</style>
     </div>
   );
