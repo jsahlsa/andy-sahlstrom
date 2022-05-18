@@ -35,9 +35,10 @@ export default function RenderMedia(data) {
         }
         .images-wrapper {
           width: 80vw;
+          height: clamp(20rem, 150vh, 100rem);
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
-          grid-template-rows: repeat(auto-fit, minmax(65px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+          grid-template-rows: repeat(auto-fit, minmax(3rem, 1fr));
           grid-auto-flow: dense;
           grid-gap: 10px;
           place-items: center;

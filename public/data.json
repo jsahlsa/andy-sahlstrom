@@ -6,9 +6,7 @@
           {
             "name": "airless organ",
             "image": "/images/instruments/airless-organ/airless-organ.mp4",
-            "caption": "some text",
-            "width": 1500,
-            "height": 844
+            "caption": "some text"
           },
           {
             "name": "airless organ",
@@ -72,6 +70,13 @@
         "airless_organ_articulator": [
           {
             "name": "airless organ articulator",
+            "image": "/images/instruments/airless-organ-articulator/airless-organ-articulator.mp4",
+            "caption": "some text",
+            "width": 1666,
+            "height": 1666
+          },
+          {
+            "name": "airless organ articulator",
             "image": "/images/instruments/airless-organ-articulator/airless-organ-articulator-1.jpeg",
             "caption": "some text",
             "width": 1666,
@@ -111,6 +116,13 @@
         "midi_player_piano": [
           {
             "name": "midi player piano",
+            "image": "/images/instruments/midi-player-piano/midi-player-piano.mp4",
+            "caption": "some text",
+            "width": 864,
+            "height": 576
+          },
+          {
+            "name": "midi player piano",
             "image": "/images/instruments/midi-player-piano/midi-player-piano-1.jpeg",
             "caption": "some text",
             "width": 864,
@@ -148,6 +160,20 @@
       },
       {
         "robotic_articulating_mouth": [
+          {
+            "name": "robotic articulating mouth",
+            "image": "/images/instruments/robotic-articulating-mouth/robotic-articulating-mouth-1.mp4",
+            "caption": "some text",
+            "width": 1251,
+            "height": 1668
+          },
+          {
+            "name": "robotic articulating mouth",
+            "image": "/images/instruments/robotic-articulating-mouth/robotic-articulating-mouth-1.mp4",
+            "caption": "some text",
+            "width": 1251,
+            "height": 1668
+          },
           {
             "name": "robotic articulating mouth",
             "image": "/images/instruments/robotic-articulating-mouth/robotic-articulating-mouth-1.jpeg",
@@ -190,6 +216,13 @@
         "kinetic_dandelion": [
           {
             "name": "kinetic-dandelion",
+            "image": "/images/sculptures/kinetic-dandelion/kinetic-dandelion.mp4",
+            "caption": "some text",
+            "width": 1500,
+            "height": 844
+          },
+          {
+            "name": "kinetic-dandelion",
             "image": "/images/sculptures/kinetic-dandelion/kinetic-dandelion-1.jpeg",
             "caption": "some text",
             "width": 1500,
@@ -199,6 +232,20 @@
       },
       {
         "kinetic_origami": [
+          {
+            "name": "kinetic-origami",
+            "image": "/images/sculptures/kinetic-origami/kinetic-origami-1.mp4",
+            "caption": "some text",
+            "width": 1500,
+            "height": 844
+          },
+          {
+            "name": "kinetic-origami",
+            "image": "/images/sculptures/kinetic-origami/kinetic-origami-2.mp4",
+            "caption": "some text",
+            "width": 1500,
+            "height": 844
+          },
           {
             "name": "kinetic-origami",
             "image": "/images/sculptures/kinetic-origami/kinetic-origami-1.jpeg",
@@ -494,10 +541,46 @@
   {
     "design": [
       {
-        "name": "daanjoy"
+        "name": "lil tyke hearse",
+        "image": "/images/design/liltyke-hearse-1.jpeg",
+        "caption": "some text",
+        "width": 2500,
+        "height": 2500
       },
       {
-        "name": "stay awake dreamer"
+        "name": "lil tyke hearse graveyard",
+        "image": "/images/design/liltyke-hearse-2.jpeg",
+        "caption": "some text",
+        "width": 2500,
+        "height": 2500
+      },
+      {
+        "name": "clurry outline",
+        "image": "/images/design/clurry-outline.jpeg",
+        "caption": "some text",
+        "width": 750,
+        "height": 971
+      },
+      {
+        "name": "joe clurry topograph",
+        "image": "/images/design/joe-clurry-topograph.jpeg",
+        "caption": "some text",
+        "width": 2500,
+        "height": 3235
+      },
+      {
+        "name": "joopburg",
+        "image": "/images/design/joopburg.jpeg",
+        "caption": "some text",
+        "width": 1428,
+        "height": 1327
+      },
+      {
+        "name": "man squatting",
+        "image": "/images/design/man-squatting.jpeg",
+        "caption": "some text",
+        "width": 1832,
+        "height": 2355
       }
     ]
   },
