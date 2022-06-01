@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Nav from '../../components/nav';
 import RenderMedia from '../../components/renderMedia';
 import data from '/public/data.json';
 
@@ -7,10 +7,7 @@ const pageData = data[0].instruments[4].touchless_tongue_drum;
 export default function Home() {
   return (
     <div className="container">
-      <Head>
-        <title>Instruments</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Nav />
 
       <main>
         <h1 className="title">Andy's new personal site</h1>

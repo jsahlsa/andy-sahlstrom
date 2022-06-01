@@ -531,10 +531,100 @@
   {
     "music": [
       {
-        "name": "daanjoy"
+        "name": "daanjoy",
+        "file": "/music/daanjoy.mp3"
       },
       {
-        "name": "stay awake dreamer"
+        "name": "stay awake dreamer",
+        "file": "/music/stay-awake-dreamer.mp3"
+      },
+      {
+        "name": "feeling miniature in a fever dream",
+        "file": "/music/feeling-miniature-in-a-fever-dream.mp3"
+      },
+      {
+        "name": "this life...",
+        "file": "/music/this-life.mp3"
+      },
+      {
+        "name": "covert operations: carribean assignment",
+        "file": "/music/covert-operation-carribean-assignment.mp3"
+      },
+      {
+        "name": "plernam brelnestat",
+        "file": "/music/plernam-brelnestat.mp3"
+      },
+      {
+        "name": "fooling",
+        "file": "/music/fooling.mp3"
+      },
+      {
+        "name": "waiting by the window",
+        "file": "/music/waiting-by-the-window.mp3"
+      },
+      {
+        "name": "kong",
+        "file": "/music/kong.mp3"
+      },
+      {
+        "name": "ostrich farm",
+        "file": "/music/ostrich-farm.mp3"
+      },
+      {
+        "name": "protoplasm",
+        "file": "/music/protoplasm.m4a"
+      },
+      {
+        "name": "thesis intro",
+        "file": "/music/thesis-intro.mp3"
+      },
+      {
+        "name": "snow monkey",
+        "file": "/music/snow-monkey.m4a"
+      },
+      {
+        "name": "winters day",
+        "file": "/music/winters-day.mp3"
+      },
+      {
+        "name": "self confident",
+        "file": "/music/self-confident.mp3"
+      },
+      {
+        "name": "parachute orchard",
+        "file": "/music/parachute-orchard.m4a"
+      },
+      {
+        "name": "patience",
+        "file": "/music/patience.mp3"
+      },
+      {
+        "name": "harroun and archer",
+        "file": "/music/harroun-and-archer.mp3"
+      },
+      {
+        "name": "a whole week through the year already",
+        "file": "/music/a-whole-week-through-the-year-already.mp3"
+      },
+      {
+        "name": "glinphly",
+        "file": "/music/glinphly.mp3"
+      },
+      {
+        "name": "building robots",
+        "file": "/music/building-robots.mp3"
+      },
+      {
+        "name": "after meeting sarah",
+        "file": "/music/after-meeting-sarah.mp3"
+      },
+      {
+        "name": "laureens mechanics",
+        "file": "/music/laureens-mechanics.mp3"
+      },
+      {
+        "name": "hello useful activity",
+        "file": "/music/hello-useful-activity.mp3"
       }
     ]
   },
