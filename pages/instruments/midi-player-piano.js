@@ -1,12 +1,13 @@
 import RenderMedia from '../../components/renderMedia';
 import data from '/public/data.json';
 import Nav from '../../components/nav';
+import Layout from '../../components/layout';
 
 const pageData = data[0].instruments[2].midi_player_piano;
 
 export default function Home() {
   return (
-    <div className="container">
+    <Layout>
       <Nav />
       <main>
         <h1 className="title">Andy's new personal site</h1>
@@ -21,6 +22,6 @@ export default function Home() {
       <footer>
         <p>coming soon…</p>
       </footer>
-    </div>
+    </Layout>
   );
 }

@@ -5,7 +5,9 @@
         "airless_organ": [
           {
             "name": "airless organ",
-            "image": "/images/instruments/airless-organ/airless-organ.mp4",
+            "image": "/images/instruments/airless-organ/airless-organ-720.mp4",
+            "webm": "/images/instruments/airless-organ/airless-organ-720.webm",
+            "poster": "/images/instruments/airless-organ/airless-organ-poster.jpg",
             "caption": "some text"
           },
           {
@@ -70,7 +72,9 @@
         "airless_organ_articulator": [
           {
             "name": "airless organ articulator",
-            "image": "/images/instruments/airless-organ-articulator/airless-organ-articulator.mp4",
+            "image": "/images/instruments/airless-organ-articulator/airless-organ-articulator-720.mp4",
+            "webm": "/images/instruments/airless-organ-articulator/airless-organ-articulator-720.webm",
+            "poster": "/images/instruments/airless-organ-articulator/airless-organ-articulator-poster.jpg",
             "caption": "some text",
             "width": 1666,
             "height": 1666
@@ -116,7 +120,9 @@
         "midi_player_piano": [
           {
             "name": "midi player piano",
-            "image": "/images/instruments/midi-player-piano/midi-player-piano.mp4",
+            "image": "/images/instruments/midi-player-piano/midi-player-piano-720.mp4",
+            "webm": "/images/instruments/midi-player-piano/midi-player-piano-720.webm",
+            "poster": "/images/instruments/midi-player-piano/midi-player-piano-poster.jpg",
             "caption": "some text",
             "width": 864,
             "height": 576
@@ -162,14 +168,18 @@
         "robotic_articulating_mouth": [
           {
             "name": "robotic articulating mouth",
-            "image": "/images/instruments/robotic-articulating-mouth/robotic-articulating-mouth-1.mp4",
+            "image": "/images/instruments/robotic-articulating-mouth/robotic-articulating-mouth-1-720.mp4",
+            "webm": "/images/instruments/robotic-articulating-mouth/robotic-articulating-mouth-1-720.webm",
+            "poster": "/images/instruments/robotic-articulating-mouth/robotic-articulating-mouth-1-poster.jpg",
             "caption": "some text",
             "width": 1251,
             "height": 1668
           },
           {
             "name": "robotic articulating mouth",
-            "image": "/images/instruments/robotic-articulating-mouth/robotic-articulating-mouth-1.mp4",
+            "image": "/images/instruments/robotic-articulating-mouth/robotic-articulating-mouth-1-720.mp4",
+            "webm": "/images/instruments/robotic-articulating-mouth/robotic-articulating-mouth-1-720.webm",
+            "poster": "/images/instruments/robotic-articulating-mouth/robotic-articulating-mouth-1-poster.jpg",
             "caption": "some text",
             "width": 1251,
             "height": 1668
@@ -216,7 +226,9 @@
         "kinetic_dandelion": [
           {
             "name": "kinetic-dandelion",
-            "image": "/images/sculptures/kinetic-dandelion/kinetic-dandelion.mp4",
+            "image": "/images/sculptures/kinetic-dandelion/kinetic-dandelion-720.mp4",
+            "webm": "/images/sculptures/kinetic-dandelion/kinetic-dandelion-720.webm",
+            "poster": "/images/sculptures/kinetic-dandelion/kinetic-dandelion-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
@@ -234,14 +246,18 @@
         "kinetic_origami": [
           {
             "name": "kinetic-origami",
-            "image": "/images/sculptures/kinetic-origami/kinetic-origami-1.mp4",
+            "image": "/images/sculptures/kinetic-origami/kinetic-origami-1-720.mp4",
+            "webm": "/images/sculptures/kinetic-origami/kinetic-origami-1-720.webm",
+            "poster": "/images/sculptures/kinetic-origami/kinetic-origami-1-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "kinetic-origami",
-            "image": "/images/sculptures/kinetic-origami/kinetic-origami-2.mp4",
+            "image": "/images/sculptures/kinetic-origami/kinetic-origami-2-720.mp4",
+            "webm": "/images/sculptures/kinetic-origami/kinetic-origami-2-720.webm",
+            "poster": "/images/sculptures/kinetic-origami/kinetic-origami-2-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
@@ -367,7 +383,9 @@
         "wavepool": [
           {
             "name": "wavepool",
-            "image": "/images/sculptures/wavepool/wavepool-1.mp4",
+            "image": "/images/sculptures/wavepool/wavepool-1-720.mp4",
+            "webm": "/images/sculptures/wavepool/wavepool-1-720.webm",
+            "poster": "/images/sculptures/wavepool/wavepool-1-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
@@ -382,119 +400,153 @@
         "timelapse": [
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-1.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-1-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-1-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-1-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-2.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-2-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-2-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-2-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-3.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-3-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-3-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-3-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-4.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-4-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-4-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-4-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-5.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-5-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-5-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-5-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-6.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-6-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-6-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-6-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-7.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-7-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-7-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-7-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-8.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-8-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-8-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-8-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-9.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-9-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-9-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-9-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-10.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-10-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-10-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-10-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-11.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-11-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-11-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-11-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-12.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-12-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-12-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-12-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-13.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-13-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-13-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-13-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-14.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-14-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-14-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-14-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-15.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-15-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-15-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-15-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-16.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-16-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-16-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-16-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
             "name": "timelapse",
-            "image": "/images/timelapse/timelapse/timelapse-17.mp4",
+            "image": "/images/timelapse/timelapse/timelapse-17-720.mp4",
+            "webm": "/images/timelapse/timelapse/timelapse-17-720.webm",
+            "poster": "/images/timelapse/timelapse/timelapse-17-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844

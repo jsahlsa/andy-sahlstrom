@@ -1,3 +1,4 @@
+import Layout from '../../components/layout';
 import Nav from '../../components/nav';
 import RenderMedia from '../../components/renderMedia';
 import data from '/public/data.json';
@@ -6,7 +7,7 @@ const pageData = data[0].instruments[3].robotic_articulating_mouth;
 
 export default function Home() {
   return (
-    <div className="container">
+    <Layout>
       <Nav />
 
       <main>
@@ -22,6 +23,6 @@ export default function Home() {
       <footer>
         <p>coming soon…</p>
       </footer>
-    </div>
+    </Layout>
   );
 }

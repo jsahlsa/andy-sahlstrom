@@ -1,13 +1,13 @@
 import Nav from '../components/nav';
-import RenderImage from '../components/renderImage';
 import data from '/public/data.json';
 import Image from 'next/image';
+import Layout from '../components/layout';
 
 export default function Home() {
   const pageData = data[5].about[0];
   console.log(pageData);
   return (
-    <div className="container">
+    <Layout>
       <Nav />
 
       <main>
@@ -50,6 +50,6 @@ export default function Home() {
           grid-column: span 3;
         }
       `}</style>
-    </div>
+    </Layout>
   );
 }

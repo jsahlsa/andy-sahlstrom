@@ -1,5 +1,16 @@
 .container {
-  background-color: aqua;
-  padding: 5%;
-  margin: 0;
+  background-image: radial-gradient(
+      hsla(0, 0%, 10%, 0.1) 4%,
+      hsla(0, 0%, 0%, 0) 4%
+    ),
+    radial-gradient(hsla(0, 0%, 10%, 0.1) 4%, hsla(0, 0%, 0%, 0) 4%);
+  background-position: 0 0, 150px 150px;
+  background-size: 100px 100px;
+  width: 100%;
+  /* background-blend-mode: overlay; */
+  min-height: 100vh;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  margin: 0 auto;
 }

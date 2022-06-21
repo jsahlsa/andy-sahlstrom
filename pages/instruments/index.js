@@ -1,10 +1,9 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Layout from '../../components/layout';
 import Nav from '../../components/nav';
 
 export default function Home() {
   return (
-    <div className="container">
+    <Layout>
       <Nav />
 
       <main>
@@ -21,6 +20,6 @@ export default function Home() {
       </footer>
 
       <style jsx>{``}</style>
-    </div>
+    </Layout>
   );
 }
