@@ -31,12 +31,15 @@ body {
 main {
   display: grid;
   justify-content: center;
+  width: clamp(16rem, 80vw, 75rem);
+  margin-top: 5rem;
 }
 
 path {
   transform-origin: center;
 }
 
-header {
+header,
+header + div {
   z-index: 3;
 }

@@ -6,8 +6,8 @@
   border: 1px red solid;
   position: fixed;
   width: 92vw;
-  height: 92vh;
-  margin: 2vw 4vw;
+  margin: 2rem 4vw;
+  background-blend-mode: multiply;
 }
 
 .mainlinks {
@@ -56,10 +56,14 @@
 }
 
 .communicate {
-  align-self: end;
-  justify-self: start;
+  display: grid;
+  position: fixed;
+  left: 4vw;
+  bottom: 2em;
 }
 .insta {
-  align-self: end;
-  justify-self: end;
+  display: grid;
+  position: fixed;
+  right: 4vw;
+  bottom: 2em;
 }

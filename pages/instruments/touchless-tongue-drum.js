@@ -11,7 +11,7 @@ export default function Home() {
       <Nav />
 
       <main>
-        <h1 className="title">Andy's new personal site</h1>
+        <h1 className="title">{pageData[0].name}</h1>
 
         <p className="description">
           Gonna be building in plain sight using{' '}
