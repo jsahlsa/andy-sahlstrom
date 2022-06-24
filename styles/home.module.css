@@ -1,6 +1,6 @@
 .main_video_container {
   width: 400px;
-  filter: drop-shadow(10px 10px 10px red);
+  border: 5px green dashed;
 }
 
 .videoContainerContainer {
