@@ -1,12 +1,21 @@
 import Link from 'next/link';
 import data from '/public/data.json';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from '../styles/nav.module.css';
 
 export default function Nav() {
   const [pageNameSame, setPageNameSame] = useState(undefined);
   const [isChildLink, setIsChildLink] = useState(false);
   const [open, setOpen] = useState('');
+  const [sameMenuName, setSameMenuName] = useState('');
+  const barOneEl = useRef(null);
+  const barTwoEl = useRef(null);
+  const barThreeEl = useRef(null);
+  const mainLinksEl = useRef(null);
+  // need to find a way to see if a details element is open
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
   useEffect(() => {
     const path = window.location.pathname;
     const pathArray = path.split('/');
@@ -18,8 +27,6 @@ export default function Nav() {
   useEffect(() => {
     const path = window.location.pathname;
     const pathArray = path.split('/');
-    console.log(window.innerWidth);
-
     setPageNameSame((pageNameSame) => (pageNameSame = pathArray[1]));
   }, []);
 
@@ -27,32 +34,85 @@ export default function Nav() {
   // needed onClick not onToggle!!!!! and 2 args to handle preventDefault()
   const toggle = (id) => (e) => {
     e.preventDefault();
-    setOpen(id);
+
+    if (!menuOpen) {
+      setOpen(id);
+    }
+    setMenuOpen(false);
+    setSameMenuName(id);
+  };
+
+  const hamburgerClick = () => {
+    if (!hamburgerOpen) {
+      barOneEl.current.style.transform = 'rotate(46deg)';
+      barTwoEl.current.style.transform = 'translateX(20px)';
+      barTwoEl.current.style.opacity = '0';
+      barThreeEl.current.style.transform = 'rotate(-43deg)';
+      mainLinksEl.current.style.display = 'grid';
+      setHamburgerOpen(!hamburgerOpen);
+    } else {
+      barOneEl.current.style.transform = 'rotate(2deg)';
+      barTwoEl.current.style.transform = 'translateX(0px)';
+      barTwoEl.current.style.opacity = '1';
+      barThreeEl.current.style.transform = 'rotate(2deg)';
+      mainLinksEl.current.style.display = 'none';
+      setHamburgerOpen(!hamburgerOpen);
+    }
   };
 
   return (
     <>
       <header className={styles.header}>
         <div>
-          <a className={styles.main_links_li}>
-            <Link href="/">Home</Link>
-          </a>
+          <Link href="/">
+            <a className={styles.main_links_li}>Home</a>
+          </Link>
         </div>
-        <nav>
-          <ul className={styles.mainlinks}>
+        <nav className={styles.nav}>
+          <div
+            className={
+              !hamburgerOpen
+                ? styles.hamburger_container
+                : styles.hamburger_container_open
+            }
+            onClick={hamburgerClick}
+          >
+            <svg viewBox="0 0 100 80" width="40" height="40">
+              <rect
+                ref={barOneEl}
+                className={`${styles.barone} ${styles.bars}`}
+                width="100"
+                height="15"
+              ></rect>
+              <rect
+                ref={barTwoEl}
+                className={`${styles.bartwo} ${styles.bars}`}
+                y="32"
+                width="85"
+                height="15"
+              ></rect>
+              <rect
+                ref={barThreeEl}
+                className={`${styles.barthree} ${styles.bars}`}
+                y="65"
+                width="100"
+                height="15"
+              ></rect>
+            </svg>
+          </div>
+          <ul ref={mainLinksEl} className={styles.mainlinks}>
             {data.map((item, i) => {
               const name = Object.keys(item);
               const parentLink = `/${name[0]}`;
               const values = Object.values(item);
               const newValue = values[0];
-              console.log(open);
               if (!newValue[0].name) {
                 return (
                   <li key={i} className={styles.details_container}>
                     <details
                       id={name[0]}
                       key={i}
-                      open={name[0] === open ? true : false}
+                      open={name[0] === open && !menuOpen}
                       onClick={toggle(name[0])}
                     >
                       <summary
@@ -92,7 +152,7 @@ export default function Nav() {
                 );
               } else {
                 return (
-                  <li key={i} className>
+                  <li key={i}>
                     <Link href={parentLink}>
                       <a
                         className={`${styles.main_links_li} ${styles.main_links_top_right}`}
@@ -108,7 +168,10 @@ export default function Nav() {
         </nav>
       </header>
       <div className={styles.communicate}>
-        <a className={styles.main_links_li} href="">
+        <a
+          className={`${styles.main_links_li} ${styles.main_links_lower_left}`}
+          href=""
+        >
           email
         </a>
 
