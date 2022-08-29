@@ -8,10 +8,12 @@ export default function Nav() {
   const [isChildLink, setIsChildLink] = useState(false);
   const [open, setOpen] = useState('');
   const [sameMenuName, setSameMenuName] = useState('');
+  const [width, setWidth] = useState(null);
   const barOneEl = useRef(null);
   const barTwoEl = useRef(null);
   const barThreeEl = useRef(null);
   const mainLinksEl = useRef(null);
+  const svgEl = useRef(null);
   // need to find a way to see if a details element is open
   const [menuOpen, setMenuOpen] = useState(false);
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
@@ -30,6 +32,15 @@ export default function Nav() {
     setPageNameSame((pageNameSame) => (pageNameSame = pathArray[1]));
   }, []);
 
+  useEffect(() => {
+    console.log(width);
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+  }, []);
+
   // WOW!!!, finally figured this out with help from https://stackoverflow.com/questions/70810204/how-to-automatically-close-an-open-details-tag-when-another-detail-is-clicked-wi
   // needed onClick not onToggle!!!!! and 2 args to handle preventDefault()
   const toggle = (id) => (e) => {
@@ -43,32 +54,32 @@ export default function Nav() {
   };
 
   const hamburgerClick = () => {
-    if (!hamburgerOpen) {
-      barOneEl.current.style.transform = 'rotate(46deg)';
-      barTwoEl.current.style.transform = 'translateX(20px)';
-      barTwoEl.current.style.opacity = '0';
-      barThreeEl.current.style.transform = 'rotate(-43deg)';
-      mainLinksEl.current.style.display = 'grid';
-      setHamburgerOpen(!hamburgerOpen);
-    } else {
-      barOneEl.current.style.transform = 'rotate(2deg)';
-      barTwoEl.current.style.transform = 'translateX(0px)';
-      barTwoEl.current.style.opacity = '1';
-      barThreeEl.current.style.transform = 'rotate(2deg)';
-      mainLinksEl.current.style.display = 'none';
-      setHamburgerOpen(!hamburgerOpen);
+    if (width < 750) {
+      if (!hamburgerOpen) {
+        barOneEl.current.style.transform = 'rotate(46deg)';
+        barTwoEl.current.style.transform = 'translateX(20px)';
+        barTwoEl.current.style.opacity = '0';
+        barThreeEl.current.style.transform = 'rotate(-43deg)';
+        setHamburgerOpen(!hamburgerOpen);
+      } else {
+        barOneEl.current.style.transform = 'rotate(2deg)';
+        barTwoEl.current.style.transform = 'translateX(0px)';
+        barTwoEl.current.style.opacity = '1';
+        barThreeEl.current.style.transform = 'rotate(2deg)';
+        setHamburgerOpen(!hamburgerOpen);
+      }
     }
   };
 
   return (
     <>
-      <header className={styles.header}>
-        <div>
+      <header className={!hamburgerOpen ? styles.header : styles.header_open}>
+        <div className={!hamburgerOpen ? styles.home : styles.home_open}>
           <Link href="/">
             <a className={styles.main_links_li}>Home</a>
           </Link>
         </div>
-        <nav className={styles.nav}>
+        <nav className={!hamburgerOpen ? styles.nav : styles.nav_open}>
           <div
             className={
               !hamburgerOpen
@@ -77,7 +88,7 @@ export default function Nav() {
             }
             onClick={hamburgerClick}
           >
-            <svg viewBox="0 0 100 80" width="40" height="40">
+            <svg ref={svgEl} viewBox="0 0 100 80" width="40" height="40">
               <rect
                 ref={barOneEl}
                 className={`${styles.barone} ${styles.bars}`}
@@ -100,7 +111,12 @@ export default function Nav() {
               ></rect>
             </svg>
           </div>
-          <ul ref={mainLinksEl} className={styles.mainlinks}>
+          <ul
+            ref={mainLinksEl}
+            className={
+              !hamburgerOpen ? styles.mainlinks : styles.mainlinks_open
+            }
+          >
             {data.map((item, i) => {
               const name = Object.keys(item);
               const parentLink = `/${name[0]}`;
@@ -121,7 +137,13 @@ export default function Nav() {
                       >
                         {name[0]}
                       </summary>
-                      <ul>
+                      <ul
+                        className={
+                          !hamburgerOpen
+                            ? styles.sub_link_container
+                            : styles.sub_link_container_open
+                        }
+                      >
                         {newValue.map((item, i) => {
                           const newValueKeys = Object.keys(item);
                           const subLinkNames = newValueKeys[0]
@@ -133,17 +155,24 @@ export default function Nav() {
                           const subLink = `/${name[0]}/${subLinkNames}`;
                           const subLinkTwo = `${subLinkNames}`;
                           return (
-                            <li key={i} className={styles.sub_links_li}>
-                              <Link
-                                href={
-                                  name[0] === pageNameSame && isChildLink
-                                    ? subLinkTwo
-                                    : subLink
+                            <Link
+                              href={
+                                name[0] === pageNameSame && isChildLink
+                                  ? subLinkTwo
+                                  : subLink
+                              }
+                            >
+                              <li
+                                key={i}
+                                className={
+                                  !hamburgerOpen
+                                    ? styles.sub_links_li
+                                    : styles.sub_links_li_open
                                 }
                               >
                                 <a key={i}>{subLinkNamesLinks}</a>
-                              </Link>
-                            </li>
+                              </li>
+                            </Link>
                           );
                         })}
                       </ul>
@@ -164,26 +193,27 @@ export default function Nav() {
                 );
               }
             })}
+            <li
+              className={
+                !hamburgerOpen ? styles.communicate : styles.communicate_open
+              }
+            >
+              <a className={styles.main_links_li} href="">
+                email
+              </a>
+
+              <a className={styles.main_links_li} href="">
+                phone
+              </a>
+            </li>
+            <li className={!hamburgerOpen ? styles.insta : styles.insta_open}>
+              <a className={styles.main_links_li} href="">
+                insta
+              </a>
+            </li>
           </ul>
         </nav>
       </header>
-      <div className={styles.communicate}>
-        <a
-          className={`${styles.main_links_li} ${styles.main_links_lower_left}`}
-          href=""
-        >
-          email
-        </a>
-
-        <a className={styles.main_links_li} href="">
-          phone
-        </a>
-      </div>
-      <div className={styles.insta}>
-        <a className={styles.main_links_li} href="">
-          insta
-        </a>
-      </div>
     </>
   );
 }

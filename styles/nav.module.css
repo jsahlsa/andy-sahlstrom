@@ -3,11 +3,9 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   justify-content: space-between;
-  border: 1px red solid;
   position: fixed;
-  width: 92vw;
+  width: 95vw;
   margin: 2rem 4vw;
-  background-blend-mode: multiply;
 }
 
 .mainlinks {
@@ -32,63 +30,12 @@
   text-transform: lowercase;
 }
 
-@media screen and (max-width: 750px) {
-  .nav {
-    position: fixed;
-    width: 93vw;
-    background-color: var(--brown-05);
-  }
-  .hamburger_container {
-    display: grid;
-    position: fixed;
-    right: 4vw;
-    top: 2em;
-    background-color: var(--brown-05);
-    border: var(--brown-90) solid 0.3rem;
-    padding: 0.2rem 0.4rem;
-    cursor: pointer;
-  }
+.hamburger_container {
+  display: none;
+}
 
-  .hamburger_container_open {
-    z-index: 3;
-    display: grid;
-    position: fixed;
-    right: 4vw;
-    top: 2em;
-    padding: 0.2rem 0.4rem;
-    cursor: pointer;
-    justify-content: end;
-  }
-
-  .bars {
-    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
-      opacity 0.1s linear;
-  }
-  .barone {
-    transform: rotate(2deg);
-    transform-origin: 20px 25px;
-  }
-
-  .bartwo {
-    transform: rotate(-1deg);
-    transform-origin: 20px 20px;
-  }
-  .barthree {
-    transform: rotate(2deg);
-    transform-origin: 5px 60%;
-  }
-  .mainlinks {
-    display: none;
-    position: relative;
-    z-index: 1;
-    grid-template-columns: 1fr;
-    justify-content: center;
-  }
-
-  .main_links_li {
-    margin-top: -0.3rem;
-    border: none;
-  }
+.hamburger_container_open {
+  display: none;
 }
 
 .main_links_top_right {
@@ -119,4 +66,151 @@
   position: fixed;
   right: 4vw;
   bottom: 2em;
+}
+
+@media screen and (max-width: 750px) {
+  .header_open {
+    display: grid;
+    justify-content: end;
+    position: relative;
+    margin-top: 2rem;
+    width: 95vw;
+  }
+
+  .nav {
+    position: fixed;
+    width: 93vw;
+    background-color: var(--brown-05);
+  }
+  .nav_open {
+    background-color: var(--brown-05);
+    position: relative;
+    width: 60vw;
+    margin-top: -0.5rem;
+  }
+  .hamburger_container {
+    display: grid;
+    position: absolute;
+    right: 2vw;
+    top: 0;
+    background-color: var(--brown-05);
+    border: var(--brown-90) solid 0.3rem;
+    padding: 0.2rem 0.4rem;
+    cursor: pointer;
+  }
+
+  .hamburger_container_open {
+    z-index: 3;
+    display: grid;
+    position: absolute;
+    right: 2vw;
+    top: -3.6em;
+    padding: 0.5em 0.4rem 0.4rem 0.4rem;
+    cursor: pointer;
+    justify-content: end;
+  }
+
+  .bars {
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+      opacity 0.1s linear;
+  }
+  .barone {
+    transform: rotate(2deg);
+    transform-origin: 20px 25px;
+  }
+
+  .bartwo {
+    transform: rotate(-1deg);
+    transform-origin: 20px 20px;
+  }
+  .barthree {
+    transform: rotate(2deg);
+    transform-origin: 5px 60%;
+  }
+  .mainlinks {
+    display: none;
+    position: relative;
+    z-index: 1;
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .main_links_open {
+    display: grid;
+  }
+
+  .main_links_li {
+    margin-top: -0.3rem;
+    border: none;
+    z-index: 5;
+    display: grid;
+    border: var(--brown-90) solid 0.3rem;
+
+    /* text-decoration: underline;
+    text-underline-offset: 1px;
+    text-decoration-thickness: 10px; */
+  }
+
+  .home > a {
+    display: inline;
+  }
+
+  .home_open > a {
+    padding: 1.2rem;
+  }
+  .communicate {
+    display: none;
+  }
+
+  .communicate_open {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .insta {
+    display: none;
+  }
+
+  .insta_open {
+    position: absolute;
+    width: 33.33%;
+    right: 0;
+    bottom: 0;
+  }
+
+  .sub_link_container_open {
+    display: grid;
+    justify-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 0.1rem;
+  }
+
+  .sub_links_li_open {
+    /* text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px; */
+    border: var(--brown-90) solid 0.2rem;
+    margin-top: -0.2rem;
+    margin-left: -0.2rem;
+    padding: 0.3rem;
+    background-color: var(--brown-10);
+    padding-left: 2rem;
+  }
+  .sub_links_li_open:hover {
+    background-color: var(--brown-90);
+    color: var(--brown-05);
+  }
+  .sub_links_li_open:active {
+    background-color: var(--brown-90);
+    color: var(--brown-05);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav_open {
+    background-color: var(--brown-05);
+    position: relative;
+    width: 93vw;
+    margin-top: -0.5rem;
+  }
 }
