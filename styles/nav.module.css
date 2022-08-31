@@ -11,8 +11,8 @@
 .mainlinks {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  border: 1px red dashed;
   align-content: start;
+  margin-right: 2em;
 }
 
 .hamburger_container {

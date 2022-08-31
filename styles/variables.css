@@ -36,6 +36,15 @@
 
 :root {
   --radioCanada: 'Inter', sans-serif;
+  --system-monospace: ui-monospace, Menlo, Monaco, 'Cascadia Mono',
+    'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace',
+    'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+}
+
+/* layout clamps */
+:root {
+  --main-layout-clamp: clamp(20rem, 90vw, 30rem);
+  --main-video-clamp: clamp(30rem, 110vw, 35rem);
 }
 
 /* @link https://utopia.fyi/type/calculator?c=320,21,1.2,1140,24,1.25,9,3,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
