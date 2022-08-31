@@ -83,7 +83,7 @@ export default function Home() {
             >
               <textPath
                 className={styles.textPath}
-                textLength="50"
+                textLength="1740"
                 href="#circle1"
               >
                 <tspan>&nbsp;&nbsp;</tspan>ANDY SAHLSTROM
@@ -97,7 +97,7 @@ export default function Home() {
               </textPath>
             </text>
             <text class={styles.mandala_accent_2} dy="90" textLength="1740">
-              <textPath textLength="1800" href="#circle2">
+              <textPath textLength="1740" href="#circle2">
                 <tspan class={styles.interactive}>
                   Interactive Technology
                   Engineer&nbsp;&nbsp;&#125;&#123;&nbsp;&nbsp;
