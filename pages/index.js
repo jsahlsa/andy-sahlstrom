@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Layout from '../components/layout';
 import Nav from '../components/nav';
 import { gsap } from 'gsap';
@@ -31,7 +30,7 @@ export default function Home() {
             autoPlay
             muted
             loop
-            playsinline
+            playsInline
             preload="metadata"
           >
             <source
