@@ -42,10 +42,6 @@
   display: list-item;
 }
 
-.main_links_lower_left {
-  margin-bottom: -0.3rem;
-}
-
 .sub_links_li {
   background-color: var(--brown-10);
   padding: 0.2rem clamp(0.5rem, 2%, 1.5rem);
@@ -61,6 +57,10 @@
   left: 4vw;
   bottom: 2em;
 }
+
+.communicate > a {
+  margin-bottom: -0.3rem;
+}
 .insta {
   display: grid;
   position: fixed;
@@ -72,9 +72,10 @@
   .header_open {
     display: grid;
     justify-content: end;
-    position: relative;
-    margin-top: 2rem;
-    width: 95vw;
+    position: fixed;
+    left: 7vw;
+    top: 5vh;
+    width: 90vw;
   }
 
   .nav {
@@ -84,9 +85,10 @@
   }
   .nav_open {
     background-color: var(--brown-05);
-    position: relative;
+    position: fixed;
     width: 60vw;
-    margin-top: -0.5rem;
+    top: 5.35rem;
+    right: 5vw;
   }
   .hamburger_container {
     display: grid;
@@ -102,9 +104,9 @@
   .hamburger_container_open {
     z-index: 3;
     display: grid;
-    position: absolute;
-    right: 2vw;
-    top: -3.6em;
+    position: fixed;
+    right: 6vw;
+    top: 1.5em;
     padding: 0.5em 0.4rem 0.4rem 0.4rem;
     cursor: pointer;
     justify-content: end;
@@ -151,6 +153,13 @@
     text-decoration-thickness: 10px; */
   }
 
+  .home_open {
+    width: 60vw;
+    right: 5vw;
+    position: fixed;
+    top: 1.4em;
+  }
+
   .home > a {
     display: inline;
   }
@@ -189,12 +198,14 @@
     /* text-decoration: underline;
     text-underline-offset: 3px;
     text-decoration-thickness: 3px; */
+    display: grid;
+    align-items: center;
     border: var(--brown-90) solid 0.2rem;
     margin-top: -0.2rem;
     margin-left: -0.2rem;
-    padding: 0.3rem;
+    padding: 0.3rem 0.3rem 0.3rem 1rem;
     background-color: var(--brown-10);
-    padding-left: 2rem;
+    text-transform: uppercase;
   }
   .sub_links_li_open:hover {
     background-color: var(--brown-90);
@@ -209,8 +220,12 @@
 @media screen and (max-width: 600px) {
   .nav_open {
     background-color: var(--brown-05);
-    position: relative;
-    width: 93vw;
-    margin-top: -0.5rem;
+    position: fixed;
+    width: 90vw;
+    left: 5vw;
+  }
+
+  .home_open {
+    width: 90vw;
   }
 }
