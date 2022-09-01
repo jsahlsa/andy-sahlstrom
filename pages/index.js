@@ -29,6 +29,7 @@ export default function Home() {
           <video
             className={styles.video}
             autoPlay
+            playsinline
             muted
             loop
             preload="metadata"
@@ -36,6 +37,10 @@ export default function Home() {
             <source
               src="../images/timelapse/timelapse/timelapse-14-720.webm"
               type="video/webm"
+            ></source>
+            <source
+              src="../images/timelapse/timelapse/timelapse-14-720.mp4"
+              type="video/mp4"
             ></source>
           </video>
         </div>
