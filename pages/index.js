@@ -29,9 +29,9 @@ export default function Home() {
           <video
             className={styles.video}
             autoPlay
-            playsinline
             muted
             loop
+            playsinline
             preload="metadata"
           >
             <source
