@@ -1,0 +1,14 @@
+.main {
+  display: grid;
+  place-items: center;
+  gap: 2em;
+  margin-top: 18vh;
+}
+
+.image_wrapper_container {
+  filter: drop-shadow(2px 2px 6px black);
+}
+
+.img_wrapper {
+  width: clamp(10rem, 90vw, 20rem);
+}

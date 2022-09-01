@@ -2,6 +2,7 @@ import Nav from '../components/nav';
 import data from '/public/data.json';
 import Image from 'next/image';
 import Layout from '../components/layout';
+import styles from '../styles/about.module.css';
 
 export default function Home() {
   const pageData = data[5].about[0];
@@ -10,46 +11,52 @@ export default function Home() {
     <Layout>
       <Nav />
 
-      <main>
-        <div className="img-wrapper">
-          <Image
-            src={pageData.image}
-            layout="responsive"
-            width={pageData.width}
-            height={pageData.height}
-            objectFit="cover"
-          />
+      <main className={styles.main}>
+        <div className={styles.image_wrapper_container}>
+          <div
+            className={styles.img_wrapper}
+            style={{
+              clipPath: 'url(#my-clip-path)',
+            }}
+          >
+            <Image
+              src={pageData.image}
+              width={pageData.width}
+              height={pageData.height}
+              objectFit="cover"
+              layout="responsive"
+            />
+          </div>
         </div>
-        <p className="about-text">
+        <p className={styles.about_text}>
           Andy Sahlstrom is an Interactive Technology Engineer, Inventor, and
           Kinetic Artist. He resides in Brooklyn New York with his dog Biscuit.{' '}
         </p>
+        <svg width="1" height="1">
+          <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
+            <path transform="translate(0.45 0.45) scale(0.9)">
+              <animate
+                attributeName="d"
+                dur="8s"
+                repeatCount="indefinite"
+                values="M0.305,-0.425 C0.386,-0.363,0.439,-0.262,0.467,-0.157 C0.495,-0.052,0.499,0.056,0.476,0.164 C0.452,0.271,0.4,0.377,0.316,0.434 C0.232,0.491,0.116,0.499,-0.001,0.5 C-0.117,0.5,-0.234,0.493,-0.321,0.437 C-0.41,0.382,-0.469,0.277,-0.495,0.169 C-0.52,0.06,-0.512,-0.052,-0.47,-0.145 C-0.428,-0.238,-0.353,-0.311,-0.269,-0.373 C-0.185,-0.434,-0.092,-0.483,0.01,-0.497 C0.112,-0.51,0.223,-0.486,0.305,-0.425;
+					
+									M0.257,-0.392 C0.329,-0.318,0.381,-0.233,0.417,-0.138 C0.454,-0.042,0.476,0.064,0.454,0.162 C0.432,0.259,0.366,0.348,0.284,0.401 C0.201,0.455,0.101,0.472,0.004,0.467 C-0.093,0.462,-0.187,0.434,-0.277,0.384 C-0.368,0.333,-0.455,0.26,-0.501,0.16 C-0.546,0.061,-0.55,-0.064,-0.51,-0.169 C-0.47,-0.273,-0.386,-0.355,-0.293,-0.421 C-0.201,-0.488,-0.101,-0.537,-0.004,-0.532 C0.093,-0.526,0.185,-0.465,0.257,-0.392;
+                  
+                  M0.284,-0.417 C0.374,-0.36,0.458,-0.277,0.482,-0.178 C0.507,-0.077,0.472,0.04,0.436,0.156 C0.401,0.272,0.366,0.387,0.293,0.444 C0.22,0.499,0.11,0.497,0.012,0.478 C-0.086,0.46,-0.172,0.426,-0.254,0.373 C-0.337,0.32,-0.417,0.25,-0.464,0.152 C-0.511,0.054,-0.524,-0.07,-0.493,-0.177 C-0.461,-0.284,-0.384,-0.375,-0.294,-0.432 C-0.204,-0.489,-0.102,-0.513,-0.002,-0.509 C0.097,-0.506,0.194,-0.475,0.284,-0.417;
+                  
+                  M0.308,-0.425 C0.393,-0.372,0.449,-0.269,0.471,-0.165 C0.493,-0.06,0.481,0.048,0.451,0.153 C0.422,0.258,0.375,0.36,0.297,0.424 C0.219,0.489,0.109,0.517,-0.002,0.52 C-0.113,0.522,-0.226,0.499,-0.319,0.44 C-0.412,0.38,-0.486,0.283,-0.509,0.177 C-0.532,0.071,-0.505,-0.044,-0.462,-0.147 C-0.42,-0.25,-0.364,-0.341,-0.285,-0.397 C-0.205,-0.452,-0.103,-0.471,0.005,-0.478 C0.112,-0.485,0.225,-0.479,0.308,-0.425;
+                  
+                  M0.305,-0.425 C0.386,-0.363,0.439,-0.262,0.467,-0.157 C0.495,-0.052,0.499,0.056,0.476,0.164 C0.452,0.271,0.4,0.377,0.316,0.434 C0.232,0.491,0.116,0.499,-0.001,0.5 C-0.117,0.5,-0.234,0.493,-0.321,0.437 C-0.41,0.382,-0.469,0.277,-0.495,0.169 C-0.52,0.06,-0.512,-0.052,-0.47,-0.145 C-0.428,-0.238,-0.353,-0.311,-0.269,-0.373 C-0.185,-0.434,-0.092,-0.483,0.01,-0.497 C0.112,-0.51,0.223,-0.486,0.305,-0.425;"
+              />
+            </path>
+          </clipPath>
+        </svg>
       </main>
 
       <footer>
         <p>coming soon…</p>
       </footer>
-      <style jsx>{`
-        .img-wrapper {
-          object-fit: cover;
-          display: grid;
-          width: clamp(10rem, 30vw, 1000rem);
-          height: 100%;
-          border-radius: 50%;
-          overflow: hidden;
-        }
-        img {
-          border-radius: 50%;
-        }
-        .wide-image {
-          grid-column: span 4;
-          grid-row: span 3;
-        }
-        .tall-image {
-          grid-row: span 4;
-          grid-column: span 3;
-        }
-      `}</style>
     </Layout>
   );
 }
