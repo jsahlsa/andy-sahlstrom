@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import styles from '../styles/music.module.css';
 
 export default function RenderMusic(song) {
   // state
@@ -10,6 +11,9 @@ export default function RenderMusic(song) {
   const audioPlayer = useRef();
   const progressBar = useRef();
   const animationRef = useRef();
+  const barOneEl = useRef();
+  const barTwoEl = useRef();
+  const barThreeEl = useRef();
 
   function onLoadedMetadata() {
     const seconds = Math.floor(audioPlayer.current.duration);
@@ -66,27 +70,57 @@ export default function RenderMusic(song) {
 
   return (
     <div>
-      <p>{song.name}</p>
-      <button onClick={playPause} onKeyPress={tapSpaceBar}>
-        {isPlaying ? 'II' : '>'}
-      </button>
+      <div className={styles.track_container}>
+        <p>{song.name}</p>
+        <button
+          className={!isPlaying ? styles.play_button : styles.pause_button}
+          onClick={playPause}
+          onKeyPress={tapSpaceBar}
+        >
+          <div className={styles.playpause_wrapper}>
+            <svg viewBox="0 0 100 80" width="40" height="40">
+              <rect
+                ref={barOneEl}
+                className={`${styles.barone} ${styles.bars}`}
+                width="60"
+                height="15"
+              ></rect>
+              <rect
+                ref={barTwoEl}
+                className={`${styles.bartwo} ${styles.bars}`}
+                y="32"
+                width="80"
+                height="15"
+              ></rect>
+              <rect
+                ref={barThreeEl}
+                className={`${styles.barthree} ${styles.bars}`}
+                y="65"
+                width="60"
+                height="15"
+              ></rect>
+            </svg>
+          </div>
+        </button>
 
-      <div>{duration && !isNaN(duration) && calculateTime(duration)}</div>
-      <div>{calculateTime(currentTime)}</div>
-      <div>
-        <input
-          type="range"
-          defaultValue="0"
-          ref={progressBar}
-          onChange={changeRange}
+        <div>{duration && !isNaN(duration) && calculateTime(duration)}</div>
+        <div>{calculateTime(currentTime)}</div>
+        <div>
+          <input
+            className={styles.progress_bar}
+            type="range"
+            defaultValue="0"
+            ref={progressBar}
+            onChange={changeRange}
+          />
+        </div>
+        <audio
+          ref={audioPlayer}
+          src={song.file}
+          preload="metadata"
+          onLoadedMetadata={onLoadedMetadata}
         />
       </div>
-      <audio
-        ref={audioPlayer}
-        src={song.file}
-        preload="metadata"
-        onLoadedMetadata={onLoadedMetadata}
-      />
     </div>
   );
 }

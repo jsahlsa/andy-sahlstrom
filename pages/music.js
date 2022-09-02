@@ -17,7 +17,7 @@ export default function Home() {
       <Nav />
 
       <main>
-        <h4>Music</h4>
+        <h1>Music</h1>
         {pageData.map((item) => {
           return <RenderMusic {...item} key={item.name} />;
         })}

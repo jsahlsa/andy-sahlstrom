@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import styles from '../styles/render_media.module.css';
 
 export default function RenderImage({ image, width, height }) {
   return (
@@ -6,10 +7,10 @@ export default function RenderImage({ image, width, height }) {
       key={image}
       className={
         width === height
-          ? 'img-container square-image'
+          ? `${styles.square_image} ${styles.img_container}`
           : width > height
-          ? 'img-container wide-image'
-          : 'img-container tall-image'
+          ? `${styles.wide_image} ${styles.img_container}`
+          : `${styles.tall_image} ${styles.img_container}`
       }
       style={{ position: 'relative' }}
     >
@@ -20,26 +21,7 @@ export default function RenderImage({ image, width, height }) {
         height={height}
         objectFit="cover"
       />
-      <style jsx>{`
-        .img-container {
-          object-fit: cover;
-          display: grid;
-          width: 100%;
-          height: 100%;
-        }
-        .square-image {
-          grid-column: span 4;
-          grid-row: span 4;
-        }
-        .wide-image {
-          grid-column: span 5;
-          grid-row: span 4;
-        }
-        .tall-image {
-          grid-row: span 5;
-          grid-column: span 4;
-        }
-      `}</style>
+      <style jsx>{``}</style>
     </div>
   );
 }

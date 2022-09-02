@@ -1,3 +1,5 @@
+import styles from '../styles/render_media.module.css';
+
 export default function RenderImage({ image, webm, poster }) {
   console.log(image);
   // use crf 28 for mp4, and 31 for webm, seems sensible based on research
@@ -8,32 +10,11 @@ export default function RenderImage({ image, webm, poster }) {
   // could get away with 720
 
   return (
-    <div className="img-container wide-image">
+    <div className={`${styles.img_container} ${styles.wide_image}`}>
       <video controls preload="metadata" poster={poster}>
         <source src={webm} type="video/webm"></source>
         <source src={image} type="video/mp4"></source>
       </video>
-
-      <style jsx>{`
-        video {
-          width: 100%;
-          height: auto;
-        }
-        .img-container {
-          object-fit: cover;
-          display: grid;
-          width: 100%;
-          height: 100%;
-        }
-        .wide-image {
-          grid-column: span 6;
-          grid-row: span 3;
-        }
-        .tall-image {
-          grid-row: span 4;
-          grid-column: span 3;
-        }
-      `}</style>
     </div>
   );
 }

@@ -1,0 +1,120 @@
+.track_container {
+  position: relative;
+}
+
+.playpause_wrapper {
+  border: var(--brown-90) solid 0.3rem;
+  padding: 0.2rem 0.5rem 0.2rem 0;
+  cursor: pointer;
+}
+
+.barone {
+  transform: rotate(37deg) translate(2.6em, -1.7em);
+}
+
+.bartwo {
+  transform: rotate(90deg) translate(0, -5rem);
+}
+
+.barthree {
+  transform: rotate(-35deg) translate(-0.7em, 0.7em);
+}
+
+.progress_bar {
+  --bar-bg: var(--brown-40);
+  --seek-before-width: 100px;
+  --seek-before-color: var(--brown-80);
+  --knobby: var(--primary-red);
+  --selected-knobby: aqua;
+  appearance: none;
+  background-color: var(--bar-bg);
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 11px;
+  outline: none;
+}
+
+/* progress bar safari */
+.progress_bar::-webkit-slider-runnable-track {
+  background-color: var(--bar-bg);
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 11px;
+  outline: none;
+}
+
+/* progress bar firefox */
+.progress_bar::-moz-range-track {
+  background-color: var(--bar-bg);
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 11px;
+  outline: none;
+}
+
+.progress_bar::-moz-focus-outer {
+  border: 0;
+}
+
+/* progress bar - chrome and safari */
+.progress_bar::before {
+  content: '';
+  height: 11px;
+  width: var(--seek-before-width);
+  background-color: var(--seek-before-color);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* progress bar - firefox */
+.progress_bar::-moz-range-progress {
+  height: 11px;
+  background-color: var(--seek-before-color);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* knob chrome & safari */
+.progress_bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--knobby);
+  cursor: pointer;
+  position: relative;
+  margin: -2px 0 0 0;
+  z-index: 3;
+}
+
+/* while dragging safari & chrome */
+.progress_bar:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  background-color: var(--selected-knobby);
+}
+
+/* knob firefox */
+.progress_bar::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: transparent;
+  background-color: var(--knobby);
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+.progress_bar:active::-moz-range-thumb {
+  transform: scale(1.2);
+  background-color: var(--selected-knobby);
+}

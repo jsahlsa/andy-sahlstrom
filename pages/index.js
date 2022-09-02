@@ -32,6 +32,7 @@ export default function Home() {
             loop
             playsInline
             preload="metadata"
+            poster="../images/timelapse/timelapse/timelapse-6-poster.jpg"
           >
             <source
               src="../images/timelapse/timelapse/timelapse-6-720.webm"
