@@ -10,6 +10,7 @@
 
 .barone {
   transform: rotate(37deg) translate(2.6em, -1.7em);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .bartwo {
@@ -18,11 +19,12 @@
 
 .barthree {
   transform: rotate(-35deg) translate(-0.7em, 0.7em);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .progress_bar {
   --bar-bg: var(--brown-40);
-  --seek-before-width: 100px;
+  --seek-before-width: 0px;
   --seek-before-color: var(--brown-80);
   --knobby: var(--primary-red);
   --selected-knobby: aqua;

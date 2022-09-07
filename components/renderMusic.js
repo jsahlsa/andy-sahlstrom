@@ -35,8 +35,19 @@ export default function RenderMusic(song) {
 
     if (!isPlaying) {
       audioPlayer.current.play();
+      barOneEl.current.style.transform = 'rotate(90deg) translate(0, -5em)';
+      barThreeEl.current.style.transform =
+        'rotate(360deg) translate(10em, -5em)';
+      barThreeEl.current.style.opacity = '0';
+      barOneEl.current.style.width = '80px';
       animationRef.current = requestAnimationFrame(whilePlaying);
     } else {
+      barOneEl.current.style.width = '60px';
+      barThreeEl.current.style.transform =
+        'rotate(-35deg) translate(-0.7em, 0.7em)';
+      barThreeEl.current.style.opacity = '1';
+      barOneEl.current.style.transform =
+        'rotate(37deg) translate(2.6em, -1.7em)';
       audioPlayer.current.pause();
 
       cancelAnimationFrame(animationRef.current);
