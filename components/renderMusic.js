@@ -35,9 +35,9 @@ export default function RenderMusic(song) {
 
     if (!isPlaying) {
       audioPlayer.current.play();
-      barOneEl.current.style.transform = 'rotate(90deg) translate(0, -5em)';
+      barOneEl.current.style.transform = 'rotate(90deg) translate(0, -5.5em)';
       barThreeEl.current.style.transform =
-        'rotate(360deg) translate(10em, -5em)';
+        'rotate(90deg) translate(-0.1em, 7.7em)';
       barThreeEl.current.style.opacity = '0';
       barOneEl.current.style.width = '80px';
       animationRef.current = requestAnimationFrame(whilePlaying);
@@ -82,7 +82,6 @@ export default function RenderMusic(song) {
   return (
     <div>
       <div className={styles.track_container}>
-        <p>{song.name}</p>
         <button
           className={!isPlaying ? styles.play_button : styles.pause_button}
           onClick={playPause}
@@ -113,24 +112,29 @@ export default function RenderMusic(song) {
             </svg>
           </div>
         </button>
+        <div className={styles.track_info}>
+          <p>{song.name}</p>
 
-        <div>{duration && !isNaN(duration) && calculateTime(duration)}</div>
-        <div>{calculateTime(currentTime)}</div>
-        <div>
-          <input
-            className={styles.progress_bar}
-            type="range"
-            defaultValue="0"
-            ref={progressBar}
-            onChange={changeRange}
+          <div>
+            <input
+              className={styles.progress_bar}
+              type="range"
+              defaultValue="0"
+              ref={progressBar}
+              onChange={changeRange}
+            />
+          </div>
+          <audio
+            ref={audioPlayer}
+            src={song.file}
+            preload="metadata"
+            onLoadedMetadata={onLoadedMetadata}
           />
+          <div className={styles.duration_items}>
+            <div>{calculateTime(currentTime)}</div>
+            <div>{duration && !isNaN(duration) && calculateTime(duration)}</div>
+          </div>
         </div>
-        <audio
-          ref={audioPlayer}
-          src={song.file}
-          preload="metadata"
-          onLoadedMetadata={onLoadedMetadata}
-        />
       </div>
     </div>
   );

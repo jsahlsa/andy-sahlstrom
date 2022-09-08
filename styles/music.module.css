@@ -1,11 +1,24 @@
 .track_container {
   position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
 }
 
 .playpause_wrapper {
   border: var(--brown-90) solid 0.3rem;
   padding: 0.2rem 0.5rem 0.2rem 0;
   cursor: pointer;
+}
+
+.track_info {
+  display: grid;
+}
+
+.duration_items {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
 }
 
 .barone {
@@ -19,7 +32,7 @@
 
 .barthree {
   transform: rotate(-35deg) translate(-0.7em, 0.7em);
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .progress_bar {
