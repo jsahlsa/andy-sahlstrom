@@ -3,6 +3,7 @@ import Nav from '../components/nav';
 import data from '/public/data.json';
 import RenderMusic from '../components/renderMusic';
 import Layout from '../components/layout';
+import styles from '../styles/music.module.css';
 
 export default function Home() {
   const pageData = data[3].music;
@@ -18,9 +19,11 @@ export default function Home() {
 
       <main>
         <h1>Music</h1>
-        {pageData.map((item) => {
-          return <RenderMusic {...item} key={item.name} />;
-        })}
+        <div className={styles.tracks_container}>
+          {pageData.map((item) => {
+            return <RenderMusic {...item} key={item.name} />;
+          })}
+        </div>
       </main>
 
       <footer>

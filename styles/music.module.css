@@ -1,3 +1,8 @@
+.tracks_container {
+  display: grid;
+  gap: min(3rem, 3vh);
+}
+
 .track_container {
   position: relative;
   display: grid;
@@ -13,6 +18,15 @@
 
 .track_info {
   display: grid;
+}
+
+.track_name {
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+.mono {
+  font-family: var(--system-monospace);
 }
 
 .duration_items {

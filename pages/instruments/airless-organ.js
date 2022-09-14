@@ -11,23 +11,10 @@ export default function Home() {
     <Layout>
       <Nav />
       <main>
-        <h1 className="title">Andy's new personal site</h1>
+        <h1 className="title">{pageData[0].name}</h1>
 
-        <p className="description">
-          Gonna be building in plain sight using{' '}
-          <a href="https://nextjs.org">NEXT.JS</a>
-        </p>
         <RenderMedia props={pageData} />
       </main>
-
-      <footer>
-        <p>coming soon…</p>
-      </footer>
-      <style jsx>{`
-        main > h1 {
-          border: red solid 10px;
-        }
-      `}</style>
     </Layout>
   );
 }

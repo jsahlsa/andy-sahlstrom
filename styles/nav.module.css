@@ -25,9 +25,11 @@
   border: var(--brown-90) solid 0.3rem;
   margin-left: -0.3rem;
   text-align: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: var(--step--2);
-  text-transform: lowercase;
+  font-family: var(--golos);
+  font-size: var(--step--3);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
 }
 
 .hamburger_container {

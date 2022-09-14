@@ -7,6 +7,31 @@
     U+201D, U+2022;
 } */
 
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/fonts/Fraunces[SOFT,WONK,opsz,wght].woff2')
+    format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fraunces Italic';
+  src: url('/fonts/Fraunces-Italic[SOFT,WONK,opsz,wght].woff2')
+    format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Golos UI';
+  src: url('/fonts/Golos-UI_VF.woff2') format('woff2-variations');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 a {
   cursor: pointer;
 }
@@ -20,10 +45,14 @@ h3 {
 h1 {
   color: var(--primary-red);
   font-size: var(--step-6);
-  font-family: var(--system-monospace);
+  font-family: var(--fraunces-italic);
   font-weight: 900;
 }
 
+p {
+  font-family: var(--fraunces);
+  font-variation-settings: 'wght' 400, 'opsz' 9, 'SOFT' 100;
+}
 body {
   --saturation: 20%;
   --lightness: 50%;

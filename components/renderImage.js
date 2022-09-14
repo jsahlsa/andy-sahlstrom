@@ -17,8 +17,8 @@ export default function RenderImage({ image, width, height }) {
       <Image
         src={image}
         layout="responsive"
-        width={width}
-        height={height}
+        width={width / 2}
+        height={height / 2}
         objectFit="cover"
       />
       <style jsx>{``}</style>

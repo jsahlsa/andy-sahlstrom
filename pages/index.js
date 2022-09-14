@@ -1,19 +1,8 @@
 import Layout from '../components/layout';
 import Nav from '../components/nav';
-import { gsap } from 'gsap';
 import styles from '../styles/home.module.css';
-import { useEffect, useRef } from 'react';
 
 export default function Home() {
-  const circleRef = useRef();
-
-  useEffect(() => {
-    gsap.to(circleRef.current, {
-      rotation: 20,
-      duration: 10,
-    });
-  }, []);
-
   return (
     <Layout>
       <Nav />
@@ -139,10 +128,6 @@ export default function Home() {
           </clipPath>
         </svg>
       </main>
-
-      <footer>
-        <p>coming soon…</p>
-      </footer>
     </Layout>
   );
 }

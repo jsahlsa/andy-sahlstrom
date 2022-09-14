@@ -225,7 +225,7 @@
       {
         "kinetic_dandelion": [
           {
-            "name": "kinetic-dandelion",
+            "name": "kinetic dandelion",
             "image": "/images/sculptures/kinetic-dandelion/kinetic-dandelion-720.mp4",
             "webm": "/images/sculptures/kinetic-dandelion/kinetic-dandelion-720.webm",
             "poster": "/images/sculptures/kinetic-dandelion/kinetic-dandelion-poster.jpg",
@@ -234,7 +234,7 @@
             "height": 844
           },
           {
-            "name": "kinetic-dandelion",
+            "name": "kinetic dandelion",
             "image": "/images/sculptures/kinetic-dandelion/kinetic-dandelion-1.jpeg",
             "caption": "some text",
             "width": 1500,
@@ -245,7 +245,7 @@
       {
         "kinetic_origami": [
           {
-            "name": "kinetic-origami",
+            "name": "kinetic origami",
             "image": "/images/sculptures/kinetic-origami/kinetic-origami-1-720.mp4",
             "webm": "/images/sculptures/kinetic-origami/kinetic-origami-1-720.webm",
             "poster": "/images/sculptures/kinetic-origami/kinetic-origami-1-poster.jpg",
@@ -254,7 +254,7 @@
             "height": 844
           },
           {
-            "name": "kinetic-origami",
+            "name": "kinetic origami",
             "image": "/images/sculptures/kinetic-origami/kinetic-origami-2-720.mp4",
             "webm": "/images/sculptures/kinetic-origami/kinetic-origami-2-720.webm",
             "poster": "/images/sculptures/kinetic-origami/kinetic-origami-2-poster.jpg",
@@ -263,7 +263,7 @@
             "height": 844
           },
           {
-            "name": "kinetic-origami",
+            "name": "kinetic origami",
             "image": "/images/sculptures/kinetic-origami/kinetic-origami-1.jpeg",
             "caption": "some text",
             "width": 1500,
@@ -292,14 +292,14 @@
       {
         "keck_observatory": [
           {
-            "name": "keck-observatory",
+            "name": "keck observatory",
             "image": "/images/sculptures/keck-observatory/keck-observatory-1.jpeg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
-            "name": "keck-observatory",
+            "name": "keck observatory",
             "image": "/images/sculptures/keck-observatory/keck-observatory-2.jpeg",
             "caption": "some text",
             "width": 1500,
@@ -328,21 +328,21 @@
       {
         "vacuum_chamber": [
           {
-            "name": "vacuum-chamber",
+            "name": "vacuum chamber",
             "image": "/images/sculptures/vacuum-chamber/vacuum-chamber-1.jpeg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
-            "name": "vacuum-chamber",
+            "name": "vacuum chamber",
             "image": "/images/sculptures/vacuum-chamber/vacuum-chamber-2.jpeg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
-            "name": "vacuum-chamber",
+            "name": "vacuum chamber",
             "image": "/images/sculptures/vacuum-chamber/vacuum-chamber-3.jpeg",
             "caption": "some text",
             "width": 1500,
@@ -353,14 +353,14 @@
       {
         "wireless_headphones": [
           {
-            "name": "\"wireless-headphones\"",
+            "name": "\"wireless headphones\"",
             "image": "/images/sculptures/wireless-headphones/wireless-headphones-1.jpeg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
-            "name": "\"wireless-headphones\"",
+            "name": "\"wireless headphones\"",
             "image": "/images/sculptures/wireless-headphones/wireless-headphones-2.jpeg",
             "caption": "some text",
             "width": 1500,
@@ -371,7 +371,7 @@
       {
         "build_a_rainbow": [
           {
-            "name": "build-a-rainbow",
+            "name": "build a rainbow",
             "image": "/images/sculptures/build-a-rainbow/build-a-rainbow-1.jpeg",
             "caption": "some text",
             "width": 1500,

@@ -120,7 +120,7 @@ export default function RenderMusic(song) {
           </div>
         </button>
         <div className={styles.track_info}>
-          <p>{song.name}</p>
+          <p className={styles.track_name}>{song.name}</p>
 
           <div>
             <input
@@ -139,8 +139,15 @@ export default function RenderMusic(song) {
           />
 
           <div className={styles.duration_items}>
-            <div>{calculateTime(currentTime)}</div>
-            <div>{!isNaN(duration) && calculateTime(duration)}</div>
+            <div>
+              <p className={styles.mono}>{calculateTime(currentTime)}</p>
+            </div>
+
+            <div>
+              <p className={styles.mono}>
+                {!isNaN(duration) && calculateTime(duration)}
+              </p>
+            </div>
           </div>
         </div>
       </div>
