@@ -1,3 +1,12 @@
+/* @font-face {
+  font-family: Science Gothic;
+  src: url('/public/fonts/ScienceGothic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0020-007F, U+00A9, U+2190-2193, U+2018, U+2019, U+201C,
+    U+201D, U+2022;
+} */
+
 a {
   cursor: pointer;
 }
@@ -11,8 +20,8 @@ h3 {
 h1 {
   color: var(--primary-red);
   font-size: var(--step-6);
-  font-family: var(--radioCanada);
-  font-variation-settings: 'wdth' 75, 'wght' 700, 'ital' 1;
+  font-family: var(--system-monospace);
+  font-weight: 900;
 }
 
 body {

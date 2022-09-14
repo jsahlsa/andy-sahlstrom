@@ -15,21 +15,24 @@ export default function RenderMusic(song) {
   const barTwoEl = useRef();
   const barThreeEl = useRef();
 
-  function onLoadedMetadata() {
-    const seconds = Math.floor(audioPlayer.current.duration);
+  const onLoadedMetadata = (e) => {
+    console.log(e.target.duration);
+    const seconds = Math.floor(e.target.duration);
     setDuration(seconds);
-
     progressBar.current.max = seconds;
-  }
+    console.log(audioPlayer.current);
 
-  function calculateTime(seconds) {
+    console.log('duration: ' + audioPlayer.current.duration);
+  };
+
+  const calculateTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     const returnedSeconds = secs < 10 ? `0${secs}` : secs;
     return `${minutes}:${returnedSeconds}`;
-  }
+  };
 
-  function playPause() {
+  const playPause = () => {
     const prevValue = isPlaying;
     setIsPlaying(!prevValue);
 
@@ -52,7 +55,7 @@ export default function RenderMusic(song) {
 
       cancelAnimationFrame(animationRef.current);
     }
-  }
+  };
 
   function tapSpaceBar(e) {
     if (e.keyCode === 32) {
@@ -60,24 +63,28 @@ export default function RenderMusic(song) {
     }
   }
 
-  function whilePlaying() {
+  const whilePlaying = () => {
     progressBar.current.value = audioPlayer.current.currentTime;
     changePlayerCurrentTime();
     animationRef.current = requestAnimationFrame(whilePlaying);
-  }
+  };
 
-  function changeRange() {
+  const changeRange = () => {
     audioPlayer.current.currentTime = progressBar.current.value;
     changePlayerCurrentTime();
-  }
+  };
 
-  function changePlayerCurrentTime() {
+  const changePlayerCurrentTime = () => {
     progressBar.current.style.setProperty(
       '--seek-before-width',
-      `${(progressBar.current.value / duration) * 100}%`
+      `${
+        (Number(progressBar.current.value) / audioPlayer.current.duration) * 100
+      }%`
     );
+    console.log(Number(progressBar.current.value) / Number(duration));
+
     setCurrentTime(progressBar.current.value);
-  }
+  };
 
   return (
     <div>
@@ -130,9 +137,10 @@ export default function RenderMusic(song) {
             preload="metadata"
             onLoadedMetadata={onLoadedMetadata}
           />
+
           <div className={styles.duration_items}>
             <div>{calculateTime(currentTime)}</div>
-            <div>{duration && !isNaN(duration) && calculateTime(duration)}</div>
+            <div>{!isNaN(duration) && calculateTime(duration)}</div>
           </div>
         </div>
       </div>

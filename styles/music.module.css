@@ -37,7 +37,7 @@
 
 .progress_bar {
   --bar-bg: var(--brown-40);
-  --seek-before-width: 0px;
+  --seek-before-width: 1px;
   --seek-before-color: var(--brown-80);
   --knobby: var(--primary-red);
   --selected-knobby: aqua;
@@ -74,7 +74,7 @@
 /* progress bar - chrome and safari */
 .progress_bar::before {
   content: '';
-  height: 5px;
+  height: 4px;
   width: var(--seek-before-width);
   background-color: var(--seek-before-color);
   border-top-left-radius: 10px;
@@ -101,11 +101,10 @@
   border: 2px solid var(--brown-80);
   height: 18px;
   width: 7px;
-  border: none;
   background-color: var(--knobby);
   cursor: pointer;
   position: relative;
-  margin: -2px 0 0 0;
+  margin: -7px 0 0 -2px;
   z-index: 3;
 }
 
