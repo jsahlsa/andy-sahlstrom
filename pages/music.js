@@ -10,11 +10,6 @@ export default function Home() {
   console.log(pageData);
   return (
     <Layout>
-      <Head>
-        <title>Music</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Nav />
 
       <main>
@@ -25,10 +20,6 @@ export default function Home() {
           })}
         </div>
       </main>
-
-      <footer>
-        <p>coming soon…</p>
-      </footer>
     </Layout>
   );
 }

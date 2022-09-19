@@ -16,3 +16,17 @@
   margin: 0 auto;
   overflow: hidden;
 }
+
+.footer {
+  display: grid;
+  place-items: center;
+  margin-top: 3rem;
+  height: 3rem;
+  border: 1px red dashed;
+}
+
+.footer > p {
+  font-family: var(--fraunces);
+  font-variation-settings: 'wght' 700, 'SOFT' 100, 'WONK' 0, 'opsz' 144;
+  color: var(--brown-90);
+}

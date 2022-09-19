@@ -53,10 +53,6 @@ export default function Home() {
           </clipPath>
         </svg>
       </main>
-
-      <footer>
-        <p>coming soon…</p>
-      </footer>
     </Layout>
   );
 }

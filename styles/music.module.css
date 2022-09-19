@@ -1,6 +1,7 @@
 .tracks_container {
   display: grid;
-  gap: min(3rem, 3vh);
+  gap: min(7rem, 8vh);
+  margin-top: min(2rem, 3vh);
 }
 
 .track_container {
@@ -18,15 +19,24 @@
 
 .track_info {
   display: grid;
+  grid-template-columns: auto;
 }
 
 .track_name {
-  font-size: 1.5rem;
-  text-decoration: underline;
+  font-family: var(--golos);
+  text-transform: lowercase;
+  letter-spacing: 0.2px;
+  font-size: var(--step--1);
+  background-color: var(--primary-red);
+  width: max-content;
+  color: var(--brown-05);
+  font-variation-settings: 'wght' 600;
+  padding: 1px 4px;
 }
 
 .mono {
   font-family: var(--system-monospace);
+  font-size: var(--step--2);
 }
 
 .duration_items {

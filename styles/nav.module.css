@@ -21,8 +21,8 @@
 
 .main_links_li {
   background-color: var(--brown-05);
-  padding: 0.5rem clamp(1rem, 5%, 3rem);
-  border: var(--brown-90) solid 0.3rem;
+  padding: 0.4rem 0.8rem;
+  border: var(--border-color) solid 0.3rem;
   margin-left: -0.3rem;
   text-align: center;
   font-family: var(--golos);
@@ -30,6 +30,7 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
+  color: var(--border-color);
 }
 
 .hamburger_container {
@@ -48,9 +49,11 @@
   background-color: var(--brown-10);
   padding: 0.2rem clamp(0.5rem, 2%, 1.5rem);
   text-align: right;
-  border: var(--brown-90) solid 0.2rem;
+  border: var(--border-color) solid 0.2rem;
+  font-family: var(--golos);
   font-size: var(--step--3);
   margin-top: -0.2rem;
+  color: var(--brown-80);
 }
 
 .communicate {
@@ -68,6 +71,46 @@
   position: fixed;
   right: 4vw;
   bottom: 2em;
+}
+
+.dark_mode_label {
+  position: absolute;
+}
+
+.darkmode_div {
+  position: absolute;
+  left: 100px;
+}
+
+.dark_mode {
+  border: var(--border-color) solid 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: hsl(var(--primary-hue), 80%, 30%);
+  position: absolute;
+  left: 64px;
+  top: 33px;
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+    background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.dark_mode:checked {
+  background-color: hsl(var(--secondary-hue), 80%, 90%);
+  transform: translateX(13px);
+}
+
+.dark_mode_label::before {
+  content: '';
+  border: var(--border-color) solid 2px;
+  width: 45px;
+  height: 30px;
+  position: absolute;
+  border-radius: 15px;
+  background-color: var(--brown-20);
+  z-index: -1;
+  left: 60px;
+  top: 30px;
 }
 
 @media screen and (max-width: 750px) {

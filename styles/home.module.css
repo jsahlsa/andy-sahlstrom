@@ -19,7 +19,7 @@
 }
 
 .mandala_accent_1 {
-  font-family: var(--system-monospace);
+  font-family: var(--golos);
   font-weight: 700;
 }
 
@@ -33,8 +33,7 @@
 .mandala_accent_2 {
   mix-blend-mode: color;
   font-size: 1.2em;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--fraunces);
   font-weight: 900;
   text-transform: uppercase;
   fill: beige;

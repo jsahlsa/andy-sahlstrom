@@ -14,10 +14,6 @@ export default function Home() {
       <main>
         <RenderMedia props={pageData} />
       </main>
-
-      <footer>
-        <p>coming soon…</p>
-      </footer>
     </Layout>
   );
 }

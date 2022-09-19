@@ -9,11 +9,70 @@ export default function Nav() {
   const [open, setOpen] = useState('');
   const [sameMenuName, setSameMenuName] = useState('');
   const [width, setWidth] = useState(null);
+  const [darkmode, setDarkmode] = useState();
+
   const barOneEl = useRef(null);
   const barTwoEl = useRef(null);
   const barThreeEl = useRef(null);
   const mainLinksEl = useRef(null);
   const svgEl = useRef(null);
+  const darkmodeEl = useRef(null);
+
+  const darkStyles = `
+    --brown-90: hsl(26, 50%, 95%);
+    --brown-80: hsl(26, 50%, 90%);
+    --brown-70: hsl(26, 50%, 80%);
+    --brown-60: hsl(26, 50%, 70%);
+    --brown-50: hsl(26, 50%, 60%);
+    --brown-40: hsl(26, 50%, 50%);
+    --brown-30: hsl(26, 50%, 40%);
+    --brown-20: hsl(26, 50%, 30%);
+    --brown-10: hsl(26, 50%, 20%);
+    --brown-05: hsl(26, 50%, 10%);
+    --primary-color-background: hsla(281, 50%, 10%, 0.8);
+    --secondary-color-background: hsla(75, 50%, 10%, 0.8);
+    --primary-color: hsl(281, 100%, 70%);
+    --secondary-color: hsl(75, 100%, 70%);
+    --border-color: hsl(var(--secondary-hue), 100%, 80%);
+  `;
+
+  const lightStyles = `
+    --brown-05: hsl(26, 50%, 95%);
+    --brown-10: hsl(26, 50%, 90%);
+    --brown-20: hsl(26, 50%, 80%);
+    --brown-30: hsl(26, 50%, 70%);
+    --brown-40: hsl(26, 50%, 60%);
+    --brown-50: hsl(26, 50%, 50%);
+    --brown-60: hsl(26, 50%, 40%);
+    --brown-70: hsl(26, 50%, 30%);
+    --brown-80: hsl(26, 50%, 20%);
+    --brown-90: hsl(26, 50%, 10%);
+    --primary-color-background: hsla(281, 50%, 50%, 0.2);
+    --secondary-color-background: hsla(75, 50%, 50%, 0.2);
+    --primary-color: hsl(281, 50%, 50%);
+    --secondary-color: hsl(75, 50%, 50%);
+    --border-color: var(--brown-90);
+  `;
+
+  useEffect(() => {
+    const getCurrentTheme = () =>
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDarkmode(
+      () => window.matchMedia('(prefers-color-scheme: dark)').matches
+    );
+    console.log('dark mode: ' + darkmode);
+    console.log('theme: ' + getCurrentTheme());
+    console.log('checkbox: ' + darkmodeEl.current.checked);
+    darkmode
+      ? (darkmodeEl.current.checked = true)
+      : (darkmodeEl.current.checked = false);
+    if (darkmode) {
+      document.documentElement.style.cssText = darkStyles;
+    }
+  }, []);
+
+  let lastDarkmode = darkmode;
+  console.log('last darkmode: ' + lastDarkmode);
   // need to find a way to see if a details element is open
   const [menuOpen, setMenuOpen] = useState(false);
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
@@ -53,6 +112,21 @@ export default function Nav() {
     setSameMenuName(id);
   };
 
+  const handleDarkModeToggle = () => {
+    console.log('darkmode: ' + darkmode);
+    if (!lastDarkmode) {
+      darkmodeEl.current.checked = true;
+      document.documentElement.style.cssText = darkStyles;
+
+      setDarkmode(!lastDarkmode);
+    } else {
+      darkmodeEl.current.checked = false;
+      document.documentElement.style.cssText = lightStyles;
+
+      setDarkmode(!lastDarkmode);
+    }
+  };
+
   const hamburgerClick = () => {
     if (width < 750) {
       if (!hamburgerOpen) {
@@ -79,6 +153,7 @@ export default function Nav() {
             <a className={styles.main_links_li}>Home</a>
           </Link>
         </div>
+
         <nav className={!hamburgerOpen ? styles.nav : styles.nav_open}>
           <div
             className={
@@ -111,6 +186,7 @@ export default function Nav() {
               ></rect>
             </svg>
           </div>
+
           <ul
             ref={mainLinksEl}
             className={
@@ -214,6 +290,17 @@ export default function Nav() {
           </ul>
         </nav>
       </header>
+      <div className={styles.darkmode_div}>
+        <label for="dark_mode" className={styles.dark_mode_label}>
+          <input
+            ref={darkmodeEl}
+            name="dark_mode"
+            className={styles.dark_mode}
+            type="checkbox"
+            onChange={handleDarkModeToggle}
+          />
+        </label>
+      </div>
     </>
   );
 }

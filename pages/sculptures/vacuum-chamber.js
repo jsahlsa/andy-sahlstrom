@@ -13,16 +13,8 @@ export default function Home() {
       <main>
         <h1 className="title">{pageData[0].name}</h1>
 
-        <p className="description">
-          Gonna be building in plain sight using{' '}
-          <a href="https://nextjs.org">NEXT.JS</a>
-        </p>
         <RenderMedia props={pageData} />
       </main>
-
-      <footer>
-        <p>coming soon…</p>
-      </footer>
     </Layout>
   );
 }
