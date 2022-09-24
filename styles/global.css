@@ -39,6 +39,7 @@ h1 {
   font-family: var(--fraunces);
   font-weight: 900;
   font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  margin-top: 4rem;
 }
 
 p {
@@ -46,6 +47,8 @@ p {
   font-variation-settings: 'wght' 400, 'opsz' 9, 'SOFT' 100;
   max-width: 60ch;
   line-height: 1.5em;
+  color: var(--brown-90);
+  font-size: var(--step--1);
 }
 body {
   --saturation: 20%;

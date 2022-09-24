@@ -7,15 +7,14 @@
   place-items: center;
   width: var(--image-wrapper-clamp);
   overflow: hidden;
-  margin-top: min(1rem, 2vh);
+  margin-top: min(3rem, 3vh);
 }
 
 .img_container {
   position: relative;
   width: 100%;
   object-fit: cover;
-  border: max(0.6rem, 0.8vw) solid black;
-  box-shadow: 2px 1px var(--brown-05), 7px 7px black;
+  border: max(0.6rem, 0.8vw) solid var(--brown-90);
 }
 
 .wide_image {

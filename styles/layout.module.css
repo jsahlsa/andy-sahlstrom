@@ -1,9 +1,6 @@
 .container {
-  background-image: radial-gradient(
-      hsla(0, 0%, 10%, 0.1) 4%,
-      hsla(0, 0%, 0%, 0) 4%
-    ),
-    radial-gradient(hsla(0, 0%, 10%, 0.1) 4%, hsla(0, 0%, 0%, 0) 4%);
+  background-image: radial-gradient(var(--bg-dot-one) 4%, var(--bg-dot-two) 4%),
+    radial-gradient(var(--bg-dot-one) 4%, var(--bg-dot-two) 4%);
   background-position: 0 0, 150px 150px;
   background-size: 100px 100px;
   width: 100%;
@@ -22,7 +19,6 @@
   place-items: center;
   margin-top: 3rem;
   height: 3rem;
-  border: 1px red dashed;
 }
 
 .footer > p {

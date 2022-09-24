@@ -27,6 +27,8 @@ html {
     var(--lightness),
     var(--opacity)
   );
+  --bg-dot-one: hsla(0, 0%, 10%, 0.1);
+  --bg-dot-two: hsla(0, 0%, 0%, 0);
 
   /* grayscale */
   --gray-05: hsl(150, 0%, 95%);
