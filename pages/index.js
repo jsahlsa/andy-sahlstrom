@@ -73,11 +73,11 @@ export default function Home() {
               class={styles.mandala_accent_1}
               dy="90
             "
-              textLength="2120"
+              textLength="2100"
             >
               <textPath
                 className={styles.textPath}
-                textLength="2120"
+                textLength="2050"
                 href="#circle1"
               >
                 <tspan>&nbsp;&nbsp;</tspan>ANDY SAHLSTROM

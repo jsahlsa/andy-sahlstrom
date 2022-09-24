@@ -20,7 +20,6 @@ export default function RenderMusic(song) {
     const seconds = Math.floor(e.target.duration);
     setDuration(seconds);
     progressBar.current.max = seconds;
-    console.log(audioPlayer.current);
 
     console.log('duration: ' + audioPlayer.current.duration);
   };

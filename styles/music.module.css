@@ -29,7 +29,7 @@
   font-size: var(--step--1);
   background-color: var(--primary-red);
   width: max-content;
-  color: var(--brown-05);
+  color: var(--brown-90);
   font-variation-settings: 'wght' 600;
   padding: 1px 4px;
 }
@@ -48,22 +48,25 @@
 .barone {
   transform: rotate(37deg) translate(2.6em, -1.7em);
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  fill: var(--brown-80);
 }
 
 .bartwo {
   transform: rotate(90deg) translate(0, -5rem);
+  fill: var(--brown-80);
 }
 
 .barthree {
   transform: rotate(-35deg) translate(-0.7em, 0.7em);
   transition: transform 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  fill: var(--brown-80);
 }
 
 .progress_bar {
   --bar-bg: var(--brown-40);
   --seek-before-width: 1px;
-  --seek-before-color: var(--brown-80);
-  --knobby: var(--primary-red);
+  --seek-before-color: var(--border-color);
+  --knobby: var(--primary-color);
   --selected-knobby: aqua;
   appearance: none;
   border: 1px solid var(--brown-80);
@@ -75,7 +78,7 @@
 
 /* progress bar safari */
 .progress_bar::-webkit-slider-runnable-track {
-  border: 1px solid var(--brown-80);
+  border: 1px solid var(--border-color);
   position: relative;
   width: 100%;
   height: 5px;
@@ -84,7 +87,7 @@
 
 /* progress bar firefox */
 .progress_bar::-moz-range-track {
-  border: 1px solid var(--brown-80);
+  border: 1px solid var(--border-color);
   position: relative;
   width: 100%;
   height: 5px;

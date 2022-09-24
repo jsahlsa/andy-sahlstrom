@@ -145,13 +145,23 @@ export default function Nav() {
             <a className={styles.home_link}>
               <svg
                 version="1.1"
-                className={styles.home_logo}
-                width="400"
-                height="100"
-                viewBox="60 25 75 75"
+                className={
+                  !hamburgerOpen ? styles.home_logo : styles.home_logo_open
+                }
                 id="Layer_1"
+                viewBox="15 0 60 60"
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <path
+                  className={
+                    !hamburgerOpen
+                      ? styles.outside_path
+                      : styles.outside_path_open
+                  }
+                  d="M67.9,28.9l0.3,1.4h-7.4V36c0,0-0.1,0-0.1,0c-2,0-3.7,0.5-5.3,1.4c-1.4-4.4-4.9-7-9.8-7c-1.4,0-2.6,0.2-3.6,0.5
+	H28.1l0.1,3.6c0,0.9,0,1.9,0,2.9l-2.3-7H12.5L3.4,59.1H17l1.3-4.2h1.6l1.3,4.2h7h7.1h20.8v-0.4c1.2,0.5,2.5,0.8,3.9,0.8
+	c1.1,0,2.1-0.1,3-0.4h7.5l0.6,0.1c1,0.2,2.3,0.4,2.9,0.5c0.8,0.1,1.4,0.1,2.1,0.1c6.2,0,8.5-4.1,10.5-8.6L95.2,32L67.9,28.9z"
+                />
                 <path
                   className={styles.path_a}
                   d="M15.7,51.4l-1.3,4.2H8.2l6.9-21.8h8.3l7.2,21.8h-6.7l-1.3-4.2H15.7z M21.4,46.7c-1-3.4-1.9-6.5-2.4-8.6h-0.1
@@ -172,12 +182,6 @@ export default function Nav() {
                   className={styles.path_a}
                   d="M79,33.7c0.6,4.3,1.2,9.7,1.2,11.5l0.1,0c0.6-2.1,1.7-5.6,3.6-10.9l6,0.7l-6.7,15c-2.3,5.1-3.8,7-9,6.4
 	c-0.4,0-1.6-0.2-2.5-0.4l0.5-4.4c0.2,0,0.7,0.1,1.1,0.2c1.4,0.2,2.2-0.1,2.8-1.3l-4-17.4L79,33.7z"
-                />
-                <path
-                  className={styles.outside_path}
-                  d="M67.9,28.9l0.3,1.4h-7.4V36c0,0-0.1,0-0.1,0c-2,0-3.7,0.5-5.3,1.4c-1.4-4.4-4.9-7-9.8-7c-1.4,0-2.6,0.2-3.6,0.5
-	H28.1l0.1,3.6c0,0.9,0,1.9,0,2.9l-2.3-7H12.5L3.4,59.1H17l1.3-4.2h1.6l1.3,4.2h7h7.1h20.8v-0.4c1.2,0.5,2.5,0.8,3.9,0.8
-	c1.1,0,2.1-0.1,3-0.4h7.5l0.6,0.1c1,0.2,2.3,0.4,2.9,0.5c0.8,0.1,1.4,0.1,2.1,0.1c6.2,0,8.5-4.1,10.5-8.6L95.2,32L67.9,28.9z"
                 />
               </svg>
             </a>
@@ -298,13 +302,16 @@ export default function Nav() {
                 !hamburgerOpen ? styles.communicate : styles.communicate_open
               }
             >
-              <a className={styles.main_links_li} href="">
+              <a
+                className={styles.main_links_li}
+                href="mailto:domesticohm@gmail.com?subject=Hi Andy!"
+              >
                 <svg
                   version="1.1"
                   class={styles.svg_shapes}
                   width="25"
                   height="25"
-                  viewBox="0 -5 90 90"
+                  viewBox="4 0 90 90"
                   id="Layer_1"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -323,7 +330,7 @@ export default function Nav() {
                 </svg>
               </a>
 
-              <a className={styles.main_links_li} href="">
+              <a className={styles.main_links_li} href="tel:+3202609212">
                 <svg
                   version="1.1"
                   class={styles.svg_shapes}
@@ -344,13 +351,17 @@ export default function Nav() {
               </a>
             </li>
             <li className={!hamburgerOpen ? styles.insta : styles.insta_open}>
-              <a className={styles.main_links_li} href="">
+              <a
+                className={styles.main_links_li}
+                href="https://instagram.com/shampoooty"
+                target="_blank"
+              >
                 <svg
                   vversion="1.1"
                   class={styles.svg_shapes}
                   width="25"
                   height="25"
-                  viewBox="0 -5 90 90"
+                  viewBox="4 0 90 90"
                   id="Layer_1"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -380,7 +391,11 @@ export default function Nav() {
           </ul>
         </nav>
       </header>
-      <div className={styles.darkmode_div}>
+      <div
+        className={
+          !hamburgerOpen ? styles.darkmode_div : styles.darkmode_div_open
+        }
+      >
         <label for="dark_mode" className={styles.dark_mode_label}>
           <input
             ref={darkmodeEl}
