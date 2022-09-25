@@ -330,7 +330,7 @@ export default function Nav() {
                 </svg>
               </a>
 
-              <a className={styles.main_links_li} href="tel:+3202609212">
+              <a className={styles.main_links_li} href="tel:+1-320-260-9212">
                 <svg
                   version="1.1"
                   class={styles.svg_shapes}
