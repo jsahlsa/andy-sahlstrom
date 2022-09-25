@@ -330,7 +330,10 @@ export default function Nav() {
                 </svg>
               </a>
 
-              <a className={styles.main_links_li} href="tel:+1-320-260-9212">
+              <a
+                className={styles.main_links_li}
+                href="sms:+1-320-260-9212?&body=Hi%20Andy!"
+              >
                 <svg
                   version="1.1"
                   class={styles.svg_shapes}
