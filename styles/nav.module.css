@@ -132,7 +132,7 @@
 .dark_mode_label::before {
   content: '';
   border: var(--border-color) solid 2px;
-  width: 45px;
+  width: 44px;
   height: 30px;
   position: absolute;
   border-radius: 15px;
@@ -271,8 +271,12 @@
   }
 
   .outside_path_open {
-    fill: var(--brown-10);
+    fill: none;
     stroke: var(--brown-90);
+  }
+
+  .path_a {
+    fill: var(--border-color);
   }
 
   .home > a {
@@ -320,6 +324,9 @@
     margin-left: -0.2rem;
     padding: 0.3rem 0.3rem 0.3rem 1rem;
     background-color: var(--brown-10);
+    font-family: var(--golos);
+    font-size: var(--step--2);
+    color: var(--brown-90);
     text-transform: uppercase;
   }
   .sub_links_li_open:hover {
