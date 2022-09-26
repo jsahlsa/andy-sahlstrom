@@ -70,14 +70,14 @@
 
 @keyframes color-change {
   0% {
-    fill: green;
+    fill: var(--tertiary-color);
   }
 
   20% {
-    fill: hotpink;
+    fill: var(--quaternary-color);
   }
 
   40% {
-    fill: orange;
+    fill: var(--quinary-color);
   }
 }

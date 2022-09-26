@@ -21,6 +21,10 @@ html {
     var(--saturation),
     var(--lightness)
   );
+  --tertiary-color: hsl(29, 49%, 60%);
+  --quaternary-color: hsl(236, 59%, 60%);
+  --quinary-color: hsl(192, 64%, 60%);
+
   --secondary-color-background: hsl(
     var(--secondary-hue),
     var(--saturation),
