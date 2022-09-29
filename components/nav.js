@@ -35,7 +35,9 @@ export default function Nav() {
     --bg-dot-one: hsla(0, 0%, 30%, 0.3);
     --bg-dot-two: hsla(0, 0%, 0%, 0);
     --media-border-color: hsl(150, 0%, 30%);
-  `;
+    --scrollbar-color: hsl(75, 50%, 60%);
+    --gray-20: hsl(150, 0%, 20%);
+    `;
 
   const lightStyles = `
     --brown-05: hsl(26, 50%, 95%);
@@ -49,7 +51,8 @@ export default function Nav() {
     --brown-80: hsl(26, 50%, 20%);
     --brown-90: hsl(26, 50%, 10%);
     --media-border-color: hsl(150, 0%, 10%);
-
+    --scrollbar-color: hsl(281, 50%, 60%);
+    
     --primary-color-background: hsla(281, 50%, 50%, 0.2);
     --secondary-color-background: hsla(75, 50%, 50%, 0.2);
     --primary-color: hsl(281, 50%, 50%);
@@ -57,7 +60,8 @@ export default function Nav() {
     --border-color: var(--brown-90);
     --bg-dot-one: hsla(0, 0%, 10%, 0.1);
     --bg-dot-two: hsla(0, 0%, 0%, 0);
-  `;
+    --gray-20: hsl(150, 0%, 80%);
+    `;
 
   // useEffect(() => {
   //   console.log('window: ' + encodeURIComponent(window.location));

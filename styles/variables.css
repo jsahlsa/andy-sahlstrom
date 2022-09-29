@@ -10,6 +10,11 @@ html {
   --primary-hue: 281;
   --secondary-hue: 75;
   --primary-color: hsl(var(--primary-hue), var(--saturation), var(--lightness));
+  --scrollbar-color: hsl(
+    var(--primary-hue),
+    var(--saturation),
+    var(--lightness)
+  );
   --primary-color-background: hsla(
     var(--primary-hue),
     var(--saturation),

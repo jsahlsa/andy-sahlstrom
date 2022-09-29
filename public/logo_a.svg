@@ -1,19 +1,22 @@
 <svg
-          width="540"
-          height="540"
+          width="30"
+          height="30"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
+		  fill='none'
           focusable="false">
 <style>
-	.outside {
-                stroke: green;
+	.inside {
+                stroke: hsl(150, 0%, 10%);
             }
-			.inside {
-				fill: green;
+			.outside {
+				fill: hsl(150, 0%, 10%);
 			}
             @media (prefers-color-scheme: dark) {
-      .outside { stroke: hsl(75, 50%, 70%); }
-	  .inside { fill: hsl(75, 50%, 70%); }
+      .outside { fill: hsl(75, 50%, 70%);
+	  			 }
+	  .inside { stroke: hsl(75, 50%, 70%);
+	  			 }
 </style>
 <g>
 <polygon class='inside' points="18,29.6 16.8,25.8 15.3,25.8 14.1,29.6 1.5,29.6 9.9,3.1 22.3,3.1 31.1,29.6 "/>
