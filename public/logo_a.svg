@@ -1,0 +1,23 @@
+<svg
+          width="540"
+          height="540"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false">
+<style>
+	.outside {
+                stroke: green;
+            }
+			.inside {
+				fill: green;
+			}
+            @media (prefers-color-scheme: dark) {
+      .outside { stroke: hsl(75, 50%, 70%); }
+	  .inside { fill: hsl(75, 50%, 70%); }
+</style>
+<g>
+<polygon class='inside' points="18,29.6 16.8,25.8 15.3,25.8 14.1,29.6 1.5,29.6 9.9,3.1 22.3,3.1 31.1,29.6 "/>
+<path class='outside' d="M12.6,23.1l-1.3,4.2H5.1L12,5.5h8.3l7.2,21.8h-6.7l-1.3-4.2H12.6z M18.3,18.4c-1-3.4-1.9-6.5-2.4-8.6h-0.1
+	c-0.5,2.3-1.3,5.5-2.2,8.6C13.6,18.4,18.3,18.4,18.3,18.4z"/>
+	</g>
+</svg>

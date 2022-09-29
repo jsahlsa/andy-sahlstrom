@@ -25,7 +25,7 @@
 
 .home_logo {
   width: 20rem;
-  max-height: clamp(4rem, 8vw, 10rem);
+  max-height: clamp(4rem, 8vw, 94px);
   transform: translate(-7rem, -2rem);
   position: absolute;
   mix-blend-mode: hard-light;

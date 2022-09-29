@@ -34,6 +34,7 @@ export default function Nav() {
     --border-color: hsl(var(--secondary-hue), 100%, 80%);
     --bg-dot-one: hsla(0, 0%, 30%, 0.3);
     --bg-dot-two: hsla(0, 0%, 0%, 0);
+    --media-border-color: hsl(150, 0%, 30%);
   `;
 
   const lightStyles = `
@@ -47,6 +48,8 @@ export default function Nav() {
     --brown-70: hsl(26, 50%, 30%);
     --brown-80: hsl(26, 50%, 20%);
     --brown-90: hsl(26, 50%, 10%);
+    --media-border-color: hsl(150, 0%, 10%);
+
     --primary-color-background: hsla(281, 50%, 50%, 0.2);
     --secondary-color-background: hsla(75, 50%, 50%, 0.2);
     --primary-color: hsl(281, 50%, 50%);
@@ -55,6 +58,12 @@ export default function Nav() {
     --bg-dot-one: hsla(0, 0%, 10%, 0.1);
     --bg-dot-two: hsla(0, 0%, 0%, 0);
   `;
+
+  // useEffect(() => {
+  //   console.log('window: ' + encodeURIComponent(window.location));
+  //   // zach leat og image create
+  //   // <meta property="og:image" content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2Fdocs%2F/opengraph/"></meta>
+  // }, []);
 
   // checks localStorage for preference
   // if none, grabs system preference and sets dark mode state
@@ -228,6 +237,7 @@ export default function Nav() {
             }
           >
             {data.map((item, i) => {
+              console.log('key: ' + i, 'item: ' + Object.keys(item));
               const name = Object.keys(item);
               const parentLink = `/${name[0]}`;
               const values = Object.values(item);
@@ -237,24 +247,25 @@ export default function Nav() {
                   <li key={i} className={styles.details_container}>
                     <details
                       id={name[0]}
-                      key={i}
+                      key={i + 'details'}
                       open={name[0] === open}
                       onClick={toggle(name[0])}
                     >
                       <summary
-                        key={i}
+                        key={i + 'summary'}
                         className={`${styles.main_links_li} ${styles.main_links_top_right}`}
                       >
                         {name[0]}
                       </summary>
                       <ul
+                        key="sublinks"
                         className={
                           !hamburgerOpen
                             ? styles.sub_link_container
                             : styles.sub_link_container_open
                         }
                       >
-                        {newValue.map((item, i) => {
+                        {newValue.map((item, j) => {
                           const newValueKeys = Object.keys(item);
                           const subLinkNames = newValueKeys[0]
                             .split('_')
@@ -263,18 +274,19 @@ export default function Nav() {
                             .split('_')
                             .join(' ');
                           const subLink = `/${name[0]}/${subLinkNames}`;
-                          const subLinkTwo = `${subLinkNames}`;
                           return (
-                            <Link href={subLink}>
+                            <Link key={j} href={subLink}>
                               <li
-                                key={i}
+                                key={j + 'sublinks'}
                                 className={
                                   !hamburgerOpen
                                     ? styles.sub_links_li
                                     : styles.sub_links_li_open
                                 }
                               >
-                                <a key={i}>{subLinkNamesLinks}</a>
+                                <a key={j + 'sublinkLink'}>
+                                  {subLinkNamesLinks}
+                                </a>
                               </li>
                             </Link>
                           );
@@ -298,6 +310,7 @@ export default function Nav() {
               }
             })}
             <li
+              key="email"
               className={
                 !hamburgerOpen ? styles.communicate : styles.communicate_open
               }
@@ -308,7 +321,7 @@ export default function Nav() {
               >
                 <svg
                   version="1.1"
-                  class={styles.svg_shapes}
+                  className={styles.svg_shapes}
                   width="25"
                   height="25"
                   viewBox="4 0 90 90"
@@ -319,12 +332,11 @@ export default function Nav() {
                     className={styles.email_solid}
                     x="8.6"
                     y="18.6"
-                    class="st0"
                     width="81.7"
                     height="52.8"
                   />
                   <polyline
-                    class={styles.email_line}
+                    className={styles.email_line}
                     points="8.6,18.6 49.5,45 90.4,18.6 "
                   />
                 </svg>
@@ -336,7 +348,7 @@ export default function Nav() {
               >
                 <svg
                   version="1.1"
-                  class={styles.svg_shapes}
+                  className={styles.svg_shapes}
                   width="25"
                   height="25"
                   viewBox="0 -5 90 90"
@@ -353,7 +365,10 @@ export default function Nav() {
                 </svg>
               </a>
             </li>
-            <li className={!hamburgerOpen ? styles.insta : styles.insta_open}>
+            <li
+              key="insta"
+              className={!hamburgerOpen ? styles.insta : styles.insta_open}
+            >
               <a
                 className={styles.main_links_li}
                 href="https://instagram.com/shampoooty"
@@ -361,7 +376,7 @@ export default function Nav() {
               >
                 <svg
                   vversion="1.1"
-                  class={styles.svg_shapes}
+                  className={styles.svg_shapes}
                   width="25"
                   height="25"
                   viewBox="4 0 90 90"
@@ -372,7 +387,6 @@ export default function Nav() {
                     className={styles.email_solid}
                     x="8.6"
                     y="4.5"
-                    class="st0"
                     width="81.7"
                     height="81"
                   />
@@ -399,7 +413,7 @@ export default function Nav() {
           !hamburgerOpen ? styles.darkmode_div : styles.darkmode_div_open
         }
       >
-        <label for="dark_mode" className={styles.dark_mode_label}>
+        <label htmlFor="dark_mode" className={styles.dark_mode_label}>
           <input
             ref={darkmodeEl}
             name="dark_mode"

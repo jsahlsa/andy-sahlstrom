@@ -14,7 +14,7 @@
   position: relative;
   width: 100%;
   object-fit: cover;
-  border: max(0.6rem, 0.8vw) solid var(--brown-90);
+  border: max(0.6rem, 0.8vw) solid var(--media-border-color);
 }
 
 .wide_image {
