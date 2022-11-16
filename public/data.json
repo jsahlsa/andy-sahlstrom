@@ -556,21 +556,21 @@
       {
         "stepper_motion_timelapse_controller": [
           {
-            "name": "kinetic-dandelion",
+            "name": "stepper motion timelapse controller",
             "image": "/images/timelapse/stepper-motion-timelapse-controller/stepper-motion-timelapse-controller-1.jpeg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
-            "name": "kinetic-dandelion",
+            "name": "stepper motion timelapse controller",
             "image": "/images/timelapse/stepper-motion-timelapse-controller/stepper-motion-timelapse-controller-2.jpeg",
             "caption": "some text",
             "width": 1500,
             "height": 844
           },
           {
-            "name": "kinetic-dandelion",
+            "name": "stepper motion timelapse controller",
             "image": "/images/timelapse/stepper-motion-timelapse-controller/stepper-motion-timelapse-controller-3.jpeg",
             "caption": "some text",
             "width": 1500,
