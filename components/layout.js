@@ -19,8 +19,8 @@ export default function Layout({ children }) {
         <meta property="og:image:secure_url" content="/andy-og.png" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="" />
-        <meta name="twitter:creator" content="" />
+        <meta name="twitter:site" content="@shampooty" />
+        <meta name="twitter:creator" content="@shampooty" />
         <meta property="twitter:domain" content="https://andysahlstrom.com" />
         <meta property="twitter:url" content="https://andysahlstrom.com" />
         <meta name="twitter:title" content="Andy Sahlstrom" />
