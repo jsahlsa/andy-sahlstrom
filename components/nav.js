@@ -291,7 +291,11 @@ export default function Nav() {
             }
           >
             <div
-              className={styles.settings_button}
+              className={
+                settingsOpen
+                  ? styles.settings_button
+                  : styles.settings_button_open
+              }
               onClick={handleSettingsButton}
             >
               <svg>
