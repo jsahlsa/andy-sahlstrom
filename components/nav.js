@@ -3,11 +3,62 @@ import data from '/public/data.json';
 import { useEffect, useState, useRef } from 'react';
 import styles from '../styles/nav.module.css';
 
+const fonts = [
+  {
+    name: 'Inter',
+    key: 1,
+    weights: {
+      max: 900,
+      min: 100,
+    },
+    slant: {
+      max: 0,
+      min: -10,
+    },
+  },
+  {
+    name: 'Lexend',
+    key: 2,
+    weights: {
+      max: 900,
+      min: 100,
+    },
+  },
+  {
+    name: 'Signika Negative',
+    key: 3,
+    weights: {
+      max: 700,
+      min: 300,
+    },
+  },
+  {
+    name: 'Fraunces',
+    key: 4,
+    weights: {
+      max: 900,
+      min: 100,
+    },
+    italic: false,
+    optical_size: false,
+    wonk: false,
+    soft: {
+      max: 100,
+      min: 0,
+    },
+  },
+];
+
 export default function Nav() {
   const [open, setOpen] = useState('');
   const [width, setWidth] = useState(null);
   const [darkmode, setDarkmode] = useState(false);
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const [font, setFont] = useState('Fraunces');
+  const [fontWeight, setFontWeight] = useState(700);
+  const [primaryHue, setPrimaryHue] = useState(281);
+  const [secondaryHue, setSecondaryHue] = useState(75);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const barOneEl = useRef(null);
   const barTwoEl = useRef(null);
@@ -85,6 +136,13 @@ export default function Nav() {
     }
   }, []);
 
+  // get font choice from local storage
+  useEffect(() => {
+    const json = localStorage.getItem('font');
+    json && setFont(JSON.parse(json));
+    document.documentElement.style.cssText = `--fraunces: ${font}`;
+  }, [font]);
+
   // sets darkmode when page loads if it is true
   useEffect(() => {
     window.addEventListener('load', () => {
@@ -92,7 +150,7 @@ export default function Nav() {
         document.documentElement.style.cssText = darkStyles;
       }
     });
-  }, [darkmode]);
+  }, [darkmode, font]);
 
   // need to find a way to see if a details element is open
 
@@ -103,6 +161,32 @@ export default function Nav() {
 
     window.addEventListener('resize', handleResize);
   }, []);
+
+  const handleFontChange = (e) => {
+    document.documentElement.style.cssText = `--font-weight: ${fontWeight}; --fraunces: ${font}`;
+    setFont(e.target.value);
+    console.log(`target: ${e.target.value}`);
+    console.log(`font now: ${font}`);
+    localStorage.setItem('font', JSON.stringify(e.target.value));
+  };
+
+  const handleFontWeight = (e) => {
+    setFontWeight(e.target.value);
+    document.documentElement.style.cssText = `--font-weight: ${fontWeight}; --fraunces: ${font}`;
+  };
+
+  const handlePrimaryHue = (e) => {
+    setPrimaryHue(e.target.value);
+    document.documentElement.style.cssText = `--font-weight: ${fontWeight}; --fraunces: ${font}; --primary-hue: ${primaryHue}; --secondary-hue: ${secondaryHue};`;
+  };
+  const handleSecondaryHue = (e) => {
+    setSecondaryHue(e.target.value);
+    document.documentElement.style.cssText = `--font-weight: ${fontWeight}; --fraunces: ${font}; --primary-hue: ${primaryHue}; --secondary-hue: ${secondaryHue};`;
+  };
+
+  const handleSettingsButton = () => {
+    setSettingsOpen(!settingsOpen);
+  };
 
   // WOW!!!, finally figured this out with help from https://stackoverflow.com/questions/70810204/how-to-automatically-close-an-open-details-tag-when-another-detail-is-clicked-wi
   // needed onClick not onToggle!!!!! and 2 args to handle preventDefault()
@@ -116,7 +200,6 @@ export default function Nav() {
     }
   };
   const handleDarkModeToggle = () => {
-    console.log('darkmode: ' + darkmode);
     if (!darkmode) {
       // darkmodeEl.current.checked = true;
       document.documentElement.style.cssText = darkStyles;
@@ -149,6 +232,9 @@ export default function Nav() {
       }
     }
   };
+
+  const selected = fonts.filter((item) => item.name === font);
+  const notSelected = fonts.filter((item) => item.name !== font);
 
   return (
     <>
@@ -199,6 +285,96 @@ export default function Nav() {
               </svg>
             </a>
           </Link>
+          <div
+            className={
+              settingsOpen ? styles.font_select : styles.font_select_closed
+            }
+          >
+            <div
+              className={styles.settings_button}
+              onClick={handleSettingsButton}
+            >
+              <svg>
+                <polygon
+                  className={
+                    settingsOpen ? styles.polygon : styles.polygon_rotate
+                  }
+                  points="10,10 25,20 10,30"
+                />
+              </svg>
+            </div>
+            <div>
+              <label for="font-select">Header font: </label>
+              <select
+                name="header-font"
+                id="font-select"
+                onChange={handleFontChange}
+                className={styles.select}
+              >
+                <option value={selected[0].name}>{selected[0].name}</option>
+                {notSelected.map((item) => {
+                  return (
+                    <option key={item.key} value={item.name}>
+                      {item.name}
+                    </option>
+                  );
+                })}
+              </select>
+              {selected.map(
+                (item) =>
+                  item.weights && (
+                    <>
+                      <label for="weight">Font Weight</label>
+                      <input
+                        type="range"
+                        className={styles.settings_range}
+                        id="weight"
+                        max={item.weights.max}
+                        min={item.weights.min}
+                        onChange={handleFontWeight}
+                        value={
+                          fontWeight > item.weights.max
+                            ? item.weights.max
+                            : fontWeight < item.weights.min
+                            ? item.weights.min
+                            : fontWeight
+                        }
+                      />
+                      <div className={styles.range_values_container}>
+                        <span className={styles.min_weight}>
+                          {item.weights.min}
+                        </span>
+                        <span className={styles.max_weight}>
+                          {item.weights.max}
+                        </span>
+                      </div>
+                    </>
+                  )
+              )}
+            </div>
+            <div>
+              <label for="primary-hue">Primary hue</label>
+              <input
+                id="primary-hue"
+                type="range"
+                max="360"
+                min="0"
+                value={primaryHue}
+                onChange={handlePrimaryHue}
+                className={styles.settings_range}
+              />
+            </div>
+            <label for="secondary-hue">Secondary hue</label>
+            <input
+              id="secondary-hue"
+              type="range"
+              max="360"
+              min="0"
+              value={secondaryHue}
+              onChange={handleSecondaryHue}
+              className={styles.settings_range}
+            />
+          </div>
         </div>
 
         <nav className={!hamburgerOpen ? styles.nav : styles.nav_open}>
@@ -241,7 +417,6 @@ export default function Nav() {
             }
           >
             {data.map((item, i) => {
-              console.log('key: ' + i, 'item: ' + Object.keys(item));
               const name = Object.keys(item);
               const parentLink = `/${name[0]}`;
               const values = Object.values(item);

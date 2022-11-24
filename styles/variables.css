@@ -8,7 +8,9 @@ html {
   --lightness: 50%;
   --opacity: 0.2;
   --primary-hue: 281;
+  --primary-hue-bg: 281;
   --secondary-hue: 75;
+  --secondary-hue-bg: 75;
   --primary-color: hsl(var(--primary-hue), var(--saturation), var(--lightness));
   --scrollbar-color: hsl(
     var(--primary-hue),
@@ -16,7 +18,7 @@ html {
     var(--lightness)
   );
   --primary-color-background: hsla(
-    var(--primary-hue),
+    var(--primary-hue-bg),
     var(--saturation),
     var(--lightness),
     var(--opacity)
@@ -31,7 +33,7 @@ html {
   --quinary-color: hsl(192, 64%, 60%);
 
   --secondary-color-background: hsl(
-    var(--secondary-hue),
+    var(--secondary-hue-bg),
     var(--saturation),
     var(--lightness),
     var(--opacity)
@@ -80,6 +82,7 @@ html {
   /* 'opsz' 9-144, 'wght' 100-900, 'SOFT' 0-100, 'WONK' 0-1 */
   --fraunces-italic: 'Fraunces Italic', var(--system-serif);
   --golos: 'Golos UI', var(--system-sans-serif);
+  --font-weight: 700;
 }
 
 /* layout clamps */
