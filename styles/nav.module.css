@@ -140,7 +140,7 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   z-index: 5;
-  transform: translateX(-250px);
+  transform: translateX(-260px);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -169,12 +169,13 @@
 .settings_button_open {
   position: absolute;
   height: 40px;
-  width: 35px;
+  width: 70px;
   left: 274px;
   top: 20px;
   background-color: var(--brown-80);
   border-top-right-radius: 10px;
-  transform: translateX(0.5rem);
+  transform: translateX(-20px);
+  padding-left: 30px;
   border-bottom-right-radius: 10px;
 }
 
