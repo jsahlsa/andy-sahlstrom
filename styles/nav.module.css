@@ -292,7 +292,7 @@
   width: 24px;
   height: 24px;
   border-radius: 12px;
-  background-color: hsl(var(--primary-hue), 80%, 30%);
+  background-color: var(--primary-color);
   position: absolute;
   left: 114px;
   top: 33px;
