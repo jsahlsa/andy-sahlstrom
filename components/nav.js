@@ -88,6 +88,10 @@ export default function Nav() {
     --media-border-color: hsl(150, 0%, 30%);
     --scrollbar-color: hsl(75, 50%, 60%);
     --gray-20: hsl(150, 0%, 20%);
+    --font-weight: ${fontWeight}; 
+    --fraunces: ${font}; 
+    --primary-color: hsl(${primaryHue}, 50%, 50%); 
+    --secondary-color: hsl(${secondaryHue}, 100%, 70%);
     `;
 
   const lightStyles = `
@@ -112,6 +116,10 @@ export default function Nav() {
     --bg-dot-one: hsla(0, 0%, 10%, 0.1);
     --bg-dot-two: hsla(0, 0%, 0%, 0);
     --gray-20: hsl(150, 0%, 80%);
+    --font-weight: ${fontWeight}; 
+    --fraunces: ${font}; 
+    --primary-color: hsl(${primaryHue}, 50%, 50%); 
+    --secondary-color: hsl(${secondaryHue}, 100%, 70%);
     `;
 
   // useEffect(() => {
@@ -140,15 +148,17 @@ export default function Nav() {
   useEffect(() => {
     const json = localStorage.getItem('font');
     json && setFont(JSON.parse(json));
-    document.documentElement.style.cssText = `--fraunces: ${font}`;
+    document.documentElement.style.cssText = darkmode
+      ? darkStyles
+      : lightStyles;
   }, [font]);
 
   // sets darkmode when page loads if it is true
   useEffect(() => {
     window.addEventListener('load', () => {
-      if (darkmode) {
-        document.documentElement.style.cssText = darkStyles;
-      }
+      darkmode
+        ? (document.documentElement.style.cssText = darkStyles)
+        : (document.documentElement.style.cssText = lightStyles);
     });
   }, [darkmode, font]);
 
@@ -165,23 +175,30 @@ export default function Nav() {
   const handleFontChange = (e) => {
     document.documentElement.style.cssText = `--font-weight: ${fontWeight}; --fraunces: ${font}`;
     setFont(e.target.value);
-    console.log(`target: ${e.target.value}`);
-    console.log(`font now: ${font}`);
+    darkmode
+      ? (document.documentElement.style.cssText = darkStyles)
+      : (document.documentElement.style.cssText = lightStyles);
     localStorage.setItem('font', JSON.stringify(e.target.value));
   };
 
   const handleFontWeight = (e) => {
     setFontWeight(e.target.value);
-    document.documentElement.style.cssText = `--font-weight: ${fontWeight}; --fraunces: ${font}`;
+    darkmode
+      ? (document.documentElement.style.cssText = darkStyles)
+      : (document.documentElement.style.cssText = lightStyles);
   };
 
   const handlePrimaryHue = (e) => {
     setPrimaryHue(e.target.value);
-    document.documentElement.style.cssText = `--font-weight: ${fontWeight}; --fraunces: ${font}; --primary-hue: ${primaryHue}; --secondary-hue: ${secondaryHue};`;
+    darkmode
+      ? (document.documentElement.style.cssText = darkStyles)
+      : (document.documentElement.style.cssText = lightStyles);
   };
   const handleSecondaryHue = (e) => {
     setSecondaryHue(e.target.value);
-    document.documentElement.style.cssText = `--font-weight: ${fontWeight}; --fraunces: ${font}; --primary-hue: ${primaryHue}; --secondary-hue: ${secondaryHue};`;
+    darkmode
+      ? (document.documentElement.style.cssText = darkStyles)
+      : (document.documentElement.style.cssText = lightStyles);
   };
 
   const handleSettingsButton = () => {
@@ -238,6 +255,96 @@ export default function Nav() {
 
   return (
     <>
+      <div
+        className={
+          settingsOpen ? styles.font_select : styles.font_select_closed
+        }
+      >
+        <div
+          className={
+            settingsOpen ? styles.settings_button : styles.settings_button_open
+          }
+          onClick={handleSettingsButton}
+        >
+          <svg>
+            <polygon
+              className={settingsOpen ? styles.polygon : styles.polygon_rotate}
+              points="10,10 25,20 10,30"
+            />
+          </svg>
+        </div>
+        <div>
+          <label for="font-select">Header font: </label>
+          <select
+            name="header-font"
+            id="font-select"
+            onChange={handleFontChange}
+            className={styles.select}
+          >
+            <option value={selected[0].name}>{selected[0].name}</option>
+            {notSelected.map((item) => {
+              return (
+                <option key={item.key} value={item.name}>
+                  {item.name}
+                </option>
+              );
+            })}
+          </select>
+          {selected.map(
+            (item) =>
+              item.weights && (
+                <>
+                  <label for="weight">Font Weight</label>
+                  <input
+                    type="range"
+                    className={styles.settings_range}
+                    id="weight"
+                    max={item.weights.max}
+                    min={item.weights.min}
+                    onChange={handleFontWeight}
+                    value={
+                      fontWeight > item.weights.max
+                        ? item.weights.max
+                        : fontWeight < item.weights.min
+                        ? item.weights.min
+                        : fontWeight
+                    }
+                  />
+                  <div className={styles.range_values_container}>
+                    <span className={styles.min_weight}>
+                      {item.weights.min}
+                    </span>
+                    <span className={styles.max_weight}>
+                      {item.weights.max}
+                    </span>
+                  </div>
+                </>
+              )
+          )}
+        </div>
+        <div>
+          <label for="primary-hue">Primary hue</label>
+          <input
+            id="primary-hue"
+            type="range"
+            max="360"
+            min="0"
+            value={primaryHue}
+            onChange={handlePrimaryHue}
+            className={styles.settings_range}
+          />
+        </div>
+        <label for="secondary-hue">Secondary hue</label>
+        <input
+          id="secondary-hue"
+          type="range"
+          max="360"
+          min="0"
+          value={secondaryHue}
+          onChange={handleSecondaryHue}
+          className={styles.settings_range}
+        />
+      </div>
       <header className={!hamburgerOpen ? styles.header : styles.header_open}>
         <div className={!hamburgerOpen ? styles.home : styles.home_open}>
           <Link href="/">
@@ -285,100 +392,6 @@ export default function Nav() {
               </svg>
             </a>
           </Link>
-          <div
-            className={
-              settingsOpen ? styles.font_select : styles.font_select_closed
-            }
-          >
-            <div
-              className={
-                settingsOpen
-                  ? styles.settings_button
-                  : styles.settings_button_open
-              }
-              onClick={handleSettingsButton}
-            >
-              <svg>
-                <polygon
-                  className={
-                    settingsOpen ? styles.polygon : styles.polygon_rotate
-                  }
-                  points="10,10 25,20 10,30"
-                />
-              </svg>
-            </div>
-            <div>
-              <label for="font-select">Header font: </label>
-              <select
-                name="header-font"
-                id="font-select"
-                onChange={handleFontChange}
-                className={styles.select}
-              >
-                <option value={selected[0].name}>{selected[0].name}</option>
-                {notSelected.map((item) => {
-                  return (
-                    <option key={item.key} value={item.name}>
-                      {item.name}
-                    </option>
-                  );
-                })}
-              </select>
-              {selected.map(
-                (item) =>
-                  item.weights && (
-                    <>
-                      <label for="weight">Font Weight</label>
-                      <input
-                        type="range"
-                        className={styles.settings_range}
-                        id="weight"
-                        max={item.weights.max}
-                        min={item.weights.min}
-                        onChange={handleFontWeight}
-                        value={
-                          fontWeight > item.weights.max
-                            ? item.weights.max
-                            : fontWeight < item.weights.min
-                            ? item.weights.min
-                            : fontWeight
-                        }
-                      />
-                      <div className={styles.range_values_container}>
-                        <span className={styles.min_weight}>
-                          {item.weights.min}
-                        </span>
-                        <span className={styles.max_weight}>
-                          {item.weights.max}
-                        </span>
-                      </div>
-                    </>
-                  )
-              )}
-            </div>
-            <div>
-              <label for="primary-hue">Primary hue</label>
-              <input
-                id="primary-hue"
-                type="range"
-                max="360"
-                min="0"
-                value={primaryHue}
-                onChange={handlePrimaryHue}
-                className={styles.settings_range}
-              />
-            </div>
-            <label for="secondary-hue">Secondary hue</label>
-            <input
-              id="secondary-hue"
-              type="range"
-              max="360"
-              min="0"
-              value={secondaryHue}
-              onChange={handleSecondaryHue}
-              className={styles.settings_range}
-            />
-          </div>
         </div>
 
         <nav className={!hamburgerOpen ? styles.nav : styles.nav_open}>
