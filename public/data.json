@@ -304,6 +304,20 @@
             "caption": "some text",
             "width": 1500,
             "height": 844
+          },
+          {
+            "name": "keck observatory",
+            "image": "/images/sculptures/keck-observatory/keck-observatory-3.jpeg",
+            "caption": "some text",
+            "width": 1492,
+            "height": 1117
+          },
+          {
+            "name": "keck observatory",
+            "image": "/images/sculptures/keck-observatory/keck-observatory-4.jpeg",
+            "caption": "some text",
+            "width": 1489,
+            "height": 1120
           }
         ]
       },
@@ -374,6 +388,24 @@
             "name": "build a rainbow",
             "image": "/images/sculptures/build-a-rainbow/build-a-rainbow-1.jpeg",
             "caption": "some text",
+            "width": 2500,
+            "height": 2000
+          },
+          {
+            "name": "build a rainbow",
+            "image": "/images/sculptures/build-a-rainbow/build-a-rainbow-1-720.mp4",
+            "webm": "/images/sculptures/build-a-rainbow/build-a-rainbow-1-720.webm",
+            "poster": "/images/sculptures/build-a-rainbow/build-a-rainbow-1-poster.jpg",
+            "caption": "some text",
+            "width": 1500,
+            "height": 844
+          },
+          {
+            "name": "build a rainbow",
+            "image": "/images/sculptures/build-a-rainbow/build-a-rainbow-2-720.mp4",
+            "webm": "/images/sculptures/build-a-rainbow/build-a-rainbow-2-720.webm",
+            "poster": "/images/sculptures/build-a-rainbow/build-a-rainbow-2-poster.jpg",
+            "caption": "some text",
             "width": 1500,
             "height": 844
           }
@@ -386,6 +418,19 @@
             "image": "/images/sculptures/wavepool/wavepool-1-720.mp4",
             "webm": "/images/sculptures/wavepool/wavepool-1-720.webm",
             "poster": "/images/sculptures/wavepool/wavepool-1-poster.jpg",
+            "caption": "some text",
+            "width": 1500,
+            "height": 844
+          }
+        ]
+      },
+      {
+        "ePod": [
+          {
+            "name": "ePod",
+            "image": "/images/sculptures/epod/ePod-720.mp4",
+            "webm": "/images/sculptures/epod/ePod-720.webm",
+            "poster": "/images/sculptures/epod/ePod-poster.jpg",
             "caption": "some text",
             "width": 1500,
             "height": 844

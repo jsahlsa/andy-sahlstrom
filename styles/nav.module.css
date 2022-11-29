@@ -106,7 +106,7 @@
   color: var(--brown-90);
   font-family: var(--golos);
   max-width: min-content;
-  position: absolute;
+  position: fixed;
   left: -40px;
   border: 1px green dashed;
   display: grid;
@@ -127,7 +127,7 @@
   color: var(--brown-90);
   font-family: var(--golos);
   max-width: min-content;
-  position: absolute;
+  position: fixed;
   left: -20px;
   border: 1px green dashed;
   display: grid;
@@ -146,12 +146,13 @@
 
 .polygon {
   fill: var(--secondary-color);
-  transform: scaleX(-1) translateX(-32px);
+  transform: scaleX(-1) translate(-32px, -3px);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .polygon_rotate {
   fill: var(--secondary-color);
+  transform: translateY(-3px);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -159,15 +160,18 @@
   position: absolute;
   height: 40px;
   width: 35px;
-  left: 285px;
+  left: 284px;
   top: 20px;
-  background-color: var(--brown-80);
+  background-color: var(--brown-10);
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  border-top: var(--border-color) 3px solid;
+  border-bottom: var(--border-color) 3px solid;
+  border-right: var(--border-color) 3px solid;
 }
 .settings_button:hover {
   transform: scale(1.05);
-  background-color: var(--brown-70);
+  background-color: var(--brown-40);
 }
 
 .settings_button_open {
@@ -176,7 +180,11 @@
   width: 70px;
   left: 274px;
   top: 20px;
-  background-color: var(--brown-80);
+  background-color: var(--brown-10);
+  border-top: var(--border-color) 3px solid;
+  border-bottom: var(--border-color) 3px solid;
+  border-right: var(--border-color) 3px solid;
+
   border-top-right-radius: 10px;
   transform: translateX(-20px);
   padding-left: 30px;
@@ -185,7 +193,7 @@
 
 .settings_button_open:hover {
   transform: scale(1.05) translateX(-20px);
-  background-color: var(--brown-70);
+  background-color: var(--brown-40);
 }
 
 .select {
