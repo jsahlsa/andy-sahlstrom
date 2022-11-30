@@ -68,7 +68,6 @@
 .two_column {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  position: absolute;
 }
 
 .sub_links_li {
