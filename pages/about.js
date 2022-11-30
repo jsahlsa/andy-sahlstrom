@@ -34,7 +34,7 @@ export default function Home() {
         </p>
         <svg width="1" height="1">
           <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
-            <path transform="translate(0.45 0.45) scale(0.9)">
+            <path transform="translate(0.35 0.35) scale(0.7)">
               <animate
                 attributeName="d"
                 dur="8s"

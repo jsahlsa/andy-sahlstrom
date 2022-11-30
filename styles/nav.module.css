@@ -65,6 +65,12 @@
   display: list-item;
 }
 
+.two_column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: absolute;
+}
+
 .sub_links_li {
   background-color: var(--brown-10);
   padding: 0.4rem clamp(0.5rem, 2%, 1.5rem);
@@ -170,8 +176,7 @@
   border-right: var(--border-color) 3px solid;
 }
 .settings_button:hover {
-  transform: scale(1.05);
-  background-color: var(--brown-40);
+  background-color: var(--brown-20);
 }
 
 .settings_button_open {
@@ -192,8 +197,8 @@
 }
 
 .settings_button_open:hover {
-  transform: scale(1.05) translateX(-20px);
-  background-color: var(--brown-40);
+  transform: translateX(-20px);
+  background-color: var(--brown-20);
 }
 
 .select {

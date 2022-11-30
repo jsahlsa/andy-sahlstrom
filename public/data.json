@@ -436,6 +436,85 @@
             "height": 844
           }
         ]
+      },
+      {
+        "faux_frog": [
+          {
+            "name": "faux frog",
+            "image": "/images/sculptures/faux-frog/faux-frog-1-720.mp4",
+            "webm": "/images/sculptures/faux-frog/faux-frog-1-720.webm",
+            "poster": "/images/sculptures/faux-frog/faux-frog-1-poster.jpg",
+            "caption": "some text",
+            "width": 1500,
+            "height": 844
+          },
+          {
+            "name": "faux frog",
+            "image": "/images/sculptures/faux-frog/faux-frog-2-720.mp4",
+            "webm": "/images/sculptures/faux-frog/faux-frog-2-720.webm",
+            "poster": "/images/sculptures/faux-frog/faux-frog-2-poster.jpg",
+            "caption": "some text",
+            "width": 1500,
+            "height": 844
+          }
+        ]
+      },
+      {
+        "injection_simulator": [
+          {
+            "name": "injection simulator",
+            "image": "/images/sculptures/injection-simulator/injection-simulator-1.jpeg",
+            "caption": "some text",
+            "width": 1382,
+            "height": 774
+          },
+          {
+            "name": "injection simulator",
+            "image": "/images/sculptures/injection-simulator/injection-simulator-2.jpeg",
+            "caption": "some text",
+            "width": 1497,
+            "height": 1114
+          },
+          {
+            "name": "injection simulator",
+            "image": "/images/sculptures/injection-simulator/injection-simulator-3.jpeg",
+            "caption": "some text",
+            "width": 1486,
+            "height": 1103
+          },
+          {
+            "name": "injection simulator",
+            "image": "/images/sculptures/injection-simulator/injection-simulator-4.jpeg",
+            "caption": "some text",
+            "width": 1490,
+            "height": 1094
+          }
+        ]
+      },
+      {
+        "moey_scope": [
+          {
+            "name": "moey scope",
+            "image": "/images/sculptures/moey-scope/moey-scope-1.jpeg",
+            "caption": "some text",
+            "width": 1436,
+            "height": 1068
+          },
+          {
+            "name": "moey scope",
+            "image": "/images/sculptures/moey-scope/moey-scope-2.jpeg",
+            "caption": "some text",
+            "width": 1409,
+            "height": 1070
+          },
+          {
+            "name": "moey scope",
+            "image": "/images/sculptures/moey-scope/moey-scope-3.jpeg",
+            "caption": "some text",
+            "width": 839,
+            "height": 1118
+          }
+        ]
       }
     ]
   },
@@ -775,9 +854,9 @@
     "about": [
       {
         "name": "andy sahlstrom",
-        "image": "/images/andy-self.jpeg",
-        "width": 720,
-        "height": 720
+        "image": "/images/meeeee.jpeg",
+        "width": 317,
+        "height": 298
       }
     ]
   }

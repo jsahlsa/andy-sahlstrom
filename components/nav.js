@@ -455,12 +455,17 @@ export default function Nav() {
                       </summary>
                       <ul
                         key="sublinks"
-                        className={
+                        className={`${
                           !hamburgerOpen
                             ? styles.sub_link_container
                             : styles.sub_link_container_open
-                        }
+                        } ${
+                          newValue.length > 8
+                            ? styles.two_column
+                            : styles.one_column
+                        }`}
                       >
+                        {console.log('length: ' + newValue.length)}
                         {newValue.map((item, j) => {
                           const newValueKeys = Object.keys(item);
                           const subLinkNames = newValueKeys[0]
