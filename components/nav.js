@@ -447,12 +447,14 @@ export default function Nav() {
                       open={name[0] === open}
                       onClick={toggle(name[0])}
                     >
-                      <summary
-                        key={i + 'summary'}
-                        className={`${styles.main_links_li} ${styles.main_links_top_right}`}
-                      >
-                        {name[0]}
-                      </summary>
+                      <Link href={name[0] === open ? parentLink : ''}>
+                        <summary
+                          key={i + 'summary'}
+                          className={`${styles.main_links_li} ${styles.main_links_top_right}`}
+                        >
+                          {name[0]}
+                        </summary>
+                      </Link>
                       <ul
                         key="sublinks"
                         className={`${
@@ -465,7 +467,6 @@ export default function Nav() {
                             : styles.one_column
                         }`}
                       >
-                        {console.log('length: ' + newValue.length)}
                         {newValue.map((item, j) => {
                           const newValueKeys = Object.keys(item);
                           const subLinkNames = newValueKeys[0]
