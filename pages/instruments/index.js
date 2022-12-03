@@ -35,7 +35,6 @@ export default function Home() {
                       src={image}
                       width={width}
                       height={height}
-                      layout="fill"
                       objectFit="cover"
                     />
                   </div>

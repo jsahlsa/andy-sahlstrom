@@ -9,6 +9,18 @@ async function generate() {
   const sitemap = `
         <?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+        <url>
+            <loc>https://andysahlstrom.com/instruments</loc>
+        </url>
+
+        <url>
+            <loc>https://andysahlstrom.com/sculptures</loc>
+        </url>
+        
+        <url>
+            <loc>https://andysahlstrom.com/timelapse</loc>
+        </url>
             ${pages
               .map((page) => {
                 const path = page.replace('pages', '').replace('.js', '');

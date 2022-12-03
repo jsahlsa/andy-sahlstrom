@@ -37,7 +37,6 @@ export default function Home() {
                         src={hasImages.image}
                         width={hasImages.width}
                         height={hasImages.height}
-                        layout="fill"
                         objectFit="cover"
                       />
                     ) : (
@@ -46,7 +45,6 @@ export default function Home() {
                         src={onlyVideo.poster}
                         width={onlyVideo.width}
                         height={onlyVideo.height}
-                        layout="fill"
                         objectFit="cover"
                       />
                     )}
