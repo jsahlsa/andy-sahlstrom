@@ -1,11 +1,37 @@
 import Layout from '../components/layout';
 import Nav from '../components/nav';
 import styles from '../styles/home.module.css';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home() {
+  const [adClose, setAdClose] = useState(true);
+
   return (
     <Layout>
       <Nav />
+      <div
+        className={adClose ? styles.ad_container : styles.ad_container_closed}
+      >
+        <Link href="/design/kids-toys-adult-issues">
+          <div className={styles.ad_image_container}>
+            <Image
+              src="/images/kids-toys-show.jpeg"
+              width={2341}
+              height={2240}
+              objectFit="cover"
+              layout="responsive"
+            />
+          </div>
+        </Link>
+        <span onClick={() => setAdClose(false)} className={styles.close_box}>
+          <svg className={styles.close_box_svg} width="30" height="30">
+            <line className={styles.line_one} x1="0" y1="0" x2="18" y2="18" />
+            <line className={styles.line_one} x1="0" y1="18" x2="18" y2="0" />
+          </svg>
+        </span>
+      </div>
 
       <main className={styles.main_container}>
         <div

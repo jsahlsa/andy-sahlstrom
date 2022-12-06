@@ -150,13 +150,13 @@
 }
 
 .polygon {
-  fill: var(--secondary-color);
+  fill: var(--border-color);
   transform: scaleX(-1) translate(-32px, -3px);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .polygon_rotate {
-  fill: var(--secondary-color);
+  fill: var(--border-color);
   transform: translateY(-3px);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
