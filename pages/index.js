@@ -19,7 +19,7 @@ export default function Home() {
       ease: 'elastic.inOut',
       delay: 2,
     });
-  }, []);
+  }, [adRef]);
 
   return (
     <Layout>
@@ -42,6 +42,33 @@ export default function Home() {
               />
             </div>
           </Link>
+          {/* <svg
+            className={styles.banner_svg}
+            width="150"
+            height="40"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polygon
+              className={styles.banner_polygon}
+              points="0,0 150,0 110,40 40,40"
+            />
+            <text
+              className={styles.svg_banner_text}
+              x="75"
+              y="20"
+              textAnchor="middle"
+            >
+              Art Show!!!
+            </text>
+            <text
+              className={`${styles.svg_banner_text} ${styles.text_line_two}`}
+              x="75"
+              y="32"
+              textAnchor="middle"
+            >
+              12/17 8pm
+            </text>
+          </svg> */}
           <span onClick={() => setAdClose(false)} className={styles.close_box}>
             <svg className={styles.close_box_svg} width="30" height="30">
               <line className={styles.line_one} x1="0" y1="0" x2="18" y2="18" />
