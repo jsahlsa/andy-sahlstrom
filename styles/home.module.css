@@ -22,16 +22,14 @@
   border-radius: 10px;
   box-shadow: 0 0 30px var(--media-border-color);
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   z-index: 10;
   animation: bouncein 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s 1;
 }
 
 @keyframes bouncein {
   from {
-    transform: translateY(-1000px);
+    opacity: 0;
+    transform: translateY(1000px);
   }
 
   65% {
@@ -44,6 +42,7 @@
 
   to {
     transform: translateY(0px);
+    opacity: 1;
   }
 }
 
