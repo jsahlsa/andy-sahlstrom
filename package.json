@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "globby": "^13.1.2",
-    "gsap": "^3.10.4",
+    "gsap": "^3.11.3",
     "next": "latest",
     "prettier": "^2.8.0",
     "react": "17.0.2",

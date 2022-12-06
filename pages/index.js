@@ -3,10 +3,23 @@ import Nav from '../components/nav';
 import styles from '../styles/home.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
+import { useRef } from 'react';
+import { gsap } from 'gsap';
 
 export default function Home() {
   const [adClose, setAdClose] = useState(true);
+  const adRef = useRef();
+
+  useLayoutEffect(() => {
+    console.log(adRef);
+    gsap.from(adRef.current, {
+      y: '-1000px',
+      duration: 2,
+      ease: 'elastic.inOut',
+      delay: 2,
+    });
+  }, []);
 
   return (
     <Layout>
@@ -14,6 +27,7 @@ export default function Home() {
 
       <main className={styles.main_container}>
         <div
+          ref={adRef}
           className={adClose ? styles.ad_container : styles.ad_container_closed}
         >
           <Link href="/design/kids-toys-adult-issues">
@@ -24,6 +38,7 @@ export default function Home() {
                 height={2240}
                 objectFit="cover"
                 layout="responsive"
+                priority={true}
               />
             </div>
           </Link>
