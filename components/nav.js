@@ -33,8 +33,16 @@ const fonts = [
     },
   },
   {
-    name: 'Fraunces',
+    name: 'Antonio',
     key: 4,
+    weights: {
+      max: 700,
+      min: 300,
+    },
+  },
+  {
+    name: 'Fraunces',
+    key: 5,
     weights: {
       max: 900,
       min: 100,
@@ -45,6 +53,14 @@ const fonts = [
     soft: {
       max: 100,
       min: 0,
+    },
+  },
+  {
+    name: 'Figtree',
+    key: 6,
+    weights: {
+      max: 900,
+      min: 300,
     },
   },
 ];
