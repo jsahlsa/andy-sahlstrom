@@ -22,8 +22,9 @@
   border-radius: 10px;
   box-shadow: 0 0 30px var(--media-border-color);
   position: absolute;
-  align-self: center;
-  justify-self: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 10;
   animation: bouncein 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s 1;
 }
@@ -57,9 +58,8 @@
   position: inherit;
   top: -20px;
   right: -20px;
-  background-color: var(--media-border-color);
-  color: var(--brown-10);
-  border: 4px solid var(--brown-10);
+  background-color: var(--brown-10);
+  border: 4px solid var(--border-color);
   border-radius: 50px;
   cursor: pointer;
 }
@@ -74,7 +74,7 @@
 
 .line_one {
   transform: translate(7px, 7px);
-  stroke: var(--brown-10);
+  stroke: var(--border-color);
   stroke-width: 5;
 }
 
