@@ -5,12 +5,6 @@ import styles from '../styles/render_media.module.css';
 
 export default function RenderMedia(data) {
   const pageData = data.props;
-  useEffect(() => {
-    const path = window.location.pathname;
-    const fileEnd = path.split('/').pop();
-    const name = fileEnd.split('-').join(' ');
-    document.title = name;
-  }, []);
 
   return (
     <div className={styles.images_wrapper}>

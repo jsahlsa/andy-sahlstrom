@@ -10,5 +10,5 @@
 }
 
 .img_wrapper {
-  width: clamp(10rem, 90vw, 20rem);
+  width: clamp(10rem, 90vw, 30rem);
 }

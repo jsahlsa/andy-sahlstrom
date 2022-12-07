@@ -138,12 +138,6 @@ export default function Nav() {
     --secondary-color: hsl(${secondaryHue}, 100%, 70%);
     `;
 
-  // useEffect(() => {
-  //   console.log('window: ' + encodeURIComponent(window.location));
-  //   // zach leat og image create
-  //   // <meta property="og:image" content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.11ty.dev%2Fdocs%2F/opengraph/"></meta>
-  // }, []);
-
   // checks localStorage for preference
   // if none, grabs system preference and sets dark mode state
   useEffect(() => {
@@ -157,6 +151,19 @@ export default function Nav() {
         '(prefers-color-scheme: dark)'
       ).matches;
       setDarkmode(getCurrentTheme);
+    }
+  }, []);
+
+  // dynamically set title
+  useEffect(() => {
+    const path = window.location.pathname;
+    const pathClean = path.split('/').pop().split('-');
+    console.log(pathClean[0].length);
+    if (pathClean[0].length >= 1) {
+      const capitalizedTitle = pathClean.map((pathItem) => {
+        return pathItem[0].toUpperCase() + pathItem.substring(1);
+      });
+      document.title = `Andy Sahlstrom | ${capitalizedTitle.join(' ')}`;
     }
   }, []);
 
@@ -290,7 +297,7 @@ export default function Nav() {
           </svg>
         </div>
         <div>
-          <label for="font-select">Header font: </label>
+          <label htmlFor="font-select">Header font: </label>
           <select
             name="header-font"
             id="font-select"
@@ -310,7 +317,7 @@ export default function Nav() {
             (item) =>
               item.weights && (
                 <>
-                  <label for="weight">Font Weight</label>
+                  <label htmlFor="weight">Font Weight</label>
                   <input
                     type="range"
                     className={styles.settings_range}
@@ -339,7 +346,7 @@ export default function Nav() {
           )}
         </div>
         <div>
-          <label for="primary-hue">Primary hue</label>
+          <label htmlFor="primary-hue">Primary hue</label>
           <input
             id="primary-hue"
             type="range"
@@ -350,7 +357,7 @@ export default function Nav() {
             className={styles.settings_range}
           />
         </div>
-        <label for="secondary-hue">Secondary hue</label>
+        <label htmlFor="secondary-hue">Secondary hue</label>
         <input
           id="secondary-hue"
           type="range"
@@ -456,7 +463,7 @@ export default function Nav() {
               const newValue = values[0];
               if (!newValue[0].name) {
                 return (
-                  <li key={i} className={styles.details_container}>
+                  <li key={i + 'main'} className={styles.details_container}>
                     <details
                       id={name[0]}
                       key={i + 'details'}
@@ -515,7 +522,7 @@ export default function Nav() {
                 );
               } else {
                 return (
-                  <li key={i}>
+                  <li key={i + 'sub'}>
                     <Link href={parentLink}>
                       <a
                         className={`${styles.main_links_li} ${styles.main_links_top_right}`}

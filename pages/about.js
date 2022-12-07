@@ -6,7 +6,6 @@ import styles from '../styles/about.module.css';
 
 export default function Home() {
   const pageData = data[5].about[0];
-  console.log(pageData);
   return (
     <Layout>
       <Nav />
@@ -25,12 +24,13 @@ export default function Home() {
               height={pageData.height}
               objectFit="cover"
               layout="responsive"
+              priority={true}
             />
           </div>
         </div>
         <p className={styles.about_text}>
           Andy Sahlstrom is an Interactive Technology Engineer, Inventor, and
-          Kinetic Artist. He resides in Brooklyn New York with his dog Biscuit.{' '}
+          Kinetic Artist. He resides in Brooklyn New York.{' '}
         </p>
         <svg width="1" height="1">
           <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">

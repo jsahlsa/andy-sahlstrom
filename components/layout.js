@@ -9,10 +9,19 @@ export default function Layout({ children }) {
       <Head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="Andy Sahlstrom's Portfolio" />
-        <meta name="keywords" content="" />
+        <title>Andy Sahlstrom</title>
+        <meta
+          name="description"
+          content="Andy Sahlstrom's Website - Interactive Technologist, Kinetic Artist, and Inventor"
+          key="desc"
+        />
+        <meta
+          name="keywords"
+          content="Interactive technology, inventor, kinetic artist"
+        />
         <meta name="author" content="Joe Sahlstrom" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="all" />
         <meta property="og:title" content="Andy's site" />
         <meta property="og:url" content="https://andysahlstrom.com" />
         <meta
