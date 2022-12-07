@@ -66,7 +66,7 @@ html {
 
   --border-color: var(--brown-90);
   --media-border-color: hsl(150, 0%, 10%);
-  --shadow-color: 35deg 14% 39%;
+  --shadow-color: 35deg 14% 10%;
   --shadow-elevation-low: 0.3px 0.2px 0.4px hsl(var(--shadow-color) / 0.44),
     0.5px 0.4px 0.7px -1.2px hsl(var(--shadow-color) / 0.44),
     1.4px 1.1px 2px -2.5px hsl(var(--shadow-color) / 0.44);
