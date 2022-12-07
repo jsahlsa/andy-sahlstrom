@@ -19,6 +19,7 @@
   position: relative;
   grid-row: 1;
   z-index: 10;
+  box-shadow: var(--shadow-elevation-high);
 }
 
 .ad_container_closed {
@@ -43,7 +44,6 @@
   width: min(80vw, 30rem);
   border: max(0.6rem, 0.8vw) solid var(--media-border-color);
   margin: 0 auto;
-  box-shadow: 0 0 30px var(--media-border-color);
 }
 
 /* .banner_svg {

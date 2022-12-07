@@ -515,6 +515,66 @@
             "height": 1118
           }
         ]
+      },
+      {
+        "gimp": [
+          {
+            "name": "gimp",
+            "image": "/images/sculptures/gimp/gimp-1.jpeg",
+            "caption": "some text",
+            "width": 2400,
+            "height": 3000
+          },
+          {
+            "name": "gimp",
+            "image": "/images/sculptures/gimp/gimp-2.jpeg",
+            "caption": "some text",
+            "width": 3600,
+            "height": 3600
+          },
+          {
+            "name": "gimp",
+            "image": "/images/sculptures/gimp/gimp-3.jpeg",
+            "caption": "some text",
+            "width": 2400,
+            "height": 3000
+          },
+          {
+            "name": "gimp",
+            "image": "/images/sculptures/gimp/gimp-4.jpeg",
+            "caption": "some text",
+            "width": 2400,
+            "height": 3000
+          },
+          {
+            "name": "gimp",
+            "image": "/images/sculptures/gimp/gimp-5.jpeg",
+            "caption": "some text",
+            "width": 2400,
+            "height": 3000
+          },
+          {
+            "name": "gimp",
+            "image": "/images/sculptures/gimp/gimp-6.jpeg",
+            "caption": "some text",
+            "width": 2400,
+            "height": 3000
+          },
+          {
+            "name": "gimp",
+            "image": "/images/sculptures/gimp/gimp-7.jpeg",
+            "caption": "some text",
+            "width": 3600,
+            "height": 3600
+          },
+          {
+            "name": "gimp",
+            "image": "/images/sculptures/gimp/gimp-8.jpeg",
+            "caption": "some text",
+            "width": 5616,
+            "height": 3744
+          }
+        ]
       }
     ]
   },
