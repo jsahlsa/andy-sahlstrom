@@ -34,5 +34,6 @@
   overflow: hidden;
   position: absolute;
   padding: 1rem;
-  text-shadow: 1px 1px 1px var(--brown-10);
+  text-shadow: 2px 2px 5px var(--brown-10), -2px 2px 5px var(--brown-10),
+    2px -2px 5px var(--brown-10), -2px -2px 5px var(--brown-10);
 }
