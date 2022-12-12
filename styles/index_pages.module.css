@@ -14,6 +14,7 @@
   display: grid;
   border: 1px red solid;
   border: max(0.6rem, 0.8vw) solid var(--media-border-color);
+  cursor: pointer;
 }
 
 .image_container {
