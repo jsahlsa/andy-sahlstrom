@@ -370,7 +370,7 @@ export default function Nav() {
       </div>
       <header className={!hamburgerOpen ? styles.header : styles.header_open}>
         <div className={!hamburgerOpen ? styles.home : styles.home_open}>
-          <Link href="/">
+          <Link href="/" aria-label="home page">
             <a className={styles.home_link}>
               <svg
                 version="1.1"
@@ -641,6 +641,7 @@ export default function Nav() {
         <label htmlFor="dark_mode" className={styles.dark_mode_label}>
           <input
             ref={darkmodeEl}
+            id="dark_mode"
             name="dark_mode"
             className={styles.dark_mode}
             type="checkbox"
