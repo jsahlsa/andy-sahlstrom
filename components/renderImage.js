@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from '../styles/render_media.module.css';
 
-export default function RenderImage({ image, width, height }) {
+export default function RenderImage({ image, width, height, caption }) {
   return (
     <div
       key={image}
@@ -20,6 +20,7 @@ export default function RenderImage({ image, width, height }) {
         width={width}
         height={height}
         objectFit="cover"
+        alt={caption}
       />
     </div>
   );

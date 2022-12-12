@@ -39,6 +39,7 @@ export default function Home() {
                 objectFit="cover"
                 layout="responsive"
                 priority={true}
+                alt="Advertisement for Andy's art show, Dec 16th, 2022, 8-10pm, The New Gallery, 127 Tompkins Ave, Brooklyn"
               />
             </div>
           </Link>

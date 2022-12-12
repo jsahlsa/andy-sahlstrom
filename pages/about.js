@@ -25,6 +25,7 @@ export default function Home() {
               objectFit="cover"
               layout="responsive"
               priority={true}
+              alt="A picture of Andy Sahlstrom with Jupiter in the background"
             />
           </div>
         </div>
