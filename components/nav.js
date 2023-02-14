@@ -72,8 +72,8 @@ export default function Nav() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const [font, setFont] = useState('Fraunces');
   const [fontWeight, setFontWeight] = useState(700);
-  const [primaryHue, setPrimaryHue] = useState(281);
-  const [secondaryHue, setSecondaryHue] = useState(75);
+  const [primaryHue, setPrimaryHue] = useState(40);
+  const [secondaryHue, setSecondaryHue] = useState(50);
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   const barOneEl = useRef(null);
@@ -84,36 +84,36 @@ export default function Nav() {
   const darkmodeEl = useRef(null);
 
   const darkStyles = `
-    --brown-90: hsl(26, 50%, 95%);
+    --brown-90: hsl(${primaryHue}, 50%, 80%);
     --brown-80: hsl(26, 50%, 90%);
     --brown-70: hsl(26, 50%, 80%);
     --brown-60: hsl(26, 50%, 70%);
     --brown-50: hsl(26, 50%, 60%);
     --brown-40: hsl(26, 50%, 50%);
     --brown-30: hsl(26, 50%, 40%);
-    --brown-20: hsl(26, 50%, 30%);
-    --brown-10: hsl(26, 50%, 20%);
+    --brown-20: hsl(${primaryHue}, 0%, 20%);
+    --brown-10: hsl(${primaryHue}, 0%, 20%);
     --brown-05: hsl(26, 50%, 10%);
-    --primary-color-background: hsla(281, 50%, 10%, 0.8);
+    --primary-color-background: hsla(27, 30%, 10%, 0.8);
     --secondary-color-background: hsla(75, 50%, 10%, 0.8);
     --primary-color: hsl(281, 100%, 70%);
     --secondary-color: hsl(75, 100%, 70%);
-    --border-color: hsl(var(--secondary-hue), 100%, 80%);
+    --border-color: hsl(${primaryHue}, 50%, 80%);
     --bg-dot-one: hsla(0, 0%, 30%, 0.3);
     --bg-dot-two: hsla(0, 0%, 0%, 0);
-    --media-border-color: hsl(150, 0%, 30%);
+    --media-border-color: hsl(${primaryHue}, 0%, 20%);
     --scrollbar-color: hsl(75, 50%, 60%);
     --gray-20: hsl(150, 0%, 20%);
     --font-weight: ${fontWeight}; 
     --fraunces: ${font}; 
-    --primary-color: hsl(${primaryHue}, 50%, 50%); 
-    --secondary-color: hsl(${secondaryHue}, 100%, 70%);
+    --primary-color: hsl(${primaryHue}, 50%, 80%); 
+    --secondary-color: hsl(${secondaryHue}, 30%, 20%);
     `;
 
   const lightStyles = `
     --brown-05: hsl(26, 50%, 95%);
-    --brown-10: hsl(26, 50%, 90%);
-    --brown-20: hsl(26, 50%, 80%);
+    --brown-10: hsl(${primaryHue}, 50%, 90%);
+    --brown-20: hsl(${primaryHue}, 50%, 90%);
     --brown-30: hsl(26, 50%, 70%);
     --brown-40: hsl(26, 50%, 60%);
     --brown-50: hsl(26, 50%, 50%);
@@ -121,21 +121,21 @@ export default function Nav() {
     --brown-70: hsl(26, 50%, 30%);
     --brown-80: hsl(26, 50%, 20%);
     --brown-90: hsl(26, 50%, 10%);
-    --media-border-color: hsl(150, 0%, 10%);
-    --scrollbar-color: hsl(281, 50%, 60%);
+    --media-border-color: hsl(${primaryHue}, 0%, 20%);
+    --scrollbar-color: hsl(28, 50%, 60%);
     
-    --primary-color-background: hsla(281, 50%, 50%, 0.2);
-    --secondary-color-background: hsla(75, 50%, 50%, 0.2);
+    --primary-color-background: hsla(27, 10%, 90%, 0.2);
+    --secondary-color-background: hsla(75, 5%, 80%, 0.2);
     --primary-color: hsl(281, 50%, 50%);
     --secondary-color: hsl(75, 50%, 50%);
-    --border-color: var(--brown-90);
+    --border-color: hsl(${primaryHue}, 0%, 20%);
     --bg-dot-one: hsla(0, 0%, 10%, 0.1);
     --bg-dot-two: hsla(0, 0%, 0%, 0);
     --gray-20: hsl(150, 0%, 80%);
     --font-weight: ${fontWeight}; 
     --fraunces: ${font}; 
-    --primary-color: hsl(${primaryHue}, 50%, 50%); 
-    --secondary-color: hsl(${secondaryHue}, 100%, 70%);
+    --primary-color: hsl(${primaryHue}, 0%, 20%); 
+    --secondary-color: hsl(${secondaryHue}, 20%, 30%);
     `;
 
   // checks localStorage for preference

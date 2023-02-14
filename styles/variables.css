@@ -4,11 +4,11 @@ html {
 
 :root {
   /* colors */
-  --saturation: 50%;
-  --lightness: 50%;
+  --saturation: 0%;
+  --lightness: 20%;
   --opacity: 0.2;
-  --primary-hue: 281;
-  --primary-hue-bg: 281;
+  --primary-hue: 25;
+  --primary-hue-bg: 28;
   --secondary-hue: 75;
   --secondary-hue-bg: 75;
   --primary-color: hsl(var(--primary-hue), var(--saturation), var(--lightness));
