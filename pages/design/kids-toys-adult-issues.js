@@ -6,7 +6,6 @@ import data from '/public/data.json';
 
 export default function Home() {
   const pageData = data[4].design[1].kids_toys_adult_issues;
-  console.log(pageData);
   return (
     <Layout>
       <Nav />
