@@ -869,6 +869,13 @@
       {
         "art": [
           {
+            "name": "art",
+            "image": "/images/design/art/liltyke-hearse-1.jpeg",
+            "caption": "picture of the lil tyke hearse",
+            "width": 2500,
+            "height": 2500
+          },
+          {
             "name": "lil tyke hearse graveyard",
             "image": "/images/design/art/liltyke-hearse-2.jpeg",
             "caption": "picture of the lil tyke hearse",
@@ -929,11 +936,46 @@
             "height": 3009
           },
           {
+            "name": "coffin",
+            "image": "/images/design/kids-toys-adult-issues/coffin.jpeg",
+            "caption": "coffin toy",
+            "width": 2814,
+            "height": 2745
+          },
+          {
+            "name": "hearse",
+            "image": "/images/design/kids-toys-adult-issues/hearse.jpeg",
+            "caption": "hearse toy",
+            "width": 2341,
+            "height": 2240
+          },
+          {
+            "name": "jail phone",
+            "image": "/images/design/kids-toys-adult-issues/jail-phone.jpeg",
+            "caption": "jail phone toy",
+            "width": 2642,
+            "height": 2639
+          },
+          {
             "name": "jail",
             "image": "/images/design/kids-toys-adult-issues/jail.jpeg",
             "caption": "jail toy",
             "width": 2684,
             "height": 2726
+          },
+          {
+            "name": "slide",
+            "image": "/images/design/kids-toys-adult-issues/slide.jpeg",
+            "caption": "slide toy",
+            "width": 2811,
+            "height": 2644
+          },
+          {
+            "name": "stocks",
+            "image": "/images/design/kids-toys-adult-issues/stocks.jpeg",
+            "caption": "stocks toy",
+            "width": 2068,
+            "height": 1950
           },
           {
             "name": "turtle",
