@@ -20,7 +20,6 @@ export default function Home() {
             const instrument = Object.keys(page);
             const instrumentName = instrument.toString().split('_').join(' ');
             const slug = instrument.toString().split('_').join('-');
-            console.log(slug);
             const values = Object.values(page);
             const eachInstrument = values[0];
             // destructure object after first instance with a jpeg image is found

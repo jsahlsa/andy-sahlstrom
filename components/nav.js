@@ -145,7 +145,11 @@ export default function Nav() {
     if (json) {
       const currentTheme = JSON.parse(json);
       // dark mode in localStorage = false
-      setDarkmode(!currentTheme);
+      if (currentTheme) {
+        setDarkmode(false);
+      } else {
+        setDarkmode(true);
+      }
     } else {
       const getCurrentTheme = window.matchMedia(
         '(prefers-color-scheme: dark)'
@@ -178,11 +182,12 @@ export default function Nav() {
 
   // sets darkmode when page loads if it is true
   useEffect(() => {
-    window.addEventListener('load', () => {
-      darkmode
-        ? (document.documentElement.style.cssText = darkStyles)
-        : (document.documentElement.style.cssText = lightStyles);
-    });
+    console.log('use effect');
+    console.log(darkmode);
+    console.log('hello');
+    darkmode
+      ? (document.documentElement.style.cssText = darkStyles)
+      : (document.documentElement.style.cssText = lightStyles);
   }, [darkmode, font]);
 
   // need to find a way to see if a details element is open

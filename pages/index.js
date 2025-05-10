@@ -1,7 +1,6 @@
 import Layout from '../components/layout';
 import Nav from '../components/nav';
 import styles from '../styles/home.module.css';
-import Image from 'next/image';
 
 export default function Home() {
   return (

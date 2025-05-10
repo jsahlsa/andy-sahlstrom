@@ -5,7 +5,6 @@ import data from '/public/data.json';
 
 export default function Home() {
   const pageData = data[0].instruments[1].airless_organ_articulator;
-  console.log(pageData);
 
   return (
     <Layout>
