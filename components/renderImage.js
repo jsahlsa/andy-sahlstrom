@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from '../styles/render_media.module.css';
 
-export default function RenderImage({ image, width, height, caption }) {
+export default function RenderImage({ image, width, height, caption, shop }) {
   return (
     <div
       key={image}
@@ -22,6 +22,11 @@ export default function RenderImage({ image, width, height, caption }) {
         objectFit="cover"
         alt={caption}
       />
+      {shop ? (
+        <a className={styles.shop_button} href={shop}>
+          shop
+        </a>
+      ) : null}
     </div>
   );
 }

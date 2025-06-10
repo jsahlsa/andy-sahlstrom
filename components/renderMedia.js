@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import RenderImage from './renderImage';
 import RenderVideo from './renderVideo';
 import styles from '../styles/render_media.module.css';

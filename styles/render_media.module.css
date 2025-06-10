@@ -1,42 +1,64 @@
 .images_wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: min(3em, 4vw);
-  height: 100%;
-  grid-auto-flow: dense;
-  place-items: center;
-  width: var(--image-wrapper-clamp);
-  overflow: hidden;
-  margin-top: min(3rem, 3vh);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: min(3em, 4vw);
+    height: 100%;
+    grid-auto-flow: dense;
+    place-items: center;
+    width: var(--image-wrapper-clamp);
+    overflow: hidden;
+    margin-top: min(3rem, 3vh);
 }
 
 .img_container {
-  position: relative;
-  width: 100%;
-  object-fit: cover;
-  border: max(0.6rem, 0.8vw) solid var(--media-border-color);
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+    border: max(0.6rem, 0.8vw) solid var(--media-border-color);
 }
 
 .wide_image {
-  grid-column: span 3;
-  grid-row: span 2;
+    grid-column: span 3;
+    grid-row: span 2;
 }
 
 .tall_image {
-  grid-column: span 2;
-  grid-row: span 3;
+    grid-column: span 2;
+    grid-row: span 3;
 }
 
 .square_image {
-  grid-column: span 2;
-  grid-row: span 3;
+    grid-column: span 3;
+    grid-row: span 3;
+}
+
+.shop_button {
+    color: var(--brown-10);
+    position: absolute;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    right: 0;
+    bottom: 0;
+    background: var(--media-border-color);
+    font-family: var(--fraunces);
+    text-transform: uppercase;
+    /* border-top-left-radius: 1rem; */
+    letter-spacing: 0.1rem;
+    text-underline-offset: 2px;
+    transition: all 0.1s ease-in;
+    font-weight: 700;
+}
+
+.shop_button:hover {
+    text-underline-offset: 3px;
+    text-decoration: underline 3px solid;
 }
 
 @media screen and (max-width: 600px) {
-  .images_wrapper {
-    grid-template-columns: 1fr;
-    place-items: center;
-  }
+    .images_wrapper {
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
 }
 
 /* main > h1 {
