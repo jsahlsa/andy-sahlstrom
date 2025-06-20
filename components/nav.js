@@ -1,89 +1,92 @@
 import Link from 'next/link';
 import data from '/public/data.json';
-import { useEffect, useState, useRef } from 'react';
+import {
+    useEffect,
+    useState,
+    useRef
+} from 'react';
 import styles from '../styles/nav.module.css';
 
-const fonts = [
-  {
-    name: 'Inter',
-    key: 1,
-    weights: {
-      max: 900,
-      min: 100,
+const fonts = [{
+        name: 'Inter',
+        key: 1,
+        weights: {
+            max: 900,
+            min: 100,
+        },
+        slant: {
+            max: 0,
+            min: -10,
+        },
     },
-    slant: {
-      max: 0,
-      min: -10,
+    {
+        name: 'Lexend',
+        key: 2,
+        weights: {
+            max: 900,
+            min: 100,
+        },
     },
-  },
-  {
-    name: 'Lexend',
-    key: 2,
-    weights: {
-      max: 900,
-      min: 100,
+    {
+        name: 'Signika Negative',
+        key: 3,
+        weights: {
+            max: 700,
+            min: 300,
+        },
     },
-  },
-  {
-    name: 'Signika Negative',
-    key: 3,
-    weights: {
-      max: 700,
-      min: 300,
+    {
+        name: 'Antonio',
+        key: 4,
+        weights: {
+            max: 700,
+            min: 300,
+        },
     },
-  },
-  {
-    name: 'Antonio',
-    key: 4,
-    weights: {
-      max: 700,
-      min: 300,
+    {
+        name: 'Fraunces',
+        key: 5,
+        weights: {
+            max: 900,
+            min: 100,
+        },
+        italic: false,
+        optical_size: false,
+        wonk: false,
+        soft: {
+            max: 100,
+            min: 0,
+        },
     },
-  },
-  {
-    name: 'Fraunces',
-    key: 5,
-    weights: {
-      max: 900,
-      min: 100,
+    {
+        name: 'Figtree',
+        key: 6,
+        weights: {
+            max: 900,
+            min: 300,
+        },
     },
-    italic: false,
-    optical_size: false,
-    wonk: false,
-    soft: {
-      max: 100,
-      min: 0,
-    },
-  },
-  {
-    name: 'Figtree',
-    key: 6,
-    weights: {
-      max: 900,
-      min: 300,
-    },
-  },
 ];
 
 export default function Nav() {
-  const [open, setOpen] = useState('');
-  const [width, setWidth] = useState(null);
-  const [darkmode, setDarkmode] = useState(false);
-  const [hamburgerOpen, setHamburgerOpen] = useState(false);
-  const [font, setFont] = useState('Fraunces');
-  const [fontWeight, setFontWeight] = useState(700);
-  const [primaryHue, setPrimaryHue] = useState(40);
-  const [secondaryHue, setSecondaryHue] = useState(50);
-  const [settingsOpen, setSettingsOpen] = useState(false);
+    const [open, setOpen] = useState('');
+    const [width, setWidth] = useState(null);
+    const [darkmode, setDarkmode] = useState(false);
+    const [hamburgerOpen, setHamburgerOpen] = useState(false);
+    const [font, setFont] = useState('Fraunces');
+    const [fontWeight, setFontWeight] = useState(700);
+    const [primaryHue, setPrimaryHue] = useState(40);
+    const [secondaryHue, setSecondaryHue] = useState(50);
+    const [settingsOpen, setSettingsOpen] = useState(false);
 
-  const barOneEl = useRef(null);
-  const barTwoEl = useRef(null);
-  const barThreeEl = useRef(null);
-  const mainLinksEl = useRef(null);
-  const svgEl = useRef(null);
-  const darkmodeEl = useRef(null);
+    const barOneEl = useRef(null);
+    const barTwoEl = useRef(null);
+    const barThreeEl = useRef(null);
+    const mainLinksEl = useRef(null);
+    const svgEl = useRef(null);
+    const darkmodeEl = useRef(null);
 
-  const darkStyles = `
+    const darkStyles = `
     --brown-90: hsl(${primaryHue}, 50%, 80%);
     --brown-80: hsl(26, 50%, 90%);
     --brown-70: hsl(26, 50%, 80%);
@@ -110,7 +113,7 @@ export default function Nav() {
     --secondary-color: hsl(${secondaryHue}, 30%, 20%);
     `;
 
-  const lightStyles = `
+    const lightStyles = `
     --brown-05: hsl(26, 50%, 95%);
     --brown-10: hsl(${primaryHue}, 50%, 90%);
     --brown-20: hsl(${primaryHue}, 50%, 90%);
@@ -138,151 +141,156 @@ export default function Nav() {
     --secondary-color: hsl(${secondaryHue}, 20%, 30%);
     `;
 
-  // checks localStorage for preference
-  // if none, grabs system preference and sets dark mode state
-  useEffect(() => {
-    const json = localStorage.getItem('andys-theme');
-    if (json) {
-      const currentTheme = JSON.parse(json);
-      // dark mode in localStorage = false
-      if (currentTheme) {
-        setDarkmode(false);
-      } else {
-        setDarkmode(true);
-      }
-    } else {
-      const getCurrentTheme = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches;
-      setDarkmode(getCurrentTheme);
-    }
-  }, []);
+    // checks localStorage for preference
+    // if none, grabs system preference and sets dark mode state
+    useEffect(() => {
+        const json = localStorage.getItem('andys-theme');
+        if (json) {
+            const currentTheme = JSON.parse(json);
+            // dark mode in localStorage = false
+            if (currentTheme) {
+                setDarkmode(false);
+            } else {
+                setDarkmode(true);
+            }
+        } else {
+            const getCurrentTheme = window.matchMedia(
+                '(prefers-color-scheme: dark)'
+            ).matches;
+            setDarkmode(getCurrentTheme);
+        }
+    }, []);
 
-  // dynamically set title
-  useEffect(() => {
-    const path = window.location.pathname;
-    const pathClean = path.split('/').pop().split('-');
-    console.log(pathClean[0].length);
-    if (pathClean[0].length >= 1) {
-      const capitalizedTitle = pathClean.map((pathItem) => {
-        return pathItem[0].toUpperCase() + pathItem.substring(1);
-      });
-      document.title = `Andy Sahlstrom | ${capitalizedTitle.join(' ')}`;
-    }
-  }, []);
+    // dynamically set title
+    useEffect(() => {
+        const path = window.location.pathname;
+        const pathClean = path.split('/').pop().split('-');
+        console.log(pathClean[0].length);
+        if (pathClean[0].length >= 1) {
+            const capitalizedTitle = pathClean.map((pathItem) => {
+                return pathItem[0].toUpperCase() + pathItem.substring(1);
+            });
+            document.title = `Andy Sahlstrom | ${capitalizedTitle.join(' ')}`;
+        }
+    }, []);
 
-  // get font choice from local storage
-  useEffect(() => {
-    const json = localStorage.getItem('font');
-    json && setFont(JSON.parse(json));
-    document.documentElement.style.cssText = darkmode
-      ? darkStyles
-      : lightStyles;
-  }, [font]);
+    // get font choice from local storage
+    useEffect(() => {
+        const json = localStorage.getItem('font');
+        json && setFont(JSON.parse(json));
+        document.documentElement.style.cssText = darkmode ?
+            darkStyles :
+            lightStyles;
+    }, [font]);
 
-  // sets darkmode when page loads if it is true
-  useEffect(() => {
-    console.log('use effect');
-    console.log(darkmode);
-    console.log('hello');
-    darkmode
-      ? (document.documentElement.style.cssText = darkStyles)
-      : (document.documentElement.style.cssText = lightStyles);
-  }, [darkmode, font]);
+    // sets darkmode when page loads if it is true
+    useEffect(() => {
+        console.log('use effect');
+        console.log(darkmode);
+        console.log('hello');
+        darkmode
+            ?
+            (document.documentElement.style.cssText = darkStyles) :
+            (document.documentElement.style.cssText = lightStyles);
+    }, [darkmode, font]);
 
-  // need to find a way to see if a details element is open
+    // need to find a way to see if a details element is open
 
-  useEffect(() => {
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
+    useEffect(() => {
+        function handleResize() {
+            setWidth(window.innerWidth);
+        }
 
-    window.addEventListener('resize', handleResize);
-  }, []);
+        window.addEventListener('resize', handleResize);
+    }, []);
 
-  const handleFontChange = (e) => {
-    document.documentElement.style.cssText = `--font-weight: ${fontWeight}; --fraunces: ${font}`;
-    setFont(e.target.value);
-    darkmode
-      ? (document.documentElement.style.cssText = darkStyles)
-      : (document.documentElement.style.cssText = lightStyles);
-    localStorage.setItem('font', JSON.stringify(e.target.value));
-  };
+    const handleFontChange = (e) => {
+        document.documentElement.style.cssText = `--font-weight: ${fontWeight}; --fraunces: ${font}`;
+        setFont(e.target.value);
+        darkmode
+            ?
+            (document.documentElement.style.cssText = darkStyles) :
+            (document.documentElement.style.cssText = lightStyles);
+        localStorage.setItem('font', JSON.stringify(e.target.value));
+    };
 
-  const handleFontWeight = (e) => {
-    setFontWeight(e.target.value);
-    darkmode
-      ? (document.documentElement.style.cssText = darkStyles)
-      : (document.documentElement.style.cssText = lightStyles);
-  };
+    const handleFontWeight = (e) => {
+        setFontWeight(e.target.value);
+        darkmode
+            ?
+            (document.documentElement.style.cssText = darkStyles) :
+            (document.documentElement.style.cssText = lightStyles);
+    };
 
-  const handlePrimaryHue = (e) => {
-    setPrimaryHue(e.target.value);
-    darkmode
-      ? (document.documentElement.style.cssText = darkStyles)
-      : (document.documentElement.style.cssText = lightStyles);
-  };
-  const handleSecondaryHue = (e) => {
-    setSecondaryHue(e.target.value);
-    darkmode
-      ? (document.documentElement.style.cssText = darkStyles)
-      : (document.documentElement.style.cssText = lightStyles);
-  };
+    const handlePrimaryHue = (e) => {
+        setPrimaryHue(e.target.value);
+        darkmode
+            ?
+            (document.documentElement.style.cssText = darkStyles) :
+            (document.documentElement.style.cssText = lightStyles);
+    };
+    const handleSecondaryHue = (e) => {
+        setSecondaryHue(e.target.value);
+        darkmode
+            ?
+            (document.documentElement.style.cssText = darkStyles) :
+            (document.documentElement.style.cssText = lightStyles);
+    };
 
-  const handleSettingsButton = () => {
-    setSettingsOpen(!settingsOpen);
-  };
+    const handleSettingsButton = () => {
+        setSettingsOpen(!settingsOpen);
+    };
 
-  // WOW!!!, finally figured this out with help from https://stackoverflow.com/questions/70810204/how-to-automatically-close-an-open-details-tag-when-another-detail-is-clicked-wi
-  // needed onClick not onToggle!!!!! and 2 args to handle preventDefault()
-  const toggle = (id) => (e) => {
-    e.preventDefault();
-    const currentTarget = e.target.innerHTML;
+    // WOW!!!, finally figured this out with help from https://stackoverflow.com/questions/70810204/how-to-automatically-close-an-open-details-tag-when-another-detail-is-clicked-wi
+    // needed onClick not onToggle!!!!! and 2 args to handle preventDefault()
+    const toggle = (id) => (e) => {
+        e.preventDefault();
+        const currentTarget = e.target.innerHTML;
 
-    setOpen(currentTarget);
-    if (currentTarget === open) {
-      setOpen(false);
-    }
-  };
-  const handleDarkModeToggle = () => {
-    if (!darkmode) {
-      // darkmodeEl.current.checked = true;
-      document.documentElement.style.cssText = darkStyles;
+        setOpen(currentTarget);
+        if (currentTarget === open) {
+            setOpen(false);
+        }
+    };
+    const handleDarkModeToggle = () => {
+        if (!darkmode) {
+            // darkmodeEl.current.checked = true;
+            document.documentElement.style.cssText = darkStyles;
 
-      setDarkmode(!darkmode);
-    } else {
-      // darkmodeEl.current.checked = false;
-      document.documentElement.style.cssText = lightStyles;
+            setDarkmode(!darkmode);
+        } else {
+            // darkmodeEl.current.checked = false;
+            document.documentElement.style.cssText = lightStyles;
 
-      setDarkmode(!darkmode);
-    }
-    const json2 = JSON.stringify(darkmode);
-    localStorage.setItem('andys-theme', json2);
-  };
+            setDarkmode(!darkmode);
+        }
+        const json2 = JSON.stringify(darkmode);
+        localStorage.setItem('andys-theme', json2);
+    };
 
-  const hamburgerClick = () => {
-    if (width < 1000) {
-      if (!hamburgerOpen) {
-        barOneEl.current.style.transform = 'rotate(46deg)';
-        barTwoEl.current.style.transform = 'translateX(20px)';
-        barTwoEl.current.style.opacity = '0';
-        barThreeEl.current.style.transform = 'rotate(-43deg)';
-        setHamburgerOpen(!hamburgerOpen);
-      } else {
-        barOneEl.current.style.transform = 'rotate(2deg)';
-        barTwoEl.current.style.transform = 'translateX(0px)';
-        barTwoEl.current.style.opacity = '1';
-        barThreeEl.current.style.transform = 'rotate(2deg)';
-        setHamburgerOpen(!hamburgerOpen);
-      }
-    }
-  };
+    const hamburgerClick = () => {
+        if (width < 1000) {
+            if (!hamburgerOpen) {
+                barOneEl.current.style.transform = 'rotate(46deg)';
+                barTwoEl.current.style.transform = 'translateX(20px)';
+                barTwoEl.current.style.opacity = '0';
+                barThreeEl.current.style.transform = 'rotate(-43deg)';
+                setHamburgerOpen(!hamburgerOpen);
+            } else {
+                barOneEl.current.style.transform = 'rotate(2deg)';
+                barTwoEl.current.style.transform = 'translateX(0px)';
+                barTwoEl.current.style.opacity = '1';
+                barThreeEl.current.style.transform = 'rotate(2deg)';
+                setHamburgerOpen(!hamburgerOpen);
+            }
+        }
+    };
 
-  const selected = fonts.filter((item) => item.name === font);
-  const notSelected = fonts.filter((item) => item.name !== font);
+    const selected = fonts.filter((item) => item.name === font);
+    const notSelected = fonts.filter((item) => item.name !== font);
 
-  return (
-    <>
+    return (
+        <>
       <div
         className={
           settingsOpen ? styles.font_select : styles.font_select_closed
@@ -539,6 +547,7 @@ export default function Nav() {
                 );
               }
             })}
+        
             <li
               key="email"
               className={
@@ -655,6 +664,46 @@ export default function Nav() {
           />
         </label>
       </div>
+        <a className={!hamburgerOpen ? styles.shop_btn : styles.shop_btn_open} href="https://shampoooty.com">
+      <svg viewBox="0 0 288 144">
+      <g>
+        <g>
+          <path class={styles.outside_shop} d="M72,135c-34.7,0-63-28.3-63-63S37.3,9,72,9h144c34.7,0,63,28.3,63,63s-28.3,63-63,63H72z"/>
+        </g>
+        <path class={styles.inside_shop} d="M228.8,52.3c0-0.1-0.1-0.1-0.1-0.1c-5.3-5.3-11.7-8.6-18.6-9.6c-1.6-0.3-2.9-0.3-3.5-0.3h-0.8
+          c-2,0-3.9,0.2-5.7,0.6c-0.7-0.1-1.4-0.2-2.1-0.2c-0.4,0-0.8,0-1.2,0.1l-13.9,1.2c-2.5,0.2-4.8,1.1-6.8,2.4
+          c-5.4-3.2-11.8-4.9-18.8-4.9c-7.1,0-13.6,2.1-19.1,6.1c-2.4-2-5.6-3.9-9.9-4.9c-0.2-3.9-1.8-7.5-4.7-10.1c-2.7-2.4-6.1-3.7-9.7-3.7
+          c-0.5,0-0.9,0-1.4,0.1l-14.1,1.4c-6.7,0.7-11.9,5.8-12.8,12.3c-2-0.2-3.8-0.3-5.5-0.3c-2.4,0-4.5,0.1-6.6,0.4
+          c-3.1,0.4-5.7,1.2-8,2.5c-3.6,1.8-6.4,4-8.5,6.6c-3.8,4.5-5.8,10.1-5.8,16.1c0,3,0.4,5.7,1.2,8.2c-0.7,1.7-1,3.5-1,5.3v12.1
+          c0,6.8,4.8,12.7,11.5,14.1c1.9,0.6,3.8,0.9,5.6,1.1c0.2,0,0.5,0,0.7,0.1c0.3,0,0.9,0.1,1.5,0.2c2.1,0.3,4.2,0.4,6.1,0.4
+          c2,0,3.9-0.1,6-0.5c0.1,0,0.4-0.1,0.4-0.1c1.5-0.2,3.5-0.6,5.7-1.4c1.1-0.4,2.1-0.8,3.1-1.2c2.3,1.5,5,2.3,7.8,2.3
+          c0.3,0,0.6,0,0.9,0l12.9-0.8c1.6,0.6,3.4,1,5.2,1c0.4,0,0.8,0,1.2-0.1l13.9-1.2c3.2-0.2,6-1.3,8.3-3.2c5.2,2.6,11,4,17.1,4
+          c3.7,0,7.2-0.6,10.4-1.6c0.2,3.7,1.8,7.3,4.6,9.8c2.7,2.5,6.2,3.8,9.8,3.8c0.4,0,0.8,0,1.1,0l15-1.2c6.3-0.5,11.3-4.9,12.8-10.8
+          c6.4-1.4,12.1-4.9,16.7-10.3c5.5-6.3,8.4-14.3,8.4-22.9C238.1,66.3,234.9,58.5,228.8,52.3z"/>
+        <path class={styles.letters_shop} d="M92.6,83.9c0,2.6-0.9,4.8-2.7,6.5c-1.4,1.4-3.3,2.5-5.7,3.3c-1.1,0.4-2.4,0.6-3.6,0.8
+          c-1.3,0.2-2.5,0.3-3.8,0.3s-2.7-0.1-4.2-0.3c-1.5-0.2-2.4-0.3-2.7-0.3c-1-0.1-2-0.3-3-0.6c-0.3-0.1-0.7-0.2-1.2-0.3V81.2
+          c0.6,0.3,1,0.5,1.5,0.6c1.4,0.5,2.9,0.9,4.6,1c0.2,0,0.5,0,0.7,0s0.5,0,0.7,0c1.2,0,2.1-0.1,2.9-0.4c0.8-0.2,1.3-0.6,1.4-1.2
+          c0.1-0.2,0.1-0.4,0.1-0.5c0-0.6-1.1-1.2-3.4-1.9c-1.6-0.5-2.9-1.1-3.9-1.8c-1.5-1-2.7-2.2-3.5-3.7c-0.9-1.6-1.3-3.4-1.3-5.6
+          c0-2.7,0.8-4.9,2.4-6.8c1-1.2,2.4-2.2,4.2-3.1c0.9-0.5,2-0.8,3.4-1s2.9-0.3,4.6-0.3c1.8,0,3.8,0.2,5.8,0.5c1.2,0.2,2.2,0.4,3.1,0.5
+          c0.4,0.1,0.9,0.2,1.6,0.4v11.6c-0.8-0.3-1.7-0.5-2.8-0.7c-1-0.2-1.8-0.4-2.4-0.4c-0.6-0.1-1-0.1-1.2-0.1s-0.4,0-0.5,0
+          c-1,0-2,0.1-2.8,0.3c-0.8,0.2-1.2,0.6-1.3,1.1c-0.1,0.6,0.2,1.1,0.7,1.4c1.9,0.6,3.8,1.3,5.7,1.9c1.5,0.7,2.8,1.8,3.9,3.2
+          C91.8,78.4,92.6,80.9,92.6,83.9z"/>
+        <path class={styles.letters_shop} d="M133.1,92.9l-14.3,1.2V73c0-1.4-0.2-2.5-0.7-3.1s-1-0.9-1.8-0.9c-0.9,0-1.6,0.4-1.9,1.2
+          c-0.3,0.8-0.5,2.2-0.5,4.2v18.7L99.8,94V44.5l14.1-1.4v16.3c1-1,2-1.7,3.2-2.2c1.5-0.7,3-1,4.5-1c3.7,0,6.5,1.1,8.4,3.3
+          c1.5,1.8,2.5,4.2,2.9,7.4c0.2,1.4,0.3,4.1,0.3,8L133.1,92.9L133.1,92.9z"/>
+        <path class={styles.letters_shop} d="M177.9,74.9c0,5.2-1.8,9.6-5.4,13.3c-3.6,3.7-8,5.5-13.2,5.5c-5.5,0-10.4-1.7-14.5-5c-4.3-3.5-6.5-7.9-6.5-13
+          c0-5.4,1.8-10.1,5.5-14.1c3.7-3.9,8.2-5.9,13.5-5.9c6,0,10.9,1.8,14.7,5.4C175.9,64.9,177.9,69.4,177.9,74.9z M163.2,74.7
+          c0-1.4-0.5-2.5-1.6-3.5c-1-1-2.3-1.4-3.7-1.4s-2.6,0.5-3.5,1.6c-1,1.1-1.4,2.3-1.4,3.7c0,1.4,0.5,2.5,1.5,3.6s2.2,1.5,3.6,1.5
+          c1.4,0,2.6-0.5,3.6-1.6C162.7,77.5,163.2,76.2,163.2,74.7z"/>
+        <path class={styles.letters_shop} d="M223.7,74.9c0,5.2-1.6,9.7-4.9,13.5c-3.4,4-7.6,6-12.5,6c-1.9,0-3.7-0.3-5.3-0.9c-0.5-0.2-1.2-0.5-1.9-1v12
+          l-15,1.2V58.2L198,57v2.1c1.1-0.6,2.2-1.2,3.4-1.8c1.4-0.5,2.9-0.7,4.4-0.7c0.2,0,0.5,0,0.8,0s0.6,0,0.9,0.1
+          c4.1,0.5,7.8,2.4,11,5.6C221.9,65.8,223.7,70,223.7,74.9z M208.4,75.5c0-1.4-0.5-2.6-1.6-3.6c-1-1-2.3-1.4-3.7-1.4
+          c-1.3,0-2.4,0.5-3.4,1.6c-0.9,1.1-1.4,2.4-1.4,3.8s0.5,2.5,1.5,3.4s2.2,1.4,3.6,1.4c1.4,0,2.5-0.5,3.5-1.6
+          C207.9,78.1,208.4,76.9,208.4,75.5z"/>
+      </g>
+
+      </svg>
+      </a>
     </>
-  );
+    );
 }
