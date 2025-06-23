@@ -373,20 +373,14 @@
     fill: #1539DE;
 }
 
-.shop_btn {
-    display: grid;
-    width: clamp(5rem, calc(4rem + 6vw), 8rem);
-    right: 3vw;
-    top: 5.3rem;
-    position: fixed;
-}
-
+.shop_btn,
 .shop_btn_open {
     display: grid;
     width: clamp(5rem, calc(4rem + 6vw), 8rem);
     right: 3vw;
     top: 5.3rem;
     position: fixed;
+    z-index: 10;
 }
 
 @media screen and (max-width: 1000px) {
@@ -569,13 +563,13 @@
     }
 
     .shop_btn {
-        right: calc(4.3rem + 4vw);
+        right: calc(4.8rem + 4vw);
         top: 1.8rem;
     }
 
     .shop_btn_open {
-        top: 1.5rem;
-        right: calc(4.3rem + 4vw);
+        top: 1.3rem;
+        right: calc(4.5rem + 4vw);
     }
 }
 
