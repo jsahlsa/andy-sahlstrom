@@ -381,6 +381,14 @@
     top: 5.3rem;
     position: fixed;
     z-index: 10;
+    filter: drop-shadow(2px 2px 2px var(--brown-90));
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+.shop_btn:hover,
+.shop_btn_open:hover {
+    opacity: 0.9;
+    transform: translateY(2px);
 }
 
 @media screen and (max-width: 1000px) {
