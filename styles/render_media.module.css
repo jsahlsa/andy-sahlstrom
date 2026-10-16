@@ -33,8 +33,7 @@
 }
 
 .shop_button {
-    --brown-10: hsl(26, 50%, 90%);
-    color: var(--brown-10);
+    color: hsl(26, 50%, 90%);
     position: absolute;
     width: fit-content;
     padding: 0.5rem 1rem;
