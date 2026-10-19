@@ -29,6 +29,7 @@ export default function Home() {
                 return item.image.split('.').pop() === 'jpeg';
               }
             );
+            console.log(width, height, 'width', 'height')
             return (
               <>
                 <Link href={`/instruments/${slug}`}>
