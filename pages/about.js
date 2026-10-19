@@ -1,6 +1,6 @@
 import Nav from '../components/nav';
 import data from '/public/data.json';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Layout from '../components/layout';
 import styles from '../styles/about.module.css';
 
@@ -22,11 +22,14 @@ export default function Home() {
               src={pageData.image}
               width={pageData.width}
               height={pageData.height}
-              objectFit="cover"
-              layout="responsive"
               priority={true}
               alt="A picture of Andy Sahlstrom with Jupiter in the background"
-            />
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "cover"
+              }} />
           </div>
         </div>
         <p className={styles.about_text}>

@@ -1,7 +1,7 @@
 import Layout from '../../components/layout';
 import Nav from '../../components/nav';
 import styles from '../../styles/index_pages.module.css';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link';
 
 import data from '/public/data.json';
@@ -41,16 +41,22 @@ export default function Home() {
                           src={hasImages.image}
                           width={hasImages.width}
                           height={hasImages.height}
-                          objectFit="cover"
-                        />
+                          style={{
+                            maxWidth: "100%",
+                            height: "auto",
+                            objectFit: "cover"
+                          }} />
                       ) : (
                         <Image
                           alt={onlyVideo.name}
                           src={onlyVideo.poster}
                           width={onlyVideo.width}
                           height={onlyVideo.height}
-                          objectFit="cover"
-                        />
+                          style={{
+                            maxWidth: "100%",
+                            height: "auto",
+                            objectFit: "cover"
+                          }} />
                       )}
                     </div>
                     <h2 className={styles.head2}>{instrumentName}</h2>

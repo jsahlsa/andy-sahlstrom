@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from '../styles/render_media.module.css';
 
 export default function RenderImage({ image, width, height, caption, shop }) {
@@ -16,12 +16,15 @@ export default function RenderImage({ image, width, height, caption, shop }) {
     >
       <Image
         src={image}
-        layout="responsive"
         width={width}
         height={height}
-        objectFit="cover"
         alt={caption}
-      />
+        sizes="100vw"
+        style={{
+          width: "100%",
+          height: "auto",
+          objectFit: "cover"
+        }} />
       {shop ? (
         <a className={styles.shop_button} href={shop}>
           shop

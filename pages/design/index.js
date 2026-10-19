@@ -1,7 +1,7 @@
 import Layout from '../../components/layout';
 import Nav from '../../components/nav';
 import styles from '../../styles/index_pages.module.css';
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 import data from '/public/data.json';
 import Link from 'next/link';
@@ -38,8 +38,11 @@ export default function Home() {
                         src={image}
                         width={width}
                         height={height}
-                        objectFit="cover"
-                      />
+                        style={{
+                          maxWidth: "100%",
+                          height: "auto",
+                          objectFit: "cover"
+                        }} />
                     </div>
                     <h2 className={styles.head2}>{instrumentName}</h2>
                   </div>
