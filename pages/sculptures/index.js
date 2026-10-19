@@ -1,7 +1,7 @@
 import Layout from '../../components/layout';
 import Nav from '../../components/nav';
 import styles from '../../styles/index_pages.module.css';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 
 import data from '/public/data.json';

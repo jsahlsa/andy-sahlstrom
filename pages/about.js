@@ -1,6 +1,6 @@
 import Nav from '../components/nav';
 import data from '/public/data.json';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Layout from '../components/layout';
 import styles from '../styles/about.module.css';
 
